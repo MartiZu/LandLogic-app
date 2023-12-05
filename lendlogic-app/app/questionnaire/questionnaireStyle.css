@@ -2,14 +2,15 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: white;
+  background-color: black;
 }
 .other-circle {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: white;
+  background-color: black;
 }
+
 body {
   background: rgb(138, 132, 226);
   background: linear-gradient(
@@ -27,7 +28,6 @@ body {
   box-shadow: 0px 4px 6px 2px #8a84e2;
   border-radius: 20px;
   padding: 10px;
-  margin: 20px;
   text-align: center;
   font-size: 24px;
 }
