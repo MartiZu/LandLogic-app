@@ -21,58 +21,58 @@ export default function PreferenceTool() {
         <div className="flex flex-col mt-32 mx-4 mb-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
       {questionNumber === 1 ? (
         <>
-          <form className="flex flex-col my-5">
+          <form className="flex flex-col my-5 items-center">
             <h2>What are you looking for</h2>
             <input
-              className=" transition-transform transform hover:shadow-card rounded-3xl w-96"
+              className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2"
               value="New Buyer"
               type="submit"
               onClick={(e) => handleClick(e, 2)}
             ></input>
-            <input value="Remortgage" type="submit" onClick={(e) => handleClick(e, 3)}></input>
-            <input value="Moving House" type="submit"onClick={(e) => handleClick(e, 4)}></input>
-            <input value="Just Browsing" type="submit"onClick={(e) => handleClick(e, 5)}></input>
+            <input value="Remortgage" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2" onClick={(e) => handleClick(e, 3)}></input>
+            <input value="Moving House" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2" onClick={(e) => handleClick(e, 4)}></input>
+            <input value="Just Browsing" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2" onClick={(e) => handleClick(e, 5)}></input>
           </form> 
       </>
       ) : null}
       {questionNumber === 2 ? (
         <>  
-        <form className="flex flex-col my-5">
+        <form className="flex flex-col my-5 items-center">
     <h2>How comfortable are you with mortgage terminology?</h2>
-    <input value="I know mortgage terms well" type="submit"></input>
-    <input value="I dont know know Mortgage terms well" type="submit"></input> 
+    <input value="I know mortgage terms well" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2" ></input>
+    <input value="I dont know know Mortgage terms well" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2"></input> 
   </form>          
       </>
       ) : null}
 
 {questionNumber === 3 ? (
         <>
-          <form className="flex flex-col my-5">
+          <form className="flex flex-col my-5 items-center">
             <h2>What are your Remortgage goals?</h2>
             <input
-              className="shadow-card rounded-3xl"
+              className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2"
               value="Repay your mortgage quicker"
               type="submit"
             ></input>
-            <input value="Reduce your monthly payments" type="submit" onClick={(e) => handleClick(e, 2)}></input>
-            <input value="Change mortgage type" type="submit"></input>
-            <input value="Release equity" type="submit"></input>
+            <input value="Reduce your monthly payments" type="submit"  className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2" onClick={(e) => handleClick(e, 2)}></input>
+            <input value="Change mortgage type" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2" ></input>
+            <input value="Release equity" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2"></input>
           </form> 
       </>
       ) : null}
 
 {questionNumber === 4 ? (
         <>
-          <form className="flex flex-col my-5">
+          <form className="flex flex-col my-5 items-center">
             <h2>What are you looking for</h2>
             <input
-              className="shadow-card rounded-3xl"
+              className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2"
               value="New Buyer"
               type="submit"
             ></input>
-            <input value="Remortgage" type="submit" onClick={(e) => handleClick(e, 2)}></input>
-            <input value="Moving House" type="submit"></input>
-            <input value="Just Browsing" type="submit"></input>
+            <input value="Remortgage" type="submit"  className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2" onClick={(e) => handleClick(e, 2)}></input>
+            <input value="Moving House" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2" ></input>
+            <input value="Just Browsing" type="submit" className=" transition-transform transform hover:shadow-card rounded-3xl w-1/2"></input>
           </form> 
       </>
       ) : null}
