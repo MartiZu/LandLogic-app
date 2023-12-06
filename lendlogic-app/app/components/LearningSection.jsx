@@ -2,10 +2,12 @@
 // import RemortgageLearningTool from './RemortgageLearningTool.jsx';
 
 import Newsletter from "./Newsletter.jsx";
-import home from "./house.jpg"
+import RemortgageReport from "./RemortgageReport.jsx";
+// import home from "./house.jpg"
 export default function LearningSection() {
   return (
     <>
+    <RemortgageReport />
     <div className="mt-32 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
     <h2>Getting ready to remortgage</h2>
     <p>Guide</p>

@@ -6,4 +6,7 @@ export default function Footer() {
           &copy; LendLogic All Rights Reserved 
     </footer>
   )
+
+ 
 }
+
