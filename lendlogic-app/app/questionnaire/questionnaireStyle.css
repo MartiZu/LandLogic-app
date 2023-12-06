@@ -22,32 +22,3 @@ body {
   color: #5e5e5e;
   height: 100vh;
 }
-
-.card-container {
-  background-color: #fcfaf9;
-  box-shadow: 0px 4px 6px 2px #8a84e2;
-  border-radius: 20px;
-  padding: 10px;
-  text-align: center;
-  font-size: 24px;
-}
-
-h1 {
-  font-weight: 800;
-  padding-top: 30px;
-}
-
-p {
-  font-weight: 400;
-  padding-top: 10px;
-}
-button {
-  width: 190px;
-  height: 60px;
-  background-color: #8a84e2;
-  color: #fff;
-  border-radius: 40px;
-  font-size: 20px;
-  margin: 20px 20px;
-  box-shadow: 0px 4px 4px 0px #8a84e2;
-}
