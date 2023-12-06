@@ -12,8 +12,9 @@ export default function PreferenceTool() {
  const handleClick = (e, num) => {
   e.preventDefault()
 
+  // update state/number when clicking on input and sends to another question based on number set in onClick function.
    setQuestionNumber(num)
-   console.log(num)
+  
   }
   return (
     <>
@@ -23,7 +24,7 @@ export default function PreferenceTool() {
           <form className="flex flex-col my-5">
             <h2>What are you looking for</h2>
             <input
-              className="shadow-card rounded-3xl"
+              className=" transition-transform transform hover:shadow-card rounded-3xl w-96"
               value="New Buyer"
               type="submit"
               onClick={(e) => handleClick(e, 2)}
@@ -32,22 +33,15 @@ export default function PreferenceTool() {
             <input value="Moving House" type="submit"onClick={(e) => handleClick(e, 4)}></input>
             <input value="Just Browsing" type="submit"onClick={(e) => handleClick(e, 5)}></input>
           </form> 
-           
-    
       </>
       ) : null}
       {questionNumber === 2 ? (
-        <>
-        
+        <>  
         <form className="flex flex-col my-5">
     <h2>How comfortable are you with mortgage terminology?</h2>
     <input value="I know mortgage terms well" type="submit"></input>
-    <input value="I dont know know Mortgage terms well" type="submit"></input>
-  
-  </form>
-
-           
-    
+    <input value="I dont know know Mortgage terms well" type="submit"></input> 
+  </form>          
       </>
       ) : null}
 
@@ -64,8 +58,6 @@ export default function PreferenceTool() {
             <input value="Change mortgage type" type="submit"></input>
             <input value="Release equity" type="submit"></input>
           </form> 
-           
-    
       </>
       ) : null}
 
@@ -82,16 +74,11 @@ export default function PreferenceTool() {
             <input value="Moving House" type="submit"></input>
             <input value="Just Browsing" type="submit"></input>
           </form> 
-           
-    
       </>
       ) : null}
       </div>
 
-      {/* <p>Repay your mortgage quicker</p>
-      <p></p>
-      <p></p>
-      <p></p> */}
+      
 <div className="flex flex-row justify-center items-center">
         <div className="current-circle w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
         <div className="w-3 h-3 rounded-full bg-purple-300 shadow-card mx-1"></div>
