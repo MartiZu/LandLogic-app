@@ -38,17 +38,14 @@ export default function PreferenceTool() {
       ) : null}
       {questionNumber === 2 ? (
         <>
-          <form className="flex flex-col my-5">
-            <h2>What are you looking for</h2>
-            <input
-              className="shadow-card rounded-3xl"
-              value="New Buyer"
-              type="submit"
-            ></input>
-            <input value="Remortgage" type="submit" onClick={(e) => handleClick(e, 2)}></input>
-            <input value="Moving House" type="submit"></input>
-            <input value="Just Browsing" type="submit"></input>
-          </form> 
+        
+        <form className="flex flex-col my-5">
+    <h2>How comfortable are you with mortgage terminology?</h2>
+    <input value="I know mortgage terms well" type="submit"></input>
+    <input value="I dont know know Mortgage terms well" type="submit"></input>
+  
+  </form>
+
            
     
       </>
