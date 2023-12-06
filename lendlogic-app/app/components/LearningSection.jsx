@@ -1,10 +1,13 @@
+
 // import NewBuyerLearningTool from './NewBuyerLearningTool.jsx';
 // import RemortgageLearningTool from './RemortgageLearningTool.jsx';
+
 
 import Newsletter from "./Newsletter.jsx";
 import RemortgageReport from "./RemortgageReport.jsx";
 // import home from "./house.jpg"
 export default function LearningSection() {
+
   return (
     <>
     <RemortgageReport />
