@@ -4,7 +4,7 @@ import LearningSection from "../components/LearningSection"
 export default function Dashboard() {
   return (
     <div>
-      
+      <LearningSection />
     </div>
   )
 }
