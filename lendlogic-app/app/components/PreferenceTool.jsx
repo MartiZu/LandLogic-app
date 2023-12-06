@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { RemortgageQuestion } from "./RemortgageQuestion";
+import Termniology from "./Termniology";
 
 export default function PreferenceTool() {
   return (
@@ -14,6 +16,7 @@ export default function PreferenceTool() {
       <p>Reduce your monthly payments</p>
       <p>Change mortgage type</p>
       <p>Release equity</p> */}
-    </div>
+      </div >
+   
   );
 }
