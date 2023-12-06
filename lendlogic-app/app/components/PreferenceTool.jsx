@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { RemortgageQuestion } from "./RemortgageQuestion";
+import Termniology from "./Termniology";
 
 export default function PreferenceTool() {
   return (
