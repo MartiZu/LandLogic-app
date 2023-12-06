@@ -18,8 +18,8 @@ module.exports = {
         "text-grey": "#5e5e5e",
       },
       boxShadow: {
-        "card": "0px 4px 6px 2px #8a84e2",
-        "button": "0px 4px 4px 0px rgba(0, 0, 0, 25%)",
+        card: "0px 4px 6px 2px #8a84e2",
+        button: "0px 4px 4px 0px rgba(0, 0, 0, 25%)",
       },
     },
   },
