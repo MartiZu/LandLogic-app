@@ -1,5 +1,7 @@
-export default function GetStartedCard() {
+
+export default function GetStartedCard({handleSubmit}) {
   return (
+    <>
     <div className="mt-32 mx-4 mb-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
       <h1 className="font-extrabold py-7">
         {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -12,10 +14,16 @@ export default function GetStartedCard() {
         fit your unique story.
       </p>
 
-      <button className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button">
+      <button type="submit" onClick={handleSubmit} className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button">
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         Let's get started!
       </button>
     </div>
+      <div className="flex flex-row justify-center items-center">
+        <div className="current-circle w-3 h-3 rounded-full bg-purple-300 shadow-card mx-1"></div>
+        <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
+        <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
+      </div>
+      </>
   );
 }
