@@ -14,7 +14,7 @@ export default function RemortgageReport({ value }) {
 
   //destructing the object returned from the custom hook
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } = value;
-  // console.log(userMonthlyPayment)
+  
   return (
     <>
       <div className="mt-32 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
