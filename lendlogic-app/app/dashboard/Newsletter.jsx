@@ -22,7 +22,7 @@ export default function Newsletter() {
 
   return (
     <main>
-      <div className="mt-32 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
+      <div className="mt-12 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
         <h2 className="font-extrabold py-7">Sign up for our newsletter</h2>
         <p className="py-2 font-normal">
           Get the latest news and updates from Lendlogic

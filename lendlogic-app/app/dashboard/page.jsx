@@ -9,7 +9,7 @@ export default async function Dashboard() {
   console.log(jenny);
 
   return (
-    <div className="mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
+    <div className="mt-6 mx-4  rounded-3xl text-center text-2xl">
       <h1 className="font-extrabold py-7">Welcome Jenny!</h1>
       <RemortgageReport value={jenny}/>
       <LearningSection />

@@ -20,7 +20,7 @@ export default function DisplayMortgageInformation({ value }) {
     console.log(monthlyPayment);
   }
   return (
-    <div className="mt-32 mx-4 text-center text-2xl">
+    <div className="mt-8 mx-4 text-center text-2xl">
       <div>Your new monthly payment could be £{monthlyPayment}</div>
       <div>Your remaining balance is £{loanAmount}</div>
       <div id="toggles" className="flex flex-col">
