@@ -1,11 +1,21 @@
 "use client";
 
+import getUserJenny from "@/library/getUserJenny";
+import DisplayJenny from "../customHooks/DisplayJenny";
+
 import { useState, useEffect } from "react";
 
 export default function DisplayMortgageInformation() {
   const [monthlyPayment, setMonthlyPayment] = useState(1653);
   const [interestRate, setInterestRate] = useState(3.5);
   const [loanTerm, setLoanTerm] = useState(30);
+  // const [user, setUSer] = useState("jenny.smith@example.com");
+
+  //destructing the object returned from the custom hook
+  const { loanAmount, userMonthlyPayment, userInterestRate } = DisplayJenny();
+  console.log(loanAmount);
+  console.log(userMonthlyPayment);
+  console.log(userInterestRate);
 
   return (
     <div className="mt-32 mx-4 text-center text-2xl">
