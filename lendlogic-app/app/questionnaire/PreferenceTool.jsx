@@ -3,6 +3,7 @@ import Link from "next/link";
 import { RemortgageQuestion } from "../components/RemortgageQuestion";
 import Termniology from "../components/Termniology";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function PreferenceTool() {
   // set state
@@ -11,12 +12,13 @@ export default function PreferenceTool() {
   // hold clicked or unclicked in state, that resets on new card
   const [cardVisible, setCardVisible] = useState(true);
   // clicked means slideout class is added
+  const router = useRouter();
 
   // handledClick on input
   const handleClick = (e, num) => {
     e.preventDefault();
     if (num === 99) {
-      redirect("/dashboard");
+      router.push("/dashboard");
     }
     // update the class names
     setCardVisible(false);
