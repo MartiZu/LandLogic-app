@@ -14,11 +14,11 @@ export default function DisplayMortgageInformation({ value }) {
   const [interestRate, setInterestRate] = useState(userInterestRate);
   const [loanTerm, setLoanTerm] = useState(loanLength);
 
-  const updateMonthlyPayment = () => {
-    const newMonthlyPayment = loanAmount / (loanTerm * 12);
-    setMonthlyPayment(newMonthlyPayment);
+  function updateMonthlyPayment() {
+    let newMonthlyPayment = (loanAmount / (loanTerm * 12)) * interestRate;
+    setMonthlyPayment(Math.ceil(newMonthlyPayment));
     console.log(monthlyPayment);
-  };
+  }
   return (
     <div className="mt-32 mx-4 text-center text-2xl">
       <div>Your new monthly payment could be £{monthlyPayment}</div>
@@ -33,7 +33,7 @@ export default function DisplayMortgageInformation({ value }) {
           value={interestRate}
           onChange={(e) => {
             setInterestRate(e.target.value);
-            updateMonthlyPayment;
+            updateMonthlyPayment();
           }}
         />
 
@@ -47,7 +47,7 @@ export default function DisplayMortgageInformation({ value }) {
           value={loanTerm}
           onChange={(e) => {
             setLoanTerm(e.target.value);
-            updateMonthlyPayment;
+            updateMonthlyPayment();
           }}
         />
       </div>
