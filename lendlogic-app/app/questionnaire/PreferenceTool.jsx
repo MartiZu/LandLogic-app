@@ -15,6 +15,9 @@ export default function PreferenceTool() {
   // handledClick on input
   const handleClick = (e, num) => {
     e.preventDefault();
+    if (num === 99) {
+      redirect("/dashboard");
+    }
     // update the class names
     setCardVisible(false);
     // set a delay of animation length
@@ -81,11 +84,13 @@ export default function PreferenceTool() {
               value="I'm comfortable"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              onClick={(e) => handleClick(e, 99)}
             ></input>
             <input
               value="I'm not comfortable"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              onClick={(e) => handleClick(e, 99)}
             ></input>
           </form>
         </div>
@@ -107,22 +112,25 @@ export default function PreferenceTool() {
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
               value="Repay your mortgage quicker"
               type="submit"
+              onClick={(e) => handleClick(e, 99)}
             ></input>
             <input
               value="Reduce your monthly payments"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
-              onClick={(e) => handleClick(e, 2)}
+              onClick={(e) => handleClick(e, 99)}
             ></input>
             <input
               value="Change mortgage type"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              onClick={(e) => handleClick(e, 99)}
             ></input>
             <input
               value="Release equity"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              onClick={(e) => handleClick(e, 99)}
             ></input>
           </form>
         </div>
