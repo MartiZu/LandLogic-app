@@ -1,7 +1,5 @@
 import getUserJenny from "@/library/getUserJenny";
 
-import { useState, useEffect } from "react";
-
 export default async function DisplayJenny() {
 
   const userData = await getUserJenny();
@@ -15,11 +13,12 @@ export default async function DisplayJenny() {
     const loanAmount = jenny.mortgage.outstanding_balance;
     const userMonthlyPayment = jenny.mortgage.monthly_payment;
     const userInterestRate = jenny.mortgage.interest_rate;
+    const loanLength = jenny.mortgage.term_years
 
     console.log(loanAmount);
     console.log(userMonthlyPayment);
     console.log(userInterestRate);
-    return { loanAmount, userMonthlyPayment, userInterestRate };
+    return { loanLength, loanAmount, userMonthlyPayment, userInterestRate };
   }
-  return console.log("no user found");
+ console.log("no user found");
 }
