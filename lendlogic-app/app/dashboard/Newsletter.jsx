@@ -22,12 +22,12 @@ export default function Newsletter() {
 
   return (
     <main>
-      <div>
-        <h2>Sign up for our newsletter</h2>
-        <p>Get the latest news and updates from Lendlogic</p>
+      <div className="mt-32 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
+        <h2 className="font-extrabold py-7">Sign up for our newsletter</h2>
+        <p className="py-2 font-normal">Get the latest news and updates from Lendlogic</p>
         <form>
           {submitted ? (
-            <p>
+            <p className="py-2 font-normal">
               {/* eslint-disable-next-line react/no-unescaped-entities */}
               Thanks for signing up! You'll receive a confirmation email soon.
             </p>
@@ -39,7 +39,7 @@ export default function Newsletter() {
                 value={email}
                 onChange={handleInputChange}
               />
-              <button type="submit" onClick={handleSubmit}>
+              <button className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button" type="submit" onClick={handleSubmit}>
                 Sign up
               </button>
             </>

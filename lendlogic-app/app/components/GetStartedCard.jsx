@@ -2,10 +2,10 @@
 export default function GetStartedCard({handleSubmit}) {
   return (
     <>
-    <div className="mt-32 mx-4 mb-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
+    <div className="mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
       <h1 className="font-extrabold py-7">
         {/* eslint-disable-next-line react/no-unescaped-entities */}
-        Welcome to LendLogic! We're not just about rates; we're about you.
+        Welcome to LendLogic! We're not just about rates, we're about you.
       </h1>
       <p className="py-2 font-normal">
         {/* eslint-disable-next-line react/no-unescaped-entities */}
