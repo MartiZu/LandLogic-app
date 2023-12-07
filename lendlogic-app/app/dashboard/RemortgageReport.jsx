@@ -13,14 +13,15 @@ export default function RemortgageReport({ value }) {
   console.log(value);
 
   //destructing the object returned from the custom hook
-  const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } = value;
-  
+  const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
+    value;
+
   return (
     <>
       <div className="mt-32 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
         <h2 className="font-extrabold py-7">Your Remortgage Report</h2>
         <p className="py-2 font-normal">
-          Your monthyl payment is{" "}
+          Your monthly payment is {" "}£
           <span className="text-2xl font-bold">{userMonthlyPayment}</span>
         </p>
         <p className="py-2 font-normal">
@@ -28,7 +29,7 @@ export default function RemortgageReport({ value }) {
         </p>
         <div className="flex justify-center items-center">
           {toolVisible ? (
-            <DisplayMortgageInformation value={value}/>
+            <DisplayMortgageInformation value={value} />
           ) : (
             <Image
               src="/Toggle_man.png"
