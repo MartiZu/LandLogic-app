@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { RemortgageQuestion } from "./RemortgageQuestion";
-import Termniology from "./Termniology";
+import { RemortgageQuestion } from "../components/RemortgageQuestion";
+import Termniology from "../components/Termniology";
 import { useState } from "react";
 
 export default function PreferenceTool() {

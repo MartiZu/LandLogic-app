@@ -1,6 +1,6 @@
-"use client"
-import GetStartedCard from "../components/GetStartedCard";
-import PreferenceTool from "../components/PreferenceTool";
+"use client";
+import GetStartedCard from "./GetStartedCard";
+import PreferenceTool from "./PreferenceTool";
 import { useState } from "react";
 
 export default function Questionnaire() {
@@ -9,16 +9,16 @@ export default function Questionnaire() {
 
   const handleSubmit = () => {
     setPreferenceToolVisible(true);
-    console.log(preferenceToolVisible)
-  }
-
-  
+    console.log(preferenceToolVisible);
+  };
 
   return (
     <main>
       {!preferenceToolVisible ? (
-        <GetStartedCard handleSubmit={handleSubmit}/>
-      ) : (<PreferenceTool />)}
+        <GetStartedCard handleSubmit={handleSubmit} />
+      ) : (
+        <PreferenceTool />
+      )}
     </main>
   );
 }
