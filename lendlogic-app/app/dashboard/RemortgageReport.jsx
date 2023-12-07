@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DisplayMortgageInformation from "./DisplayMortgageInformation";
 
 export default function RemortgageReport() {
   return (
@@ -9,6 +10,7 @@ export default function RemortgageReport() {
           Get insights into remortgaging by using our interactive tool.
         </p>
         <div className="flex justify-center items-center">
+          <DisplayMortgageInformation />
           <Image
             src="/Toggle_man.png"
             alt="A man using toggles"
