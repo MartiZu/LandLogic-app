@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        slideout: "slideleft 0.5s ease 0s 1 normal forwards",
+        slidein: "slideright 0.5s ease 0s 1 normal forwards",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -20,6 +24,16 @@ module.exports = {
       boxShadow: {
         card: "0px 4px 6px 2px #8a84e2",
         button: "0px 4px 4px 0px rgba(0, 0, 0, 25%)",
+      },
+      keyframes: {
+        slideleft: {
+          "0%": { opacity: 1, transform: "translateX(0)" },
+          "100%": { opacity: 0, transform: "translateX(-250px)" },
+        },
+        slideright: {
+          "0%": { opacity: 0, transform: "translateX(250px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
       },
     },
   },
