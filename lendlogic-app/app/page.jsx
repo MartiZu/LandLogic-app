@@ -1,14 +1,14 @@
-import Image from "next/image";
-import PreferenceTool from "./components/PreferenceTool";
-import Newsletter from "./components/Newsletter";
-import LearningSection from "./components/LearningSection";
+import Link from "next/link";
+
+
 
 export default function Home() {
   return (
     <main>
-      {/* <PreferenceTool />
-      <Newsletter /> */}
-      <LearningSection />
+      <div className="mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
+
+      <Link className="font-extrabold py-7" href="/questionnaire">Get Started</Link> 
+      </div>
     </main>
   );
 }
