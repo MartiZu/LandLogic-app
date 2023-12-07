@@ -3,7 +3,6 @@ import Link from "next/link";
 import { RemortgageQuestion } from "../components/RemortgageQuestion";
 import Termniology from "../components/Termniology";
 import { useState } from "react";
-
 import { useRouter } from "next/navigation";
 
 export default function PreferenceTool() {
