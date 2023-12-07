@@ -18,7 +18,7 @@ export default function DisplayMortgageInformation() {
   console.log(userInterestRate);
 
   return (
-    <div className="mt-32 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
+    <div className="mt-32 mx-4 text-center text-2xl">
       <div>Monthly Payment</div>
       <div id="toggles">
         <label htmlFor="interestRate">Interest Rate: </label>

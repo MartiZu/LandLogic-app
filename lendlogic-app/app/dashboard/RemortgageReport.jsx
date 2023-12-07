@@ -1,7 +1,15 @@
+"use client";
 import Image from "next/image";
 import DisplayMortgageInformation from "./DisplayMortgageInformation";
+import { useState } from "react";
 
 export default function RemortgageReport() {
+  //state to handle whether tool is image is displayed
+  const [toolVisible, setToolVisible] = useState(false);
+  //write click hangler for toolVisible button
+  function clickHandler() {
+    setToolVisible(!toolVisible);
+  }
   return (
     <>
       <div className="mt-32 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
@@ -10,15 +18,21 @@ export default function RemortgageReport() {
           Get insights into remortgaging by using our interactive tool.
         </p>
         <div className="flex justify-center items-center">
-          <DisplayMortgageInformation />
-          <Image
-            src="/Toggle_man.png"
-            alt="A man using toggles"
-            width={300}
-            height={200}
-          />
+          {toolVisible ? (
+            <DisplayMortgageInformation />
+          ) : (
+            <Image
+              src="/Toggle_man.png"
+              alt="A man using toggles"
+              width={300}
+              height={200}
+            />
+          )}
         </div>
-        <button className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button">
+        <button
+          className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
+          onClick={clickHandler}
+        >
           View My Report
         </button>
       </div>
