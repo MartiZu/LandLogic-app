@@ -2,7 +2,7 @@
 export default function Footer() {
   return (
     
-    <footer className="fixed bottom-0 left-0 mt-11 w-full text-xs justify-center flex flex-col text-center h-6">
+    <footer className="flex flex-col text-center h-screen w-full text-xs mt-20">
           &copy; LendLogic All Rights Reserved 
     </footer>
   )
