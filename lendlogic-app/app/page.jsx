@@ -11,10 +11,10 @@ export default function Home() {
           </Link>
         </div>
         <Image
-          className=""
+          className="rounded-full border-2 border-purple-accent"
           src={"/logo.png"}
           width={300}
-          height={300}
+          height={500}
           alt="LandLogic Logo"
         />
       </div>
