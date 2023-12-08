@@ -33,7 +33,7 @@ export default function DisplayMortgageInformation({ value }) {
         <label className="py-4" htmlFor="interestRate">
           Interest Rate: {interestRate}%
         </label>
-        <input
+        <input id="interestRate"
           className="w-1/2"
           type="range"
           min="2"
@@ -48,7 +48,7 @@ export default function DisplayMortgageInformation({ value }) {
         <label className="py-4" htmlFor="loanTerm">
           Loan Term: {loanTerm}
         </label>
-        <input
+        <input id="loanTerm"
           className="w-1/2"
           type="range"
           min="5"
