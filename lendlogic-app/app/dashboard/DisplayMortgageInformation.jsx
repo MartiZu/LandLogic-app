@@ -21,11 +21,20 @@ export default function DisplayMortgageInformation({ value }) {
   }
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
-      <div>Your new monthly payment could be £{monthlyPayment}</div>
-      <div>Your remaining balance is £{loanAmount}</div>
-      <div id="toggles" className="flex flex-col">
-        <label htmlFor="interestRate">Interest Rate: {interestRate}%</label>
+      <div className="py-4">
+        Your new monthly payment could be{" "}
+        <span className="text-2xl font-bold">£{monthlyPayment}</span>
+      </div>
+      <div className="py-4">
+        Your remaining balance is{" "}
+        <span className="text-2xl font-bold">£{loanAmount}</span>
+      </div>
+      <div id="toggles" className="flex flex-col items-center">
+        <label className="py-4" htmlFor="interestRate">
+          Interest Rate: {interestRate}%
+        </label>
         <input
+          className="w-1/2"
           type="range"
           min="2"
           max="9"
@@ -36,10 +45,11 @@ export default function DisplayMortgageInformation({ value }) {
             updateMonthlyPayment();
           }}
         />
-
-        <label htmlFor="loanTerm">Loan Term: {loanTerm}</label>
+        <label className="py-4" htmlFor="loanTerm">
+          Loan Term: {loanTerm}
+        </label>
         <input
-          className="bg-black"
+          className="w-1/2"
           type="range"
           min="5"
           max="35"
