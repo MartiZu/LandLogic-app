@@ -22,7 +22,7 @@ export default function DisplayMortgageInformation({ value }) {
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
       <div className="py-4">
-        Your new monthly payment could be{" "}
+        Your new monthly payment could be <br></br>
         <span className="text-2xl font-bold">£{monthlyPayment}</span>
       </div>
       <div className="py-4">
@@ -33,7 +33,8 @@ export default function DisplayMortgageInformation({ value }) {
         <label className="py-4" htmlFor="interestRate">
           Interest Rate: {interestRate}%
         </label>
-        <input id="interestRate"
+        <input
+          id="interestRate"
           className="w-1/2"
           type="range"
           min="2"
@@ -48,7 +49,8 @@ export default function DisplayMortgageInformation({ value }) {
         <label className="py-4" htmlFor="loanTerm">
           Loan Term: {loanTerm}
         </label>
-        <input id="loanTerm"
+        <input
+          id="loanTerm"
           className="w-1/2"
           type="range"
           min="5"

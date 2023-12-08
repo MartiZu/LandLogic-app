@@ -12,7 +12,7 @@ export default function Home() {
         </div>
         <Image
           className=""
-          src={"/images/logo.png"}
+          src={"/logo.png"}
           width={300}
           height={300}
           alt="LandLogic Logo"
