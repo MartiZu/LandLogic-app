@@ -10,12 +10,13 @@ export default function Home() {
             Mortgage
           </Link>
         </div>
-        <Image
+        <Image loading="eager"
           className=""
-          src={"/images/logo.png"}
+          src={"/Logo_lendlogic.png"}
           width={300}
           height={300}
           alt="LandLogic Logo"
+          priority={true}
         />
       </div>
     </main>
