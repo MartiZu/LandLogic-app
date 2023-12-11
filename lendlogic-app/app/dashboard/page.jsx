@@ -10,15 +10,13 @@ export default async function Dashboard() {
   console.log(jenny);
 
   return (
-    <>
+
     <div className="my-8 rounded-3xl text-center text-2xl">
       <h1 className="font-extrabold pt-7 text-5xl">Welcome Jenny!</h1>
       <RemortgageReport value={jenny} />
       <LearningSection />
       <Newsletter />
     </div>
-    <div>
-    </div>
-    </>
+  
   );
 }
