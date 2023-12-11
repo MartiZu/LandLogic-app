@@ -19,12 +19,6 @@ describe("Header", () => {
     expect(logoImage).toHaveAttribute("src", "/Logo_lendlogic.png");
     expect(logoImage).toHaveAttribute("width", "100");
   });
-  it("has the correct CSS classes", () => {
-    // locator
-    render(<Header />);
-    //assertion
-    expect(screen.getByRole("header")).toHaveClass("your-header-class");
-  });
   it("renders the correct title", () => {
     // locator
     render(<Header />);

@@ -2,6 +2,8 @@ import LearningSection from "./LearningSection";
 import Newsletter from "./Newsletter";
 import RemortgageReport from "./RemortgageReport";
 import DisplayJenny from "../customHooks/DisplayJenny";
+import { Suspense } from "react";
+import Loading from "../Loading";
 
 
 export default async function Dashboard() {

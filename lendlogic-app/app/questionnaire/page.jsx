@@ -14,22 +14,17 @@ export default function Questionnaire() {
   };
 
   return (
-    <main >
+    <main>
       <div className="flex flex-col items-center">
-      {!preferenceToolVisible ? (
-        <>
-        <GetStartedCard handleSubmit={handleSubmit} />
-        <Image
-        className="mt-8"
-        src={"/Logo_lendlogic.png"}
-        width={200}
-        height={300}
-        alt="LandLogic Logo"
-      />
-      </>
-      ) : (
-        <>
-        <PreferenceTool />
+        {!preferenceToolVisible ? (
+          <>
+            <GetStartedCard handleSubmit={handleSubmit} />
+          </>
+        ) : (
+          <>
+            <PreferenceTool />
+          </>
+        )}
         <Image
           className="mt-8"
           src={"/Logo_lendlogic.png"}
@@ -37,8 +32,6 @@ export default function Questionnaire() {
           height={300}
           alt="LandLogic Logo"
         />
-        </>
-      )}
       </div>
     </main>
   );

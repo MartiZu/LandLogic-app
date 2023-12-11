@@ -6,6 +6,9 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    minHeight: {
+      "card-height": "520px",
+    },
     extend: {
       animation: {
         slideout: "slideleft 0.5s ease 0s 1 normal forwards",

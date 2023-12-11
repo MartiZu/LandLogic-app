@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+
 export default function PreferenceTool() {
   // set state
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -33,8 +34,8 @@ export default function PreferenceTool() {
         <div
           className={
             cardVisible
-              ? "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
-              : "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
+              ? "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
+              : "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
           <form className="flex flex-col my-5 items-center ">
@@ -72,8 +73,8 @@ export default function PreferenceTool() {
         <div
           className={
             cardVisible
-              ? "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
-              : "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
+              ? "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
+              : "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
           <form className="flex flex-col my-5 items-center">
@@ -100,8 +101,8 @@ export default function PreferenceTool() {
         <div
           className={
             cardVisible
-              ? "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
-              : "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
+              ? "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
+              : "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
           <form className="flex flex-col my-5 items-center ">
@@ -140,8 +141,8 @@ export default function PreferenceTool() {
         <div
           className={
             cardVisible
-              ? "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
-              : "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
+              ? "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
+              : "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
           <form className="flex flex-col my-5 items-center">
