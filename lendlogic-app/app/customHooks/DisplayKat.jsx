@@ -7,4 +7,4 @@ export default async function DisplayKat() {
 
   const kat = userData.find(
     (user) => user.email === "kat.johnson@example.com"
-  );
+  )};
