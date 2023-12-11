@@ -16,7 +16,8 @@ export default async function Dashboard() {
   return (
     <div className="my-8 rounded-3xl text-center text-2xl">
       <h1 className="font-extrabold pt-7 text-5xl">Welcome Jenny!</h1>
-      <DepositButton value={kat} />
+      {/* //we swapped out components to test - need conditional logic */}
+      <DepositButton value={kat} /> 
       <LearningSection />
       <Newsletter />
     </div>
