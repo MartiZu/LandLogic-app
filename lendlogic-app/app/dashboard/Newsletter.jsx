@@ -36,7 +36,7 @@ export default function Newsletter() {
           </p>
         ) : (
           <div className="flex flex-col items-center py-4">
-            <input className="border-2 border-purple-accent rounded-full w-4/5 h-16 pl-8 text-xl font-semibold shadow-button"
+            <input className="border-2 max-w-md border-purple-accent rounded-full w-4/5 h-16 pl-8 text-xl font-semibold shadow-button"
               type="email"
               placeholder="Email address"
               value={email}

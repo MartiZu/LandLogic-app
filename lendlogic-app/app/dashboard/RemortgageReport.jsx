@@ -21,7 +21,7 @@ export default function RemortgageReport({ value }) {
       <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
         <h2 className="font-extrabold py-7">Your Remortgage Report</h2>
         <p className="py-2 font-normal">
-          Your current monthly payment is{" "}
+          Your current monthly payment is <br></br>{" "}
           <span className="text-2xl font-bold">£{userMonthlyPayment}</span>
         </p>
         <p className="p-2 font-normal">
