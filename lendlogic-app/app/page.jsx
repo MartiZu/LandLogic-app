@@ -10,12 +10,14 @@ export default function Home() {
             Mortgage
           </Link>
         </div>
-        <Image
-          className="rounded-full border-2 border-purple-accent"
-          src={"/logo.png"}
+
+        <Image loading="eager"
+          className=""
+            src={"/Logo_lendlogic.png"}
           width={300}
           height={500}
           alt="LandLogic Logo"
+          priority={true}
         />
       </div>
     </main>

@@ -28,7 +28,7 @@ export default function PreferenceTool() {
     // update state/number when clicking on input and sends to another question based on number set in onClick function.
   };
   return (
-    <>
+    <section>
       {questionNumber === 1 ? (
         <div
           className={
@@ -104,7 +104,7 @@ export default function PreferenceTool() {
               : "flex flex-col mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
-          <form className="flex flex-col my-5 items-center">
+          <form className="flex flex-col my-5 items-center ">
             <h2 className="mb-40 text-2xl font-semibold">
               What are your Remortgage goals?
             </h2>
@@ -185,6 +185,6 @@ export default function PreferenceTool() {
           <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
         </div>
       )}
-    </>
+    </section>
   );
 }
