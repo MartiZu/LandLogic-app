@@ -1,7 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
+import { cookies } from "next/headers";
+import { CookieButton } from "./CookieButton";
+import { Cookie } from "next/font/google";
 
-export default function Home() {
+export default async function Home() {
+  async function setCookieJenny() {
+    "use server";
+    const userId = "jenny.smith@gmail.com";
+    cookies().set("user_id", userId);
+    console.log("Jenny logged in successfully!");
+  }
+  async function setCookieKat() {
+    "use server";
+    const userId = "kat.johnson@example.com";
+    cookies().set("user_id", userId);
+    console.log("Kat logged in successfully!");
+  }
   return (
     <main>
       <div className="flex flex-col items-center">
@@ -10,7 +25,8 @@ export default function Home() {
             Mortgage
           </Link>
         </div>
-
+        <CookieButton setCookie={setCookieJenny} key={"Jenny"} />
+        <CookieButton setCookie={setCookieKat} key={"Kat"} />
         <Image
           loading="eager"
           className=""
