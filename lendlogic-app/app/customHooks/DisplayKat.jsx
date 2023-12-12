@@ -1,7 +1,7 @@
 import getUsers from "@/library/getUsers";
 
 export default async function DisplayKat() {
-  const userData = await getUserJenny();
+  const userData = await getUsers();
   console.log(userData); //displays
 
   const kat = userData.find((user) => user.email === "kat.johnson@example.com");
@@ -12,7 +12,7 @@ export default async function DisplayKat() {
     const credit_score = kat.credit_score;
     const userName = kat.name;
     //take only the first part of the postcode
-    const postcode = kat.postcode.split(" ")[0];
+    const postcode = kat.address.postcode.split(" ")[0];
 
     console.log(salary, property_value, credit_score);
 

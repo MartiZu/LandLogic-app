@@ -2,8 +2,8 @@ import LearningSection from "./LearningSection";
 import Newsletter from "./Newsletter";
 // import RemortgageReport from "./RemortgageReport";
 import DisplayJenny from "../customHooks/DisplayJenny";
-
 import DisplayKat from "../customHooks/DisplayKat";
+import DisplayProperties from "../customHooks/DisplayProperties";
 import DepositTool from "./NewBuyerReport";
 import { Suspense } from "react";
 import Loading from "../loading";
@@ -18,6 +18,9 @@ export default async function Dashboard() {
   const kat = await DisplayKat();
   console.log(kat);
 
+  const properties = await DisplayProperties();
+  console.log(properties);
+
   return (
     <Suspense fallback={<Loading />}>
       <div className="flex flex-col my-8 rounded-3xl text-center text-2xl">
@@ -28,7 +31,7 @@ export default async function Dashboard() {
           Welcome {kat.userName}, here is everything you need to know
         </p>
         {/*<RemortgageReport value={jenny} />*/}
-        <DepositTool value={kat} />
+        <DepositTool value={kat} properties={properties}/>
         <LearningSection />
         <Newsletter />
       </div>

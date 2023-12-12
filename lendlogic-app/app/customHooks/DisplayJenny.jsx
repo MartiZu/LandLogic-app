@@ -1,7 +1,7 @@
 import getUsers from "@/library/getUsers";
 
 export default async function DisplayJenny() {
-  const userData = await getUserJenny();
+  const userData = await getUsers();
   console.log(userData); //displays
 
   const jenny = userData.find(
