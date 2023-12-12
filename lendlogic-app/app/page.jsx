@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cookies } from "next/headers";
-import { CookieButton } from "./CookieButton";
+import { CookieButton } from "./cookies/CookieButton";
 import { Cookie } from "next/font/google";
-import { CookieRead } from "./CookieRead";
+import { CookieRead } from "./cookies/CookieRead";
 
 export default async function Home() {
   async function setCookieJenny() {
