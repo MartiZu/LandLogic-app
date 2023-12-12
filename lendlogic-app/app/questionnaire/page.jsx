@@ -3,6 +3,7 @@ import GetStartedCard from "./GetStartedCard";
 import PreferenceTool from "./PreferenceTool";
 import { useState } from "react";
 import Image from "next/image";
+import { cookies } from "next/headers";
 
 export default function Questionnaire() {
   //manage the visibility of the preferenceTool

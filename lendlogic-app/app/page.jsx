@@ -3,6 +3,7 @@ import Image from "next/image";
 import { cookies } from "next/headers";
 import { CookieButton } from "./CookieButton";
 import { Cookie } from "next/font/google";
+import { CookieRead } from "./CookieRead";
 
 export default async function Home() {
   async function setCookieJenny() {
@@ -17,6 +18,11 @@ export default async function Home() {
     cookies().set("user_id", userId);
     console.log("Kat logged in successfully!");
   }
+  async function readUserCookie() {
+    "use server";
+    const currentUser = cookies().get("user_id");
+    console.log(currentUser.value);
+  }
   return (
     <main>
       <div className="flex flex-col items-center">
@@ -27,6 +33,7 @@ export default async function Home() {
         </div>
         <CookieButton setCookie={setCookieJenny} key={"Jenny"} />
         <CookieButton setCookie={setCookieKat} key={"Kat"} />
+        <CookieRead readCookie={readUserCookie} />
         <Image
           loading="eager"
           className=""

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { cookies } from "next/headers";
 
 export default function PreferenceTool() {
   // set state
@@ -11,7 +12,10 @@ export default function PreferenceTool() {
   const [cardVisible, setCardVisible] = useState(true);
   // clicked means slideout class is added
   const router = useRouter();
-
+  // function that saves question we are on and chosen answer
+  const setCookie = async (num, answer) => {
+    cookies().set(`question${num}`, answer)
+}
   // handledClick on input
   const handleClick = (e, num) => {
     e.preventDefault();
