@@ -1,4 +1,4 @@
-import getUserJenny from "@/library/getUserJenny";
+import getUsers from "@/library/getUsers";
 
 export default async function DisplayJenny() {
   const userData = await getUserJenny();
@@ -18,7 +18,13 @@ export default async function DisplayJenny() {
     console.log(loanAmount);
     console.log(userMonthlyPayment);
     console.log(userInterestRate);
-    return { loanLength, loanAmount, userMonthlyPayment, userInterestRate, userName };
+    return {
+      loanLength,
+      loanAmount,
+      userMonthlyPayment,
+      userInterestRate,
+      userName,
+    };
   }
   console.log("no user found");
 }
