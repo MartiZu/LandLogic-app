@@ -13,10 +13,11 @@ export default async function DisplayKat() {
     const salary = kat.salary;
     const property_value = kat.property_value;
     const credit_score = kat.credit_score;
+    const userName = kat.name;
 
     console.log(salary, property_value, credit_score);
 
-    return { salary, property_value, credit_score };
+    return { salary, property_value, credit_score, userName };
   }
 
   console.log("no user found");

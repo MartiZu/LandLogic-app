@@ -1,21 +1,69 @@
 "use client";
 
-// import getUserJenny from "@/library/getUserJenny";
-// import DisplayKat from "../customHooks/DisplayKat";
+import { useState, useEffect } from "react";
 
-// import { useState, useEffect } from "react";
-// import internal from "stream";
+export default function DisplayNewBuyerInformation({ value }) {
+  const { salary, property_value, credit_score } = value;
+  console.log(value);
 
-export default function DisplayDeposit({ value }) {
+  const [monthlySaving, setMonthlySaving] = useState(500);
+  const [years, setYears] = useState(5);
+  const [months, setMonths] = useState(0);
 
-    const { salary, property_value, credit_score } = value;
-    console.log(value);
-
-    
-    
-return (
-    <p className="py-3">
-        Based on your current ins outs goings you can save £500 a month and have your deposit in 8 years and 4 months.
-    </p>
-)
+  return (
+    <div className="mt-8 mx-4 text-center text-2xl">
+      <p className="py-2 font-normal text-xl">
+        Your monthly saving could be{" "}
+        <span className="text-2xl font-bold text-purple-accent">
+          £{monthlySaving}
+        </span>
+        a month and have your deposit in{" "}
+        <span className="text-2xl font-bold text-purple-accent">{years}</span>{" "}
+        years and{" "}
+        <span className="text-2xl font-bold text-purple-accent">{months} </span>
+        months.
+      </p>
+      <div id="toggles" className="flex flex-col items-center">
+        <label className="py-4" htmlFor="monthlySaving">
+          Monthly Saving: {monthlySaving}
+        </label>
+        <input
+          id="monthlySaving"
+          className="w-1/2"
+          type="range"
+          min="100"
+          max="1000"
+          step="50"
+          value={monthlySaving}
+          onChange={(e) => setMonthlySaving(e.target.value)}
+        />
+        <label className="py-4" htmlFor="years">
+          Years: {years}
+        </label>
+        <input
+          id="years"
+          className="w-1/2"
+          type="range"
+          min="1"
+          max="50"
+          step="1"
+          value={years}
+          onChange={(e) => setYears(e.target.value)}
+        />
+        <label className="py-4" htmlFor="months">
+          Months: {months}
+        </label>
+        <input
+          id="months"
+          className="w-1/2"
+          type="range"
+          min="1"
+          max="12"
+          step="1"
+          value={months}
+          onChange={(e) => setMonths(e.target.value)}
+        />
+      </div>
+    </div>
+  );
 }

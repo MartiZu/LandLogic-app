@@ -25,10 +25,9 @@ body {
 
 }
 
-#loanTerm {
+#loanTerm, #interestRate, #monthlySaving, #years, #months {
   accent-color: #8a84e2;
 }
 
-#interestRate {
-  accent-color: #8a84e2;
-}
+
+

@@ -23,11 +23,15 @@ export default function DisplayMortgageInformation({ value }) {
     <div className="mt-8 mx-4 text-center text-2xl">
       <div className="py-4">
         Your new monthly payment could be
-        <span className="text-2xl font-bold text-purple-accent">£{monthlyPayment}</span>
+        <span className="text-2xl font-bold text-purple-accent">
+          £{monthlyPayment}
+        </span>
       </div>
       <div className="py-4">
         Your remaining balance is{" "}
-        <span className="text-2xl font-bold text-purple-accent">£{loanAmount}</span>
+        <span className="text-2xl font-bold text-purple-accent">
+          £{loanAmount}
+        </span>
       </div>
       <div id="toggles" className="flex flex-col items-center">
         <label className="py-4" htmlFor="interestRate">
