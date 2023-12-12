@@ -3,7 +3,7 @@ import Newsletter from "./Newsletter";
 // import RemortgageReport from "./RemortgageReport";
 import DisplayJenny from "../customHooks/DisplayJenny";
 import DisplayKat from "../customHooks/DisplayKat";
-import DepositButton from "./DepositButton";
+import DepositButton from "./NewBuyerReport";
 
 export default async function Dashboard() {
   //destructing the object returned from the custom hook

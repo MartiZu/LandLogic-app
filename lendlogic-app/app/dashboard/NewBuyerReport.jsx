@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import DisplayDeposit from "./DisplayDeposit";
+import DisplayDeposit from "./DisplayNewBuyerInformation";
 
 export default function DepositButton({ value }) {
     
