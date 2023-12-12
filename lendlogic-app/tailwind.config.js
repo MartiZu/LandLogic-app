@@ -6,6 +6,9 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    minHeight: {
+      "card-height": "520px",
+    },
     extend: {
       animation: {
         slideout: "slideleft 0.5s ease 0s 1 normal forwards",
@@ -18,7 +21,7 @@ module.exports = {
       },
       colors: {
         "off-white": "#fcfaf9",
-        "purple-accent": "#8a84e2",
+        "purple-accent": "#645eb0",
         "text-grey": "#5e5e5e",
       },
       boxShadow: {
