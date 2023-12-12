@@ -4,6 +4,7 @@ import RemortgageReport from "./RemortgageReport";
 import DisplayJenny from "../customHooks/DisplayJenny";
 import { Suspense } from "react";
 import Loading from "../Loading";
+import Image from "next/image";
 
 
 export default async function Dashboard() {
@@ -12,13 +13,16 @@ export default async function Dashboard() {
   console.log(jenny);
 
   return (
-
-    <div className="my-8 rounded-3xl text-center text-2xl">
-      <h1 className="font-extrabold pt-7 text-5xl">Welcome Jenny!</h1>
-      <RemortgageReport value={jenny} />
-      <LearningSection />
-      <Newsletter />
-    </div>
-  
+    <Suspense fallback={<Loading />}>
+      <div className="flex flex-col my-8 rounded-3xl text-center text-2xl">
+        <h1 className="font-normal pt-7 text-3xl text-purple-accent">We've got your back!</h1>
+        <p className="px-2 py-4 text-lg">
+          Welcome {jenny.userName}, here is everything you need to know about Remortgaging
+        </p>
+        <RemortgageReport value={jenny} />
+        <LearningSection />
+        <Newsletter />
+      </div>
+    </Suspense>
   );
 }
