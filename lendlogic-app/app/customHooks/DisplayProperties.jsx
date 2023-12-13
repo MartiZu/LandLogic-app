@@ -1,32 +1,24 @@
 import getProperties from "@/library/getProperties";
 
 export default async function GetProperties() {
-  const propertyData = await getProperties();
-  console.log(propertyData); 
+  try {
+    const propertiesData = await getProperties();
+    console.log(propertiesData);
 
-  // const jenny = propertyData.find(
-  //   (user) => user.email === "jenny.smith@example.com"
-  // );
+    const property = propertiesData.map((property) => {
+      const searchPostcode = property.postcode.split(" ")[0];
+      const searchValue = property.value;
+      console.log(searchPostcode);
+      console.log(searchValue);
 
-  // if (jenny.email === "jenny.smith@example.com") {
-  //   const loanAmount = jenny.mortgage.outstanding_balance;
-  //   const userMonthlyPayment = jenny.mortgage.monthly_payment;
-  //   const userInterestRate = jenny.mortgage.interest_rate;
-  //   const loanLength = jenny.mortgage.term_years;
-  //   const userName = jenny.name;
-
-  //   console.log(loanAmount);
-  //   console.log(userMonthlyPayment);
-  //   console.log(userInterestRate);
-  //   return {
-  //     loanLength,
-  //     loanAmount,
-  //     userMonthlyPayment,
-  //     userInterestRate,
-  //     userName,
-  //   };
-  // }
-  // console.log("no user found");
+      return {
+        searchPostcode,
+        searchValue,
+      };
+    });
+    return { searchPostcode, searchValue };
+  } catch (error) {
+    console.error("Error fetching property data:", error);
+    // Handle the error or return a default value as needed
+  }
 }
-
-GetProperties();
