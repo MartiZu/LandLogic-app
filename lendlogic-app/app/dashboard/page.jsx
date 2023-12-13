@@ -30,7 +30,7 @@ export default async function Dashboard() {
         <p className="px-2 py-4 text-lg">
           Welcome {kat.userName}, here is everything you need to know
         </p>
-        {/*<RemortgageReport value={jenny} />*/}
+        {/* <RemortgageReport value={jenny} /> */}
         <DepositTool value={kat} properties={properties}/>
         <LearningSection />
         <Newsletter />
