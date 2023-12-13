@@ -1,6 +1,6 @@
 const url = "https://lendlogic-data.onrender.com/"
 
-export default async function getUserJenny() {
+export default async function getUsers() {
     try {const res = await fetch(`${url}users`);
 
     if(!res.ok){
