@@ -10,6 +10,8 @@ export default function DepositTool({ value, property }) {
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
   console.log(property); //prints undefined
 
+  const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
+
   const deposit = propertyValue * 0.2;
 
   //write click hangler for furtherInfoVisible button
@@ -36,7 +38,7 @@ export default function DepositTool({ value, property }) {
         <span className="text-2xl font-bold text-purple-accent">
           £{deposit}
         </span>{" "}
-        <span className="text-xs">(reference 2-bedroom properties).</span>
+        <span className="text-xs"><br />(reference 2-bedroom properties).</span>
       </p>
       <p className="py-2 font-normal text-xl">Searching in another area?</p>
       <div className="flex justify-center items-center">
@@ -45,11 +47,9 @@ export default function DepositTool({ value, property }) {
         ) : null}
       </div>
       <button
-        className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
+        className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
         onClick={clickHandler}
-      >
-        Find Out More
-      </button>
+      >{buttonText}</button>
       {/* <div>
         <input
           type="text"
