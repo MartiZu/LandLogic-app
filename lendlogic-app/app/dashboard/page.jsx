@@ -15,9 +15,9 @@ export default async function Dashboard() {
   async function readUserCookie() {
     "use server";
     const currentUser = cookies().get("user_id");
-    return (currentUser.value);
+    return currentUser.value;
   }
-  const user = readUserCookie()
+  const user = await readUserCookie();
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
   //destructing the object returned from the custom hook
@@ -30,8 +30,6 @@ export default async function Dashboard() {
   const properties = await DisplayProperties();
   console.log(properties);
   // read cookies fucntion
-
-  
 
   return (
     <Suspense fallback={<Loading />}>

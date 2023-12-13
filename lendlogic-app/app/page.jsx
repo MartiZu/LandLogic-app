@@ -31,11 +31,10 @@ export default async function Home() {
             Mortgage
           </Link>
         </div> */}
-        <Link className="m-42 flex flex-col items-center font-medium py-7 text-2xl " href="/questionnaire">
-          <CookieButton setCookie={setCookieJenny} user={"Jenny"} />
-          <CookieButton setCookie={setCookieKat} user={"Kat"} />
-          {/* <CookieRead readCookie={readUserCookie} /> */}
-        </Link>
+
+        <CookieButton setCookie={setCookieJenny} user={"Jenny"} />
+        <CookieButton setCookie={setCookieKat} user={"Kat"} />
+
         <Image
           loading="eager"
           className=""

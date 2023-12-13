@@ -1,6 +1,8 @@
 import getUsers from "@/library/getUsers";
 
 export default async function DisplayJenny(email) {
+  // need to put email into the search function so it works with any user that logs in
+
   const userData = await getUsers();
   console.log(userData); //displays
 
@@ -18,7 +20,7 @@ export default async function DisplayJenny(email) {
     console.log(loanAmount);
     console.log(userMonthlyPayment);
     console.log(userInterestRate);
-    console.log(email);
+
     return {
       loanLength,
       loanAmount,
