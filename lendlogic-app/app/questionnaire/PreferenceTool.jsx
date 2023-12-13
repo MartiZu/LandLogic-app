@@ -3,8 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
-export default function PreferenceTool() {
+export default function PreferenceTool({ cookieHandler }) {
   // set state
   const [questionNumber, setQuestionNumber] = useState(1);
 
@@ -14,8 +13,9 @@ export default function PreferenceTool() {
   const router = useRouter();
 
   // handledClick on input
-  const handleClick = (e, num) => {
+  const handleClick = (e, num, qNum, aNum) => {
     e.preventDefault();
+    cookieHandler(qNum, aNum);
     if (num === 99) {
       router.push("/dashboard");
     }
@@ -46,25 +46,25 @@ export default function PreferenceTool() {
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               value="New Buyer"
               type="submit"
-              onClick={(e) => handleClick(e, 2)}
+              onClick={(e) => handleClick(e, 2, "q1", "a1")}
             ></input>
             <input
               value="Remortgage"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 3)}
+              onClick={(e) => handleClick(e, 3, "q1", "a2")}
             ></input>
             <input
               value="Moving House"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 4)}
+              onClick={(e) => handleClick(e, 4, "q1", "a3")}
             ></input>
             <input
               value="Just Browsing"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 5)}
+              onClick={(e) => handleClick(e, 5, "q1", "a4")}
             ></input>
           </form>
         </div>
@@ -85,13 +85,13 @@ export default function PreferenceTool() {
               value="I'm comfortable"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 99)}
+              onClick={(e) => handleClick(e, 99, "q2", "a1")}
             ></input>
             <input
               value="I'm not comfortable"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 99)}
+              onClick={(e) => handleClick(e, 99, "q2", "a2")}
             ></input>
           </form>
         </div>
@@ -113,25 +113,25 @@ export default function PreferenceTool() {
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               value="Repay your mortgage quicker"
               type="submit"
-              onClick={(e) => handleClick(e, 99)}
+              onClick={(e) => handleClick(e, 99, "q2", "a1")}
             ></input>
             <input
               value="Reduce your monthly payments"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 99)}
+              onClick={(e) => handleClick(e, 99, "q2", "a2")}
             ></input>
             <input
               value="Change mortgage type"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 99)}
+              onClick={(e) => handleClick(e, 99, "q2", "a3")}
             ></input>
             <input
               value="Release equity"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 99)}
+              onClick={(e) => handleClick(e, 99, "q2", "a4")}
             ></input>
           </form>
         </div>
@@ -158,7 +158,7 @@ export default function PreferenceTool() {
               value="Remortgage"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 2)}
+              onClick={(e) => handleClick(e, 2, "q2", "a2")}
             ></input>
             <input
               value="Moving House"

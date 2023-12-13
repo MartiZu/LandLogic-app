@@ -8,6 +8,8 @@ import DepositTool from "./NewBuyerReport";
 import { Suspense } from "react";
 import Loading from "../loading";
 import Image from "next/image";
+import { cookies } from "next/headers";
+import { CookieRead } from "../cookies/CookieRead";
 
 export default async function Dashboard() {
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -20,6 +22,12 @@ export default async function Dashboard() {
 
   const properties = await DisplayProperties();
   console.log(properties);
+  // read cookies fucntion
+  async function readUserCookie() {
+    "use server";
+    const currentUser = cookies().get("user_id");
+    console.log(currentUser.value);
+  }
 
   return (
     <Suspense fallback={<Loading />}>
@@ -31,7 +39,8 @@ export default async function Dashboard() {
           Welcome {kat.userName}, here is everything you need to know
         </p>
         {/*<RemortgageReport value={jenny} />*/}
-        <DepositTool value={kat} properties={properties}/>
+        <CookieRead readCookie={readUserCookie} />
+        <DepositTool value={kat} properties={properties} />
         <LearningSection />
         <Newsletter />
       </div>

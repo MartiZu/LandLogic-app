@@ -1,31 +1,20 @@
-"use client";
 import GetStartedCard from "./GetStartedCard";
 import PreferenceTool from "./PreferenceTool";
-import { useState } from "react";
 import Image from "next/image";
-
+import { cookies } from "next/headers";
+import QuestionnaireContent from "./QuestionnaireContent";
 
 export default function Questionnaire() {
-  //manage the visibility of the preferenceTool
-  const [preferenceToolVisible, setPreferenceToolVisible] = useState(false);
-
-  const handleSubmit = () => {
-    setPreferenceToolVisible(true);
-    console.log(preferenceToolVisible);
-  };
-
+  //manage the preferences cookies
+  async function setQuestionCookies(qNum, aNum) {
+    "use server";
+    cookies().set(qNum, aNum);
+    console.log(`Cookie set to ${qNum}:${aNum}`);
+  }
   return (
     <main>
       <div className="flex flex-col items-center">
-        {!preferenceToolVisible ? (
-          <>
-            <GetStartedCard handleSubmit={handleSubmit} />
-          </>
-        ) : (
-          <>
-            <PreferenceTool />
-          </>
-        )}
+        <QuestionnaireContent cookieHandler={setQuestionCookies} />
         <Image
           className="mt-8"
           src={"/Logo_lendlogic.png"}
