@@ -12,9 +12,16 @@ import { cookies } from "next/headers";
 import { CookieRead } from "../cookies/CookieRead";
 
 export default async function Dashboard() {
+  async function readUserCookie() {
+    "use server";
+    const currentUser = cookies().get("user_id");
+    return (currentUser.value);
+  }
+  const user = readUserCookie()
+
   await new Promise((resolve) => setTimeout(resolve, 1000));
   //destructing the object returned from the custom hook
-  const jenny = await DisplayJenny();
+  const jenny = await DisplayJenny(user);
   console.log(jenny);
 
   const kat = await DisplayKat();
@@ -23,11 +30,8 @@ export default async function Dashboard() {
   const properties = await DisplayProperties();
   console.log(properties);
   // read cookies fucntion
-  async function readUserCookie() {
-    "use server";
-    const currentUser = cookies().get("user_id");
-    console.log(currentUser.value);
-  }
+
+  
 
   return (
     <Suspense fallback={<Loading />}>

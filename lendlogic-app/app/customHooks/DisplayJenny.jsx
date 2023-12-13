@@ -1,6 +1,6 @@
 import getUsers from "@/library/getUsers";
 
-export default async function DisplayJenny() {
+export default async function DisplayJenny(email) {
   const userData = await getUsers();
   console.log(userData); //displays
 
@@ -18,6 +18,7 @@ export default async function DisplayJenny() {
     console.log(loanAmount);
     console.log(userMonthlyPayment);
     console.log(userInterestRate);
+    console.log(email);
     return {
       loanLength,
       loanAmount,

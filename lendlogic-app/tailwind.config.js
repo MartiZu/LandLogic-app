@@ -9,6 +9,9 @@ module.exports = {
     minHeight: {
       "card-height": "520px",
     },
+    minWidth: {
+      "button-width": "230px",
+    },
     extend: {
       animation: {
         slideout: "slideleft 0.5s ease 0s 1 normal forwards",
