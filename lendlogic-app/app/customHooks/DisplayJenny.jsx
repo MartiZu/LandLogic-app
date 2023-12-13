@@ -1,8 +1,7 @@
-import getUserJenny from "@/library/getUserJenny";
+import getUsers from "@/library/getUsers";
 
 export default async function DisplayJenny() {
-
-  const userData = await getUserJenny();
+  const userData = await getUsers();
   console.log(userData); //displays
 
   const jenny = userData.find(
@@ -13,12 +12,19 @@ export default async function DisplayJenny() {
     const loanAmount = jenny.mortgage.outstanding_balance;
     const userMonthlyPayment = jenny.mortgage.monthly_payment;
     const userInterestRate = jenny.mortgage.interest_rate;
-    const loanLength = jenny.mortgage.term_years
+    const loanLength = jenny.mortgage.term_years;
+    const userName = jenny.name;
 
     console.log(loanAmount);
     console.log(userMonthlyPayment);
     console.log(userInterestRate);
-    return { loanLength, loanAmount, userMonthlyPayment, userInterestRate };
+    return {
+      loanLength,
+      loanAmount,
+      userMonthlyPayment,
+      userInterestRate,
+      userName,
+    };
   }
- console.log("no user found");
+  console.log("no user found");
 }

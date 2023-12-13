@@ -1,7 +1,7 @@
 import { render, screen, fireEvent  } from "@testing-library/react";
 //userEvent is an alternative to fireEvent
-import GetStartedCard from "../app/questionnaire/GetStartedCard";
 import { describe } from "node:test";
+import GetStartedCard from "./GetStartedCard";
 
 describe("GetStartedCard", () => {
   it("renders the GetStartedCard page", () => {

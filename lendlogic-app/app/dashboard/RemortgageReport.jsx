@@ -19,12 +19,16 @@ export default function RemortgageReport({ value }) {
   return (
     <>
       <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
-        <h2 className="font-extrabold py-7">Your Remortgage Report</h2>
-        <p className="py-2 font-normal">
+        <h2 className="font-normal py-7 text-3xl text-purple-accent">
+          Your Remortgage Report
+        </h2>
+        <p className="py-2 font-normal text-xl">
           Your current monthly payment is <br></br>{" "}
-          <span className="text-2xl font-bold">£{userMonthlyPayment}</span>
+          <span className="text-2xl font-bold text-purple-accent">
+            £{userMonthlyPayment}
+          </span>
         </p>
-        <p className="p-2 font-normal">
+        <p className="p-2 font-normal text-xl">
           Get insights into remortgaging by using our interactive tool.
         </p>
         <div className="flex justify-center items-center">

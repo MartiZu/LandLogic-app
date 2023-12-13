@@ -39,11 +39,11 @@ export default function PreferenceTool() {
           }
         >
           <form className="flex flex-col my-5 items-center ">
-            <h2 className="mb-40 text-2xl font-semibold">
+            <h2 className="mb-40 text-3xl font-normal text-purple-accent">
               Which of the following best describes you?
             </h2>
             <input
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               value="New Buyer"
               type="submit"
               onClick={(e) => handleClick(e, 2)}
@@ -51,19 +51,19 @@ export default function PreferenceTool() {
             <input
               value="Remortgage"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 3)}
             ></input>
             <input
               value="Moving House"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 4)}
             ></input>
             <input
               value="Just Browsing"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 5)}
             ></input>
           </form>
@@ -78,19 +78,19 @@ export default function PreferenceTool() {
           }
         >
           <form className="flex flex-col my-5 items-center">
-            <h2 className="mb-40 text-2xl font-semibold">
+            <h2 className="mb-40 text-3xl font-normal text-purple-accent">
               How comfortable are you with mortgage terminology?
             </h2>
             <input
               value="I'm comfortable"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99)}
             ></input>
             <input
               value="I'm not comfortable"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99)}
             ></input>
           </form>
@@ -106,11 +106,11 @@ export default function PreferenceTool() {
           }
         >
           <form className="flex flex-col my-5 items-center ">
-            <h2 className="mb-40 text-2xl font-semibold">
+            <h2 className="mb-40 text-3xl font-normal text-purple-accent">
               What are your Remortgage goals?
             </h2>
             <input
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               value="Repay your mortgage quicker"
               type="submit"
               onClick={(e) => handleClick(e, 99)}
@@ -118,19 +118,19 @@ export default function PreferenceTool() {
             <input
               value="Reduce your monthly payments"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99)}
             ></input>
             <input
               value="Change mortgage type"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99)}
             ></input>
             <input
               value="Release equity"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99)}
             ></input>
           </form>
@@ -146,29 +146,29 @@ export default function PreferenceTool() {
           }
         >
           <form className="flex flex-col my-5 items-center">
-            <h2 className="mb-40 text-2xl font-semibold">
+            <h2 className="mb-40 text-3xl font-normal text-purple-accent">
               What are you looking for
             </h2>
             <input
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               value="New Buyer"
               type="submit"
             ></input>
             <input
               value="Remortgage"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 2)}
             ></input>
             <input
               value="Moving House"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
             ></input>
             <input
               value="Just Browsing"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-medium"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
             ></input>
           </form>
         </div>

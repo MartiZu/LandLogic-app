@@ -4,6 +4,7 @@ import PreferenceTool from "./PreferenceTool";
 import { useState } from "react";
 import Image from "next/image";
 
+
 export default function Questionnaire() {
   //manage the visibility of the preferenceTool
   const [preferenceToolVisible, setPreferenceToolVisible] = useState(false);

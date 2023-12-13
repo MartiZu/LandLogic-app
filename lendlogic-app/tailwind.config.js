@@ -21,7 +21,7 @@ module.exports = {
       },
       colors: {
         "off-white": "#fcfaf9",
-        "purple-accent": "#8a84e2",
+        "purple-accent": "#645eb0",
         "text-grey": "#5e5e5e",
       },
       boxShadow: {
