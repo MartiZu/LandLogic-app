@@ -62,7 +62,7 @@ export default function DisplayNewBuyerInformation({ value }) {
         </label>
         <input
           id="propertyValue"
-          className="w-1/2 bg-gray-200 rounded-3xl p-3 text-center text-2xl"
+          className="border-2 max-w-md border-purple-accent rounded-full w-1/2 h-16 pl-8 text-xl font-semibold shadow-button"
           type="number"
           value={propertyValue}
           onChange={handlePropertyValueChange}
@@ -71,3 +71,5 @@ export default function DisplayNewBuyerInformation({ value }) {
     </div>
   );
 }
+
+// "w-1/2 bg-gray-200 rounded-3xl p-3 text-center text-2xl"
