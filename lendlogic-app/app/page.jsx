@@ -25,16 +25,17 @@ export default async function Home() {
   }
   return (
     <main>
-
       <div className="flex flex-col items-center">
-        <div className="my-32 mx-4 w-1/2 bg-off-white rounded-3xl text-purple-accent p-3 shadow-card text-center text-2xl hover:bg-purple-accent hover:text-off-white hover:font-semibold">
+        <div className=" mx-4 w-1/2 bg-off-white rounded-3xl text-purple-accent p-3 shadow-card text-center text-2xl hover:bg-purple-accent hover:text-off-white hover:font-semibold">
           <Link className="font-extrabold py-7 " href="/questionnaire">
             Mortgage
           </Link>
         </div>
-        <CookieButton setCookie={setCookieJenny} key={"Jenny"} />
-        <CookieButton setCookie={setCookieKat} key={"Kat"} />
-        <CookieRead readCookie={readUserCookie} />
+        <Link className="flex flex-col items-center font-extrabold py-7 " href="/questionnaire">
+          <CookieButton setCookie={setCookieJenny} user={"Jenny"} />
+          <CookieButton setCookie={setCookieKat} user={"Kat"} />
+          <CookieRead readCookie={readUserCookie} />
+        </Link>
         <Image
           loading="eager"
           className=""
@@ -45,7 +46,6 @@ export default async function Home() {
           priority={true}
         />
       </div>
-
     </main>
   );
 }
