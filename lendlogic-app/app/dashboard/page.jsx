@@ -38,10 +38,9 @@ export default async function Dashboard() {
           We've got your back!
         </h1>
         <p className="px-2 py-4 text-lg">
-          Welcome {kat.userName}, here is everything you need to know
+          Welcome {currentUser.userName}, here is everything you need to know
         </p>
-        {/*<RemortgageReport value={jenny} />*/}
-        <NewBuyerReport value={kat} properties={properties} />
+        <NewBuyerReport value={currentUser} properties={properties} />
         <LearningSection />
         <Newsletter />
       </div>
