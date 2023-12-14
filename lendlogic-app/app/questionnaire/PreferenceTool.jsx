@@ -43,7 +43,7 @@ export default function PreferenceTool({ cookieHandler }) {
               Which of the following best describes you?
             </h2>
             <input
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               value="New Buyer"
               type="submit"
               onClick={(e) => handleClick(e, 2, "q1", "a1")}
@@ -51,20 +51,20 @@ export default function PreferenceTool({ cookieHandler }) {
             <input
               value="Remortgage"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 3, "q1", "a2")}
             ></input>
             <input
               value="Moving House"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 4, "q1", "a3")}
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
+              onClick={(e) => handleClick(e, 99, "q1", "a3")}
             ></input>
             <input
               value="Just Browsing"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
-              onClick={(e) => handleClick(e, 5, "q1", "a4")}
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
+              onClick={(e) => handleClick(e, 99, "q1", "a4")}
             ></input>
           </form>
         </div>
@@ -84,13 +84,13 @@ export default function PreferenceTool({ cookieHandler }) {
             <input
               value="I'm comfortable"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99, "q2", "a1")}
             ></input>
             <input
               value="I'm not comfortable"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99, "q2", "a2")}
             ></input>
           </form>
@@ -110,7 +110,7 @@ export default function PreferenceTool({ cookieHandler }) {
               What are your Remortgage goals?
             </h2>
             <input
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               value="Repay your mortgage quicker"
               type="submit"
               onClick={(e) => handleClick(e, 99, "q2", "a1")}
@@ -118,19 +118,19 @@ export default function PreferenceTool({ cookieHandler }) {
             <input
               value="Reduce your monthly payments"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99, "q2", "a2")}
             ></input>
             <input
               value="Change mortgage type"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99, "q2", "a3")}
             ></input>
             <input
               value="Release equity"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99, "q2", "a4")}
             ></input>
           </form>
@@ -150,25 +150,25 @@ export default function PreferenceTool({ cookieHandler }) {
               What are you looking for
             </h2>
             <input
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               value="New Buyer"
               type="submit"
             ></input>
             <input
               value="Remortgage"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 2, "q2", "a2")}
             ></input>
             <input
               value="Moving House"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
             ></input>
             <input
               value="Just Browsing"
               type="submit"
-              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full mx-20 my-1 h-12 text-xl font-normal"
+              className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
             ></input>
           </form>
         </div>
