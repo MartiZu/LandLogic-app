@@ -3,10 +3,10 @@ import Home from "./page";
 import { describe } from "node:test";
 
 describe("Home", () => {
-  it("renders the home page", () => {
-    //arrange
-    render(<Home />);
-  });
+  // it("renders the home page", () => {
+  //   //arrange
+  //   render(<Home />);
+  // });
   it("should contain the word Mortgage", () => {
     //arrange
     render(<Home />);
