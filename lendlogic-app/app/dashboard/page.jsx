@@ -12,7 +12,6 @@ import Checklist from "./Checklist";
 import BuyingHomeTimeline from "./BuyingHomeTimeline";
 
 export default async function Dashboard() {
-  
   async function readCookie(cookieName) {
     "use server";
     const currentUser = cookies().get(cookieName);
@@ -40,20 +39,11 @@ export default async function Dashboard() {
         <p className="px-2 py-4 text-lg">
           Welcome {currentUser.userName}, here is everything you need to know
         </p>
-        <NewBuyerReport value={currentUser} properties={properties} />
-        <LearningSection />
-        <Newsletter />
-      </div>
-      <div className="flex flex-col my-8 rounded-3xl text-center text-2xl">
-        <h1 className="font-normal pt-7 text-3xl text-purple-accent">
-          We've got your back!
-        </h1>
-        <p className="px-2 py-4 text-lg">
-          Welcome {currentUser.userName}, here is everything you need to know
-        </p>
 
-        { q1 === "a2" ? <RemortgageReport value={currentUser} q2={q2}/> : null }
-        {q1=== "a1" ? <NewBuyerReport value={currentUser} properties={properties} /> : null }
+        {q1 === "a2" ? <RemortgageReport value={currentUser} q2={q2} /> : null}
+        {q1 === "a1" ? (
+          <NewBuyerReport value={currentUser} properties={properties} />
+        ) : null}
         <LearningSection />
         <Newsletter />
         <Checklist />
