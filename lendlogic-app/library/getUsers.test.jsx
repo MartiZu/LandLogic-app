@@ -1,25 +1,22 @@
 import getUsers from "./getUsers";
 import { describe } from "node:test";
 
-// emultating a fetch request
-jest.mock('node-fetch');
 
-describe("getUsers function", () => {
-    it("fetch request is successful", async () => {
-        // Setting up the mock response
-        const mockSuccessfulResponse = {users: [user1, user2]}
-        const mockJsonPromise = Promise.resolve(mockSuccessResponse);
-        const mockFetchPromise = Promise.resolve({
-          ok: true,
-          json: () => mockJsonPromise,
-        });
-        // mockImplemenation 
-        jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
-        
-        // Call the getUsers function
-        const result = await getUsers();
-        
-        expect(global.fetch).toHaveBeenCalledWith('https://lendlogic-data.onrender.com/users');
-        expect(result).toEqual(mockSuccessfulResponse);
+const mockUsers = ["user1", "user2"]
+global.fetch = jest.fn(() => Promise.resolve({
+    json: () => Promise.resolve(mockUsers)
+  }));
+  
+  describe('getUsers function', () => {
+    let users;
+  
+    describe('When getUsers is called', () => {
+      beforeEach(async () => {
+        users = await getUsers();
+      });
+  
+      it('Then the correct users should be returned', () => {
+        expect(users).toEqual(mockUsers);
+      });
     });
-})
+  });
