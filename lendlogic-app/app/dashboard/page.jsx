@@ -33,7 +33,7 @@ export default async function Dashboard() {
           Welcome {kat.userName}, here is everything you need to know
         </p>
         {/*<RemortgageReport value={jenny} />*/}
-        <DepositTool value={kat} properties={properties} />
+        <NewBuyerReport value={kat} properties={properties} />
         <LearningSection />
         <Newsletter />
       </div>
