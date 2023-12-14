@@ -6,7 +6,6 @@ import DisplayKat from "../customHooks/DisplayKat";
 import DisplayProperties from "../customHooks/DisplayProperties";
 import DepositTool from "./NewBuyerReport";
 import { Suspense } from "react";
-import Loading from "../loading";
 import Image from "next/image";
 
 export default async function Dashboard() {
@@ -22,7 +21,6 @@ export default async function Dashboard() {
   console.log(properties);
 
   return (
-    <Suspense fallback={<Loading />}>
       <div className="flex flex-col my-8 rounded-3xl text-center text-2xl">
         <h1 className="font-normal pt-7 text-3xl text-purple-accent">
           We've got your back!
@@ -35,6 +33,5 @@ export default async function Dashboard() {
         <LearningSection />
         <Newsletter />
       </div>
-    </Suspense>
   );
 }
