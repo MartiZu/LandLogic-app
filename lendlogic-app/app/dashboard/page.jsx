@@ -6,7 +6,7 @@ import DisplayKat from "../customHooks/DisplayKat";
 import DisplayProperties from "../customHooks/DisplayProperties";
 import DepositTool from "./NewBuyerReport";
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "../loading/loading";
 import Image from "next/image";
 
 export default async function Dashboard() {
@@ -30,8 +30,8 @@ export default async function Dashboard() {
         <p className="px-2 py-4 text-lg">
           Welcome {kat.userName}, here is everything you need to know
         </p>
-        {/* <RemortgageReport value={jenny} /> */}
-        <DepositTool value={kat} properties={properties}/>
+        {/*<RemortgageReport value={jenny} />*/}
+        <DepositTool value={kat} properties={properties} />
         <LearningSection />
         <Newsletter />
       </div>
