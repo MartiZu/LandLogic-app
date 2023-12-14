@@ -2,7 +2,6 @@ import getSteps from "@/library/getSteps";
 
 export default async function GetSteps() {
   try {
-    // Fetch steps data
     const stepsData = await getSteps();
     console.log(stepsData);
 
@@ -19,7 +18,7 @@ export default async function GetSteps() {
     });
 
     // Log the entire steps array
-    console.log(steps);
+    console.log("Debug returning steps", steps);
 
     // Log the title of the first step
     console.log(steps[0].title);

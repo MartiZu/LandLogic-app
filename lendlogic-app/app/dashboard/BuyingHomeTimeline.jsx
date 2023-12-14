@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import NewBuyerTimeline from "./NewBuyerTimeline";
 
-export default function BuyingHomeTimeline({ steps }) {
+export default function BuyingHomeTimeline({steps}) {
   //state to handle whether tool is image is displayed
   const [toolVisible, setToolVisible] = useState(false);
   //write click hangler for toolVisible button
@@ -12,8 +12,7 @@ export default function BuyingHomeTimeline({ steps }) {
     setToolVisible(!toolVisible);
   }
 
-  //debugging
-  console.log(steps);
+
 
   const buttonText = toolVisible ? "Hide" : "Find Out More";
   return (

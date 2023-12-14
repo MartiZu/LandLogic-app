@@ -10,6 +10,7 @@ import Image from "next/image";
 import { cookies } from "next/headers";
 import Checklist from "./Checklist";
 import BuyingHomeTimeline from "./BuyingHomeTimeline";
+import GetSteps from "../customHooks/DisplaySteps";
 
 export default async function Dashboard() {
   async function readCookie(cookieName) {
@@ -30,6 +31,9 @@ export default async function Dashboard() {
   console.log(properties);
   // read cookies fucntion
 
+  const steps = await GetSteps();
+  console.log("debugging on dashboard page stesp", steps);
+
   return (
     <>
       <div className="flex flex-col my-8 rounded-3xl text-center text-2xl">
@@ -47,7 +51,7 @@ export default async function Dashboard() {
         {q1 === "a2" ? <LearningSection /> : null}
         <Newsletter />
         {q1 === "a1" ? <Checklist /> : null}
-        {q1 === "a1" ? <BuyingHomeTimeline /> : null}
+        {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
       </div>
     </>
   );
