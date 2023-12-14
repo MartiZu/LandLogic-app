@@ -18,8 +18,9 @@ export default function DisplayNewBuyerInformation({ value, deposit }) {
 
   // useEffect to recalculate when property value, years, or months change
   useEffect(() => {
-    // let deposit = propertyValue * 0.2;
-    const totalMonths = deposit / monthlySaving;
+    //update deposit based on new propertyvalue
+    const newDeposit = propertyValue * 0.2;
+    const totalMonths = newDeposit / monthlySaving;
     setYears(Math.floor(totalMonths / 12));
     setMonths(Math.floor(totalMonths % 12));
 
@@ -54,11 +55,11 @@ export default function DisplayNewBuyerInformation({ value, deposit }) {
           value={monthlySaving}
           onChange={(e) => setMonthlySaving(e.target.value)}
         />
-       
       </div>
       <div id="propertyInput" className="flex flex-col items-center">
         <label className="py-4" htmlFor="propertyValue">
-          Property Value: £
+          Update the property value:{" "}
+          <span className="text-2xl font-bold text-purple-accent"> £</span>
         </label>
         <input
           id="propertyValue"
@@ -71,5 +72,3 @@ export default function DisplayNewBuyerInformation({ value, deposit }) {
     </div>
   );
 }
-
-// "w-1/2 bg-gray-200 rounded-3xl p-3 text-center text-2xl"
