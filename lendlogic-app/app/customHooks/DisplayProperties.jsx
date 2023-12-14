@@ -16,7 +16,7 @@ export default async function GetProperties() {
         searchValue,
       };
     });
-    return { searchPostcode, searchValue };
+    return { property };
   } catch (error) {
     console.error("Error fetching property data:", error);
     // Handle the error or return a default value as needed

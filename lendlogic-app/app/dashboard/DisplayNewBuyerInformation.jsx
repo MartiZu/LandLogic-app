@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 
-export default function DisplayNewBuyerInformation({ value }) {
-  const { salary, property_value, credit_score } = value;
-  console.log(value);
-  const [propertyValue, setPropertyValue] = useState(property_value);
+export default function DisplayNewBuyerInformation({ value, deposit }) {
+  // const { salary, property_value, credit_score } = value;
+  // console.log(value);
+  const [propertyValue, setPropertyValue] = useState(value);
   const [monthlySaving, setMonthlySaving] = useState(500);
   const [years, setYears] = useState(5);
   const [months, setMonths] = useState(0);
@@ -18,7 +18,7 @@ export default function DisplayNewBuyerInformation({ value }) {
 
   // useEffect to recalculate when property value, years, or months change
   useEffect(() => {
-    let deposit = propertyValue * 0.2;
+    // let deposit = propertyValue * 0.2;
     const totalMonths = deposit / monthlySaving;
     setYears(Math.floor(totalMonths / 12));
     setMonths(Math.floor(totalMonths % 12));

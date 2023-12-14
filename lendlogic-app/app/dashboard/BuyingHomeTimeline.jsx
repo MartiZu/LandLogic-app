@@ -4,13 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 import NewBuyerTimeline from "./NewBuyerTimeline";
 
-export default function BuyingHomeTimeline() {
+export default function BuyingHomeTimeline({ steps }) {
   //state to handle whether tool is image is displayed
   const [toolVisible, setToolVisible] = useState(false);
   //write click hangler for toolVisible button
   function clickHandler() {
     setToolVisible(!toolVisible);
   }
+
+  //debugging
+  console.log(steps);
 
   const buttonText = toolVisible ? "Hide" : "Find Out More";
   return (
@@ -20,10 +23,10 @@ export default function BuyingHomeTimeline() {
             New Buyer Timeline
           </h2>
           <p className="py-2 font-normal text-xl">
-          Buying a home is one of the most stressful things you'll do – and sadly it's not become any easier over time. Knowing the rough outline of how the process works though will make the ride that bit smoother. 
+          Buying a home is one of the most stressful things you'll do and sadly it's not become any easier over time. Knowing the rough outline of how the process works though will make the ride that bit smoother. 
           </p>
           {toolVisible ? (
-            <NewBuyerTimeline />
+            <NewBuyerTimeline steps={steps}/>
           ) : (
             <div className="flex justify-center">
               <Image

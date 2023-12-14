@@ -5,21 +5,27 @@ import DisplayNewBuyerInformation from "./DisplayNewBuyerInformation";
 import Image from "next/image";
 
 export default function NewBuyerReport({ value, property }) {
+  //deconstruct data from user display
   const { postcode, property_value } = value;
+  //set state for the property value
   const [propertyValue, setPropertyValue] = useState(property_value);
+  //set state for visibility of other component
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
+  //set property postcode state
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
-  console.log(property); //prints undefined
-
+  //prints array of objects with searchpostcode and searchvalue keys
+  console.log(property);
+  //initiate variable to set value of the button
   const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
-
+  //decalre deposit variable
   const deposit = propertyValue * 0.2;
 
-  //write click hangler for furtherInfoVisible button
+  //write click handler to switch toggles
   function clickHandler() {
     setFurtherInfoVisible(!furtherInfoVisible);
   }
-  // console.log(value);
+  // debugging
+  //console.log(value);
 
   const handleSearch = (e) => {
     setPropertyValue(e.target.value);
@@ -39,25 +45,41 @@ export default function NewBuyerReport({ value, property }) {
         <span className="text-2xl font-bold text-purple-accent">
           £{deposit}
         </span>{" "}
-        <span className="text-xs"><br />(reference 2-bedroom properties).</span>
+        <span className="text-xs">
+          <br />
+          (reference 2-bedroom properties).
+        </span>
       </p>
-      
+
       <div className="flex justify-center items-center">
         {furtherInfoVisible ? (
-          <DisplayNewBuyerInformation value={value} />
-        ) : (<div><Image
-        src="/Toggle_man.png"
-        alt="A man using toggles"
-        width={300}
-        height={200}
-        />
-        <div> <p className="py-2 font-normal text-xl">Searching in another area?</p>
-        <button className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button">Click here!</button> </div> </div>)}
+          <DisplayNewBuyerInformation value={propertyValue} deposit={deposit} />
+        ) : (
+          <div>
+            <Image
+              src="/Toggle_man.png"
+              alt="A man using toggles"
+              width={300}
+              height={200}
+            />
+            <div>
+              {" "}
+              <p className="py-2 font-normal text-xl">
+                Searching in another area?
+              </p>
+              <button className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button">
+                Click here!
+              </button>{" "}
+            </div>{" "}
+          </div>
+        )}
       </div>
       <button
         className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
         onClick={clickHandler}
-      >{buttonText}</button>
+      >
+        {buttonText}
+      </button>
       {/* <div>
         <input
           type="text"
