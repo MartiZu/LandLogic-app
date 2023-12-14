@@ -2,13 +2,16 @@
 
 import { useState } from "react";
 import DisplayNewBuyerInformation from "./DisplayNewBuyerInformation";
+import Image from "next/image";
 
-export default function DepositTool({ value, property }) {
+export default function NewBuyerReport({ value, property }) {
   const { postcode, property_value } = value;
   const [propertyValue, setPropertyValue] = useState(property_value);
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
   console.log(property); //prints undefined
+
+  const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
 
   const deposit = propertyValue * 0.2;
 
@@ -36,20 +39,25 @@ export default function DepositTool({ value, property }) {
         <span className="text-2xl font-bold text-purple-accent">
           £{deposit}
         </span>{" "}
-        <span className="text-xs">(reference 2-bedroom properties).</span>
+        <span className="text-xs"><br />(reference 2-bedroom properties).</span>
       </p>
-      <p className="py-2 font-normal text-xl">Searching in another area?</p>
+      
       <div className="flex justify-center items-center">
         {furtherInfoVisible ? (
           <DisplayNewBuyerInformation value={value} />
-        ) : null}
+        ) : (<div><Image
+        src="/Toggle_man.png"
+        alt="A man using toggles"
+        width={300}
+        height={200}
+        />
+        <div> <p className="py-2 font-normal text-xl">Searching in another area?</p>
+        <button className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button">Click here!</button> </div> </div>)}
       </div>
       <button
-        className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
+        className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
         onClick={clickHandler}
-      >
-        Find Out More
-      </button>
+      >{buttonText}</button>
       {/* <div>
         <input
           type="text"

@@ -54,32 +54,7 @@ export default function DisplayNewBuyerInformation({ value }) {
           value={monthlySaving}
           onChange={(e) => setMonthlySaving(e.target.value)}
         />
-        <label className="py-4" htmlFor="years">
-          Years: {years}
-        </label>
-        <input
-          id="years"
-          className="w-1/2"
-          type="range"
-          min="1"
-          max="50"
-          step="1"
-          value={years}
-          onChange={(e) => setYears(e.target.value)}
-        />
-        <label className="py-4" htmlFor="months">
-          Months: {months}
-        </label>
-        <input
-          id="months"
-          className="w-1/2"
-          type="range"
-          min="1"
-          max="12"
-          step="1"
-          value={months}
-          onChange={(e) => setMonths(e.target.value)}
-        />
+       
       </div>
       <div id="propertyInput" className="flex flex-col items-center">
         <label className="py-4" htmlFor="propertyValue">
@@ -87,7 +62,7 @@ export default function DisplayNewBuyerInformation({ value }) {
         </label>
         <input
           id="propertyValue"
-          className="w-1/2"
+          className="border-2 max-w-md border-purple-accent rounded-full w-1/2 h-16 pl-8 text-xl font-semibold shadow-button"
           type="number"
           value={propertyValue}
           onChange={handlePropertyValueChange}
@@ -96,3 +71,5 @@ export default function DisplayNewBuyerInformation({ value }) {
     </div>
   );
 }
+
+// "w-1/2 bg-gray-200 rounded-3xl p-3 text-center text-2xl"

@@ -37,7 +37,7 @@ export default function DisplayMortgageInformation({ value }) {
         <label className="py-4" htmlFor="interestRate">
           Interest Rate: {interestRate}%
         </label>
-        <input
+        <input data-testid="interestRate"
           id="interestRate"
           className="w-1/2"
           type="range"
