@@ -11,11 +11,11 @@ export default function Checklist() {
   function clickHandler() {
     setToolVisible(!toolVisible);
   }
+
+  const buttonText = toolVisible ? "Hide" : "Find Out More";
+
   return (
     <>
-      {toolVisible ? (
-        <ExpandChecklist />
-      ) : (
         <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
           <div className="grid grid-cols-2 gap-4">
             <h2 className="col-span-2 font-normal py-7 text-3xl text-purple-accent">
@@ -24,6 +24,9 @@ export default function Checklist() {
             <p className="col-span-2 py-2 font-normal text-xl">
               Everything you need to know when it comes to buy a property.
             </p>
+      {toolVisible ? (
+        <ExpandChecklist />
+      ) : (<>
             <Link
               className="bg-off-white text-lg font-normal flex items-center justify-center h-16 p-3 border-2 border-purple-accent rounded-full shadow-button"
               href="https://www.gov.uk/government/publications/how-to-buy-a-home/how-to-buy"
@@ -48,16 +51,17 @@ export default function Checklist() {
             >
               Right to Buy
             </Link>
+            </>
+          )}
           </div>
           <button
             className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
             type="submit"
             onClick={clickHandler}
           >
-            See more
+            {buttonText}
           </button>
         </div>
-      )}
     </>
   );
 }
