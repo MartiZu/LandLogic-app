@@ -44,10 +44,10 @@ export default async function Dashboard() {
         {q1 === "a1" ? (
           <NewBuyerReport value={currentUser} properties={properties} />
         ) : null}
-        <LearningSection />
+        {q1 === "a2" ? <LearningSection /> : null}
         <Newsletter />
-        <Checklist />
-        <BuyingHomeTimeline />
+        {q1 === "a1" ? <Checklist /> : null}
+        {q1 === "a1" ? <BuyingHomeTimeline /> : null}
       </div>
     </>
   );
