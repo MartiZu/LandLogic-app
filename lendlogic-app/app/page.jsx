@@ -2,13 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { cookies } from "next/headers";
 import { CookieButton } from "./cookies/CookieButton";
-import { Cookie } from "next/font/google";
-import { CookieRead } from "./cookies/CookieRead";
 
 export default async function Home() {
   async function setCookieJenny() {
     "use server";
-    const userId = "jenny.smith@gmail.com";
+    const userId = "jenny.smith@example.com";
     cookies().set("user_id", userId);
     console.log("Jenny logged in successfully!");
   }
@@ -17,11 +15,6 @@ export default async function Home() {
     const userId = "kat.johnson@example.com";
     cookies().set("user_id", userId);
     console.log("Kat logged in successfully!");
-  }
-  async function readUserCookie() {
-    "use server";
-    const currentUser = cookies().get("user_id");
-    console.log(currentUser.value);
   }
   return (
     <main>

@@ -1,7 +1,7 @@
 "use client";
 
 import getUserJenny from "@/library/getUsers";
-import DisplayJenny from "../customHooks/DisplayJenny";
+import DisplayJenny from "../customHooks/DisplayUser";
 
 import { useState, useEffect } from "react";
 import internal from "stream";
