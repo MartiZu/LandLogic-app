@@ -11,6 +11,8 @@ export default function BuyingHomeTimeline() {
   function clickHandler() {
     setToolVisible(!toolVisible);
   }
+
+  const buttonText = toolVisible ? "Hide" : "Find Out More";
   return (
     <>
       <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
@@ -18,7 +20,7 @@ export default function BuyingHomeTimeline() {
             New Buyer Timeline
           </h2>
           <p className="py-2 font-normal text-xl">
-            Everything you need to know when it comes to buy a property.
+          Buying a home is one of the most stressful things you'll do – and sadly it's not become any easier over time. Knowing the rough outline of how the process works though will make the ride that bit smoother. 
           </p>
           {toolVisible ? (
             <NewBuyerTimeline />
@@ -37,7 +39,7 @@ export default function BuyingHomeTimeline() {
           type="submit"
           onClick={clickHandler}
         >
-          See timeline
+          {buttonText}
         </button>
       </div>
     </>
