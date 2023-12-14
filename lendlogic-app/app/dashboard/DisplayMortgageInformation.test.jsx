@@ -20,6 +20,12 @@ describe("DisplayMortgageInformation", () => {
       };
       render(
         <DisplayMortgageInformation
+          value={{
+            loanLength: 30,
+            loanAmount: 100000,
+            userMonthlyPayment: 500,
+            userInterestRate: 4,
+          }}
           updateMonthlyPayment={mockUpdateMonthlyPayment}
         />
       );
