@@ -6,7 +6,7 @@ import DisplayKat from "../customHooks/DisplayKat";
 import DisplayProperties from "../customHooks/DisplayProperties";
 import DepositTool from "./NewBuyerReport";
 import { Suspense } from "react";
-import Loading from "../loading/loading";
+import Loading from "../loading";
 import Image from "next/image";
 
 export default async function Dashboard() {
