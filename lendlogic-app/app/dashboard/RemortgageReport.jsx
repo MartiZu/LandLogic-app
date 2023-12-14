@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import DisplayMortgageInformation from "./DisplayMortgageInformation";
+import UniqueMonthlyPayment from "./UniqueMonthlyPayment";
 import { useState } from "react";
 
-export default function RemortgageReport({ value }) {
+export default function RemortgageReport({ value, q2 }) {
   //state to handle whether tool is image is displayed
   const [toolVisible, setToolVisible] = useState(false);
   //write click hangler for toolVisible button
@@ -22,12 +23,8 @@ export default function RemortgageReport({ value }) {
         <h2 className="font-normal py-7 text-3xl text-purple-accent">
           Your Remortgage Report
         </h2>
-        <p className="py-2 font-normal text-xl">
-          Your current monthly payment is <br></br>{" "}
-          <span className="text-2xl font-bold text-purple-accent">
-            £{userMonthlyPayment}
-          </span>
-        </p>
+  <UniqueMonthlyPayment q2={q2} value={value} />
+     
         <p className="p-2 font-normal text-xl">
           Get insights into remortgaging by using our interactive tool.
         </p>
