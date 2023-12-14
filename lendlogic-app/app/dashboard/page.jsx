@@ -4,10 +4,12 @@ import Newsletter from "./Newsletter";
 import DisplayJenny from "../customHooks/DisplayJenny";
 import DisplayKat from "../customHooks/DisplayKat";
 import DisplayProperties from "../customHooks/DisplayProperties";
-import DepositTool from "./NewBuyerReport";
+import NewBuyerReport from "./NewBuyerReport";
 import { Suspense } from "react";
 // import Loading from "../loading";
 import Image from "next/image";
+import Checklist from "./Checklist";
+import BuyingHomeTimeline from "./BuyingHomeTimeline";
 
 export default async function Dashboard() {
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -31,9 +33,11 @@ export default async function Dashboard() {
         Welcome {kat.userName}, here is everything you need to know
       </p>
       {/*<RemortgageReport value={jenny} />*/}
-      <DepositTool value={kat} properties={properties} />
+      <NewBuyerReport value={kat} properties={properties} />
       <LearningSection />
       <Newsletter />
+      <Checklist />
+      <BuyingHomeTimeline />
     </div>
     // </Suspense>
   );

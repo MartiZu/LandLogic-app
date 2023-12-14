@@ -3,7 +3,7 @@
 import { useState } from "react";
 import DisplayNewBuyerInformation from "./DisplayNewBuyerInformation";
 
-export default function DepositTool({ value, property }) {
+export default function NewBuyerReport({ value, property }) {
   const { postcode, property_value } = value;
   const [propertyValue, setPropertyValue] = useState(property_value);
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
