@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe } from "node:test";
-import DisplayMortgageInformation from "./remortgage_components/DisplayMortgageInformation";
+import DisplayMortgageInformation from "./DisplayMortgageInformation";
 
 describe("DisplayMortgageInformation", () => {
   describe("Render", () => {
