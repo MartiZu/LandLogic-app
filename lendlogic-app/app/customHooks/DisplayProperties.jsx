@@ -3,7 +3,7 @@ import getProperties from "@/library/getProperties";
 export default async function GetProperties() {
   try {
     const propertiesData = await getProperties();
-    console.log(propertiesData);
+    // console.log(propertiesData);
 
     const property = propertiesData.map((property) => {
       const searchPostcode = property.postcode.split(" ")[0];

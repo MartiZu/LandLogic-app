@@ -11,7 +11,7 @@ export default function RemortgageReport({ value, q2 }) {
   function clickHandler() {
     setToolVisible(!toolVisible);
   }
-  console.log(value);
+  // console.log(value);
 
   //destructing the object returned from the custom hook
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =

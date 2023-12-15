@@ -17,7 +17,7 @@ export default function DisplayMortgageInformation({ value }) {
   function updateMonthlyPayment() {
     let newMonthlyPayment = (loanAmount / (loanTerm * 12)) * interestRate;
     setMonthlyPayment(Math.ceil(newMonthlyPayment));
-    console.log(monthlyPayment);
+    // console.log(monthlyPayment);
   }
   return (
     <div className="mt-8 mx-4 text-center text-2xl">

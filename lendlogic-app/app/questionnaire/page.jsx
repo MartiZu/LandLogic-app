@@ -9,7 +9,7 @@ export default function Questionnaire() {
   async function setQuestionCookies(qNum, aNum) {
     "use server";
     cookies().set(qNum, aNum);
-    console.log(`Cookie set to ${qNum}:${aNum}`);
+    // console.log(`Cookie set to ${qNum}:${aNum}`);
   }
   return (
     <main>

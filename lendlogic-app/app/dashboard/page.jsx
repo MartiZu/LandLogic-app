@@ -21,14 +21,14 @@ export default async function Dashboard() {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   //destructing the object returned from the custom hook
   const currentUser = await DisplayUser(user);
-  console.log(currentUser);
+  // console.log(currentUser);
 
   const properties = await DisplayProperties();
-  console.log(properties);
+  // console.log(properties);
   // read cookies fucntion
 
   const steps = await GetSteps();
-  console.log("debugging on dashboard page stesp", steps);
+  // console.log("debugging on dashboard page stesp", steps);
 
   return (
     <>
