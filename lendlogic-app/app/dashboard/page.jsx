@@ -11,9 +11,8 @@ import GetSteps from "../customHooks/DisplaySteps";
 
 export default async function Dashboard() {
   async function readCookie(cookieName) {
-    "use server";
-    const currentUser = cookies().get(cookieName);
-    return currentUser.value;
+    const cookie = cookies().get(cookieName);
+    return cookie.value;
   }
   const user = await readCookie("user_id");
   const q1 = await readCookie("q1");
