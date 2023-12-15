@@ -8,7 +8,6 @@ describe("RemortgageReport", () => {
       render(<RemortgageReport />);
       expect(screen.getByText("Your Remortgage Report")).toBeInTheDocument();
     });
-    
   });
 
   describe("Function", () => {

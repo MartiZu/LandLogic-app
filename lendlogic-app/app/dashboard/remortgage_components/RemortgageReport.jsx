@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import DisplayMortgageInformation from "./DisplayMortgageInformation";
-import UniqueMonthlyPayment from "./UniqueMonthlyPayment";
+import UniqueMonthlyPayment from "../UniqueMonthlyPayment";
 import { useState } from "react";
 
 export default function RemortgageReport({ value, q2 }) {
@@ -23,8 +23,8 @@ export default function RemortgageReport({ value, q2 }) {
         <h2 className="font-normal py-7 text-3xl text-purple-accent">
           Your Remortgage Report
         </h2>
-  <UniqueMonthlyPayment q2={q2} value={value} />
-     
+        <UniqueMonthlyPayment q2={q2} value={value} />
+
         <p className="p-2 font-normal text-xl">
           Get insights into remortgaging by using our interactive tool.
         </p>

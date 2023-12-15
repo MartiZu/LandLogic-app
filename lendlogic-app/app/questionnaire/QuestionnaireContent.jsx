@@ -3,6 +3,7 @@
 import GetStartedCard from "./GetStartedCard";
 import PreferenceTool from "./PreferenceTool";
 import { useState } from "react";
+import Image from "next/image";
 
 // this allows us to convert the page into a server rendered thing
 // whcih means we can use cookies
@@ -20,9 +21,16 @@ export default function QuestionnaireContent({ cookieHandler }) {
   return (
     <>
       {!preferenceToolVisible ? (
-        <>
+        <div className="flex flex-col items-center">
           <GetStartedCard handleSubmit={handleSubmit} />
-        </>
+          <Image
+            className="mt-8"
+            src={"/Logo_lendlogic.png"}
+            width={200}
+            height={300}
+            alt="LandLogic Logo"
+          />
+        </div>
       ) : (
         <>
           <PreferenceTool cookieHandler={cookieHandler} />

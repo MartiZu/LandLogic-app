@@ -1,15 +1,13 @@
 import LearningSection from "./LearningSection";
 import Newsletter from "./Newsletter";
-import RemortgageReport from "./RemortgageReport";
+import RemortgageReport from "./remortgage_components/RemortgageReport";
 import DisplayUser from "../customHooks/DisplayUser";
 import DisplayProperties from "../customHooks/DisplayProperties";
-import NewBuyerReport from "./NewBuyerReport";
-import { Suspense } from "react";
-
-import Image from "next/image";
+import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
 import { cookies } from "next/headers";
-import Checklist from "./Checklist";
-import BuyingHomeTimeline from "./BuyingHomeTimeline";
+import Checklist from "./newbuyer_components/Checklist";
+import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
+import GetSteps from "../customHooks/DisplaySteps";
 
 export default async function Dashboard() {
   async function readCookie(cookieName) {
@@ -30,6 +28,9 @@ export default async function Dashboard() {
   console.log(properties);
   // read cookies fucntion
 
+  const steps = await GetSteps();
+  console.log("debugging on dashboard page stesp", steps);
+
   return (
     <>
       <div className="flex flex-col my-8 rounded-3xl text-center text-2xl">
@@ -39,7 +40,6 @@ export default async function Dashboard() {
         <p className="px-2 py-4 text-lg">
           Welcome {currentUser.userName}, here is everything you need to know
         </p>
-
         {q1 === "a2" ? <RemortgageReport value={currentUser} q2={q2} /> : null}
         {q1 === "a1" ? (
           <NewBuyerReport value={currentUser} properties={properties} />
@@ -47,7 +47,7 @@ export default async function Dashboard() {
         {q1 === "a2" ? <LearningSection /> : null}
         <Newsletter />
         {q1 === "a1" ? <Checklist /> : null}
-        {q1 === "a1" ? <BuyingHomeTimeline /> : null}
+        {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
       </div>
     </>
   );

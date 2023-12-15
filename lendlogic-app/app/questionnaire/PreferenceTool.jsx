@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Loading from "../components/loading";
 
 export default function PreferenceTool({ cookieHandler }) {
   // set state
@@ -16,7 +18,7 @@ export default function PreferenceTool({ cookieHandler }) {
   const handleClick = (e, num, qNum, aNum) => {
     e.preventDefault();
     cookieHandler(qNum, aNum);
-    if (num === 99) {
+    if (num === 99) {;  
       router.push("/dashboard");
     }
     // update the class names
@@ -173,19 +175,48 @@ export default function PreferenceTool({ cookieHandler }) {
           </form>
         </div>
       ) : null}
-      {questionNumber > 1 ? (
-        <div className="flex flex-row justify-center items-center">
-          <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
-          <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
-          <div className="w-3 h-3 rounded-full bg-purple-300 shadow-card mx-1"></div>
-        </div>
-      ) : (
+      {questionNumber === 1 ? (
         <div className="flex flex-row justify-center items-center">
           <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
           <div className="w-3 h-3 rounded-full bg-purple-300 shadow-card mx-1"></div>
           <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
         </div>
-      )}
+      ) : null}
+      {questionNumber === 2 ? (
+        <div className="flex flex-row justify-center items-center">
+          <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
+          <div className="w-2 h-2 rounded-full bg-off-white shadow-card mx-1"></div>
+          <div className="w-3 h-3 rounded-full bg-purple-300 shadow-card mx-1"></div>
+        </div>
+      ) : null}
+      {questionNumber === 999 ? (
+        <div className="flex flex-row justify-center items-center"></div>
+      ) : null}
+      {questionNumber === 1 ? (
+        <div className="flex flex-col items-center">
+          <Image
+            className="mt-8"
+            src={"/Logo_lendlogic.png"}
+            width={200}
+            height={300}
+            alt="LandLogic Logo"
+          />
+        </div>
+      ) : null}
+      {questionNumber === 2 ? (
+        <div className="flex flex-col items-center">
+          <Image
+            className="mt-8"
+            src={"/Logo_lendlogic.png"}
+            width={200}
+            height={300}
+            alt="LandLogic Logo"
+          />
+        </div>
+      ) : null}
+      {questionNumber === 99 ? (
+        <div className="flex flex-row justify-center items-center"><Loading /></div>
+      ) : null}
     </section>
   );
 }

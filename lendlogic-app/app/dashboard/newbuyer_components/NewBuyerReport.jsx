@@ -13,6 +13,8 @@ export default function NewBuyerReport({ value, property }) {
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
   //set property postcode state
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
+  // Set state for the search input value
+  const [searchInput, setSearchInput] = useState("");
   //prints array of objects with searchpostcode and searchvalue keys
   console.log(property);
   //initiate variable to set value of the button
@@ -27,8 +29,15 @@ export default function NewBuyerReport({ value, property }) {
   // debugging
   //console.log(value);
 
-  const handleSearch = (e) => {
-    setPropertyValue(e.target.value);
+  const handleSearchInputChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  // Function to handle search button click
+  const handleSearchButtonClick = () => {
+    // Perform any action you need with the searchInput value
+    console.log("Search for:", searchInput);
+    // You may want to update state or perform some other action here
   };
 
   return (
@@ -67,9 +76,21 @@ export default function NewBuyerReport({ value, property }) {
               <p className="py-2 font-normal text-xl">
                 Searching in another area?
               </p>
-              <button className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button">
-                Click here!
-              </button>{" "}
+              <div className="flex flex-row w-72 justify-center py-3">
+                <input
+                  type="text"
+                  placeholder="Enter postcode..."
+                  value={searchInput}
+                  onChange={handleSearchInputChange}
+                  className="w-40 h-12 p-2 border rounded-l-full text-xl focus:outline-none"
+                />
+                <button
+                  onClick={handleSearchButtonClick}
+                  className="w-24 h-12 bg-purple-accent rounded-r-full text-off-white text-xl font-semibold shadow-button"
+                >
+                  Search
+                </button>
+              </div>
             </div>{" "}
           </div>
         )}
