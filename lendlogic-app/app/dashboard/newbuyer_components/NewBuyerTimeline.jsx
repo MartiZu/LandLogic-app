@@ -1,6 +1,6 @@
 import Step from "../Step";
 
-export default async function NewBuyerTimeline({ steps }) {
+export default function NewBuyerTimeline({ steps }) {
   return (
     <div>
       <h2>Gamefied Buyer Timeline</h2>
