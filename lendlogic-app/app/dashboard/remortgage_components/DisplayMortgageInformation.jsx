@@ -1,7 +1,7 @@
 "use client";
 
 import getUserJenny from "@/library/getUsers";
-import DisplayJenny from "../customHooks/DisplayUser";
+import DisplayJenny from "../../customHooks/DisplayUser";
 
 import { useState, useEffect } from "react";
 import internal from "stream";
@@ -37,7 +37,8 @@ export default function DisplayMortgageInformation({ value }) {
         <label className="py-4" htmlFor="interestRate">
           Interest Rate: {interestRate}%
         </label>
-        <input data-testid="interestRate"
+        <input
+          data-testid="interestRate"
           id="interestRate"
           className="w-1/2"
           type="range"

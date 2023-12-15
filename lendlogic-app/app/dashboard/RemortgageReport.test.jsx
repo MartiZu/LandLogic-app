@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe } from "node:test";
-import RemortgageReport from "./RemortgageReport";
+import RemortgageReport from "./remortgage_components/RemortgageReport";
 
 describe("RemortgageReport", () => {
   describe("Render", () => {
@@ -8,7 +8,6 @@ describe("RemortgageReport", () => {
       render(<RemortgageReport />);
       expect(screen.getByText("Your Remortgage Report")).toBeInTheDocument();
     });
-    
   });
 
   describe("Function", () => {
