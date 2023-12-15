@@ -189,9 +189,6 @@ export default function PreferenceTool({ cookieHandler }) {
           <div className="w-3 h-3 rounded-full bg-purple-300 shadow-card mx-1"></div>
         </div>
       ) : null}
-      {questionNumber === 999 ? (
-        <div className="flex flex-row justify-center items-center"></div>
-      ) : null}
       {questionNumber === 1 ? (
         <div className="flex flex-col items-center">
           <Image

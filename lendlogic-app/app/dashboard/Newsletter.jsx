@@ -11,7 +11,7 @@ export default function Newsletter() {
 
   const handleSubmit = () => {
     //simulate storing user data
-    console.log("Data submitted", email);
+    // console.log("Data submitted", email);
     //display messafe and reset form
     setSubmitted(true);
     setTimeout(() => {

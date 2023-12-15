@@ -11,9 +11,10 @@ export default function BuyingHomeTimeline({ steps }) {
   function clickHandler() {
     setToolVisible(!toolVisible);
   }
-  console.log("debug buyinghometimeline", steps);
-  const firstStep = steps.steps[0];
-  console.log("print first step", firstStep);
+  const stepsArr = steps.steps
+  // console.log("debug buyinghometimeline", stepsArr);
+  // const firstStep = steps.steps[0];
+  // console.log("print first step", firstStep);
 
   const buttonText = toolVisible ? "Hide" : "Find Out More";
   return (
@@ -28,7 +29,7 @@ export default function BuyingHomeTimeline({ steps }) {
           the process works though will make the ride that bit smoother.
         </p>
         {toolVisible ? (
-          <NewBuyerTimeline steps={steps} />
+          <NewBuyerTimeline steps={stepsArr} />
         ) : (
           <div className="flex justify-center">
             <Image
