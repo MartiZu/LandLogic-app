@@ -4,7 +4,7 @@ export default async function DisplayUser(email) {
   // need to put email into the search function so it works with any user that logs in
 
   const userData = await getUsers();
-  console.log(userData); //displays
+  // console.log(userData); 
 
   const user = userData.find((user) => user.email === email);
 
@@ -21,9 +21,9 @@ export default async function DisplayUser(email) {
     const postcode = user.address.postcode.split(" ")[0];
     const userName = user.name;
 
-    console.log(loanAmount);
-    console.log(userMonthlyPayment);
-    console.log(userInterestRate);
+    // console.log(loanAmount);
+    // console.log(userMonthlyPayment);
+    // console.log(userInterestRate);
 
     return {
       salary,

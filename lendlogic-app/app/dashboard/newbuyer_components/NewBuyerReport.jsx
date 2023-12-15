@@ -16,7 +16,7 @@ export default function NewBuyerReport({ value, property }) {
   // Set state for the search input value
   const [searchInput, setSearchInput] = useState("");
   //prints array of objects with searchpostcode and searchvalue keys
-  console.log(property);
+  // console.log(property);
   //initiate variable to set value of the button
   const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
   //decalre deposit variable
@@ -36,7 +36,7 @@ export default function NewBuyerReport({ value, property }) {
   // Function to handle search button click
   const handleSearchButtonClick = () => {
     // Perform any action you need with the searchInput value
-    console.log("Search for:", searchInput);
+    // console.log("Search for:", searchInput);
     // You may want to update state or perform some other action here
   };
 

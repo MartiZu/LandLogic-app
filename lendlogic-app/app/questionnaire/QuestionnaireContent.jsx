@@ -14,7 +14,7 @@ export default function QuestionnaireContent({ cookieHandler }) {
   //function to handle the click on GetStartedTool so that it changes the above state
   const handleSubmit = () => {
     setPreferenceToolVisible(true);
-    console.log(preferenceToolVisible);
+    // console.log(preferenceToolVisible);
   };
 
   //use ternary operator to decide which to show
