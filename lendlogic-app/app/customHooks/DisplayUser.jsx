@@ -1,6 +1,6 @@
 import getUsers from "@/library/getUsers";
 
-export default async function DisplayUser(email) {
+export default async function displayUser(email) {
   // need to put email into the search function so it works with any user that logs in
 
   const userData = await getUsers();
