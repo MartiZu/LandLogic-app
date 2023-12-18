@@ -4,6 +4,7 @@ import { useState } from "react";
 import DisplayNewBuyerInformation from "./DisplayNewBuyerInformation";
 import Image from "next/image";
 
+
 export default function NewBuyerReport({ value, properties }) {
   //deconstruct data from user display
   const { postcode, property_value } = value;
@@ -11,6 +12,7 @@ export default function NewBuyerReport({ value, properties }) {
   const [propertyValue, setPropertyValue] = useState(property_value);
   //set state for visibility of other component
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
+  // const [searchPropertyVisible, setSearchPropertyVisible] = useState(false);
   //set property postcode state
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
   // Set state for the search input value
@@ -26,25 +28,38 @@ export default function NewBuyerReport({ value, properties }) {
   function clickHandler() {
     setFurtherInfoVisible(!furtherInfoVisible);
   }
+
+  function typeHandler() {
+    setSearchPropertyVisible();
+  }
   // debugging
   //console.log(value);
 
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
-    setPropertyPostcode()
-    if(setSearchInput === properties.searchPostcode) {
-      console.log(properties.searchValue)
-      return properties.searchValue
-    } 
+    // setSearchPropertyVisible()
+  
   };
  
 
   // Function to handle search button click
-  const handleSearchButtonClick = () => {
+  const handleSearchButtonClick = async () => {
+  if (searchInput === property.searchPostcode);
+  return searchValue
+  
+
+  // if (result) {
+  //   setPropertyPostcode(result.searchPostcode);
+  //   setPropertyValue(result.searchValue);
+  // }
+ 
     // Perform any action you need with the searchInput value
     // console.log("Search for:", searchInput);
     // You may want to update state or perform some other action here
   };
+ 
+  
+ 
 
   return (
     <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
@@ -52,13 +67,13 @@ export default function NewBuyerReport({ value, properties }) {
         Your New Buyer Report
       </h2>
       <p className="py-2 font-normal text-xl">
-        We looked at properties around your area in{" "}
+        We looked at properties around your area you searched for in {" "}
         <span className="text-2xl font-bold text-purple-accent">
-          {postcode}
+          {/* {postcode} */}
         </span>
         . Based on the market value your estimated deposit is{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          £{deposit}
+          {/* £{deposit} */}
         </span>{" "}
         <span className="text-xs">
           <br />
