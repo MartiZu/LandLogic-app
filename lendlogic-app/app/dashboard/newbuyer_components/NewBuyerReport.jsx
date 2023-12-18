@@ -4,7 +4,7 @@ import { useState } from "react";
 import DisplayNewBuyerInformation from "./DisplayNewBuyerInformation";
 import Image from "next/image";
 
-export default function NewBuyerReport({ value, property }) {
+export default function NewBuyerReport({ value, properties }) {
   //deconstruct data from user display
   const { postcode, property_value } = value;
   //set state for the property value
@@ -16,7 +16,7 @@ export default function NewBuyerReport({ value, property }) {
   // Set state for the search input value
   const [searchInput, setSearchInput] = useState("");
   //prints array of objects with searchpostcode and searchvalue keys
-  // console.log(property);
+  // console.log(properties);
   //initiate variable to set value of the button
   const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
   //decalre deposit variable
@@ -31,7 +31,13 @@ export default function NewBuyerReport({ value, property }) {
 
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
+    setPropertyPostcode()
+    if(setSearchInput === properties.searchPostcode) {
+      console.log(properties.searchValue)
+      return properties.searchValue
+    } 
   };
+ 
 
   // Function to handle search button click
   const handleSearchButtonClick = () => {
