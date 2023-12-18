@@ -15,13 +15,19 @@ const ComparisonTool = () => {
         <p>£999</p>
         <p>7.3%</p>
    
-        <button className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button">Go to Lender</button>
+        <button className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button">Go to Lender</button>
         </div>
-        <div className="py-2 font-normal text-xl">Swansea
-        <p>£1,201</p>
-        <p> 4.62%</p>
-        <p>£999</p>
-        <p>7.3%</p>
+        <div>Swansea</div>
+        <div className="py-2 font-normal text-base">
+        <div className='flex'>
+        <p className="border border-1 border-black p-4"> Monthly payment until 28/02/2029</p>
+        {/* <p >4.62% Initial rate</p> */}
+        <p className="border border-1 border-black p-4">£1,201</p>
+        </div>
+        <div className='flex'>
+        <p className="border border-1 border-black p-4">£999 Product fees</p>
+        <p className="border border-1 border-black p-4">7.3% APRC</p>
+        </div>
         <button className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button">Go to Lender</button>
         </div>
 
