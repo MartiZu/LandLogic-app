@@ -43,12 +43,14 @@ export default async function Dashboard() {
         {q1 === "a2" ? <RemortgageReport value={currentUser} q2={q2} /> : null}
         {q1 === "a1" ? (
           <NewBuyerReport value={currentUser} properties={properties} />
-        ) : null}
+        ) : null} 
+        {q1 === "a4" ||  q1 === "a3"  ? <ComparisonTool /> : null}
         {q1 === "a2" ? <LearningSection /> : null}
         <Newsletter />
         {q1 === "a1" ? <Checklist /> : null}
         {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
-        {q1 === "a4" ? <ComparisonTool /> : null}
+      
+       
       </div>
    
     </>
