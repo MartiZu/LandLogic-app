@@ -4,7 +4,6 @@ import { useState } from "react";
 import DisplayNewBuyerInformation from "./DisplayNewBuyerInformation";
 import Image from "next/image";
 
-
 export default function NewBuyerReport({ value, properties }) {
   //deconstruct data from user display
   const { postcode, property_value } = value;
@@ -22,7 +21,7 @@ export default function NewBuyerReport({ value, properties }) {
   //initiate variable to set value of the button
   const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
   //decalre deposit variable
-  const deposit = propertyValue * 0.2;
+  const deposit = propertyValue * 0.1;
 
   //write click handler to switch toggles
   function clickHandler() {
@@ -32,34 +31,25 @@ export default function NewBuyerReport({ value, properties }) {
   function typeHandler() {
     setSearchPropertyVisible();
   }
-  // debugging
-  //console.log(value);
 
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
-    // setSearchPropertyVisible()
-  
   };
- 
 
-  // Function to handle search button click
-  const handleSearchButtonClick = async () => {
-  if (searchInput === property.searchPostcode);
-  return searchValue
-  
-
-  // if (result) {
-  //   setPropertyPostcode(result.searchPostcode);
-  //   setPropertyValue(result.searchValue);
-  // }
- 
-    // Perform any action you need with the searchInput value
-    // console.log("Search for:", searchInput);
-    // You may want to update state or perform some other action here
+  const handleSearchButtonClick = () => {
+    //take the search input and compare it to the postcode in the array of objects
+    const findProperty = properties.property.find(
+      (property) => property.searchPostcode === searchInput
+    );
+    //if the search input matches the postcode in the array of objects
+    if (findProperty) {
+      //set the property value to the search value
+      setPropertyValue(findProperty.searchValue);
+      setPropertyPostcode(findProperty.searchPostcode);
+    } else {
+      console.log("Postcode not found");
+    }
   };
- 
-  
- 
 
   return (
     <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
@@ -67,13 +57,13 @@ export default function NewBuyerReport({ value, properties }) {
         Your New Buyer Report
       </h2>
       <p className="py-2 font-normal text-xl">
-        We looked at properties around your area you searched for in {" "}
+        We looked at properties around your area you searched for in{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          {/* {postcode} */}
+          {propertyPostcode}
         </span>
         . Based on the market value your estimated deposit is{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          {/* £{deposit} */}
+          £{deposit}
         </span>{" "}
         <span className="text-xs">
           <br />
@@ -122,15 +112,6 @@ export default function NewBuyerReport({ value, properties }) {
       >
         {buttonText}
       </button>
-      {/* <div>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={}
-          onChange={}
-        />
-        <button onClick={}>Search</button>
-      </div> */}
     </div>
   );
 }
