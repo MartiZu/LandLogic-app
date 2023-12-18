@@ -14,19 +14,24 @@ const ComparisonTool = () => {
         <p> 4.62%</p>
         <p>£999</p>
         <p>7.3%</p>
+    
    
         <button className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button">Go to Lender</button>
         </div>
-        <div>Swansea</div>
+        <div  className='flex justify-center content-center '><img src='/SBS logo.png'  alt='swansea bank logo' className='w-64 '/></div>
         <div className="py-2 font-normal text-base">
-        <div className='flex'>
-        <p className="border border-1 border-black p-4"> Monthly payment until 28/02/2029</p>
-        {/* <p >4.62% Initial rate</p> */}
-        <p className="border border-1 border-black p-4">£1,201</p>
+        <div className='flex flex-col'>
+        <p className="border border-1 border-black p-4 font-bold bg-purple-accent text-white "> Monthly payment until 28/02/2029</p>
+      
+        <p className="border border-1 border-black p-4">£1,201</p>  
+         <p className="border border-1 border-black p-4 font-bold  bg-purple-accent text-white ">Initial rate</p> 
+         <p className="border border-1 border-black p-4">4.62% </p>
         </div>
-        <div className='flex'>
-        <p className="border border-1 border-black p-4">£999 Product fees</p>
-        <p className="border border-1 border-black p-4">7.3% APRC</p>
+        <div className='flex flex-col'>
+        <p className="border border-1 border-black p-4 font-bold  bg-purple-accent text-white "> Product fees</p>
+        <p className="border border-1 border-black p-4">£999</p>
+        <p className="border border-1 border-black p-4 font-bold  bg-purple-accent text-white "> APRC</p>
+        <p className="border border-1 border-black p-4">7.3%</p>
         </div>
         <button className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button">Go to Lender</button>
         </div>
