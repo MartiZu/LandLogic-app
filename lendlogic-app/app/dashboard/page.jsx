@@ -48,8 +48,9 @@ export default async function Dashboard() {
         <Newsletter />
         {q1 === "a1" ? <Checklist /> : null}
         {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
+        {q1 === "a4" ? <ComparisonTool /> : null}
       </div>
-      <ComparisonTool/>
+   
     </>
   );
 }
