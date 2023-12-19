@@ -19,7 +19,9 @@ export default function PreferenceTool({ cookieHandler }) {
     e.preventDefault();
     cookieHandler(qNum, aNum);
     if (num === 99) {;  
-      router.push("/dashboard");
+      setTimeout(() => {
+        router.push("/dashboard");
+    }, 5000);
     }
     // update the class names
     setCardVisible(false);
