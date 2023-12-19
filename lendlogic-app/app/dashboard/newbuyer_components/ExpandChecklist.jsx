@@ -1,6 +1,6 @@
 export default function ExpandChecklist() {
   return (
-    <>
+    <div className="grid grid-cols-2 gap-4">
       <a
         target="_blank"
         className="bg-off-white text-lg font-normal flex items-center justify-center h-16 p-3 border-2 border-purple-accent rounded-full shadow-button cursor-pointer hover:bg-purple-accent hover:text-off-white hover:font-semibold"
@@ -43,6 +43,6 @@ export default function ExpandChecklist() {
       >
         Shared ownership
       </a>
-    </>
+    </div>
   );
 }
