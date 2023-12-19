@@ -90,10 +90,10 @@ export default function NewBuyerReport({ value, properties }) {
               <div className="flex flex-row w-72 justify-center py-3">
                 <input
                   type="text"
-                  placeholder="Enter postcode..."
+                  placeholder="Enter postcode"
                   value={searchInput}
                   onChange={handleSearchInputChange}
-                  className="w-40 h-12 p-2 border rounded-l-full text-xl focus:outline-none"
+                  className="w-44 h-12 pl-4 py-2 border rounded-l-full text-xl focus:outline-none border-purple-accent border-r-0"
                 />
                 <button
                   onClick={handleSearchButtonClick}
