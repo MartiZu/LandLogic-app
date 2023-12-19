@@ -25,8 +25,8 @@ export default async function Home() {
           </Link>
         </div> */}
 
-        <CookieButton setCookie={setCookieJenny} user={"Jenny"} />
-        <CookieButton setCookie={setCookieKat} user={"Kat"} />
+        <CookieButton setCookie={setCookieJenny} user={"Jenny"} className="cursor-pointer"/>
+        <CookieButton setCookie={setCookieKat} user={"Kat"} className="cursor-pointer"/>
 
         <Image
           loading="eager"
