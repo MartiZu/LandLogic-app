@@ -6,7 +6,7 @@ import DisplayJenny from "../../customHooks/DisplayUser";
 import { useState, useEffect } from "react";
 import internal from "stream";
 
-export default function DisplayMortgageInformation({ value }) {
+export default function DisplayMortgageInformation({ q2, value }) {
   //destructing the object returned from the custom hook
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
     value;

@@ -4,6 +4,9 @@ const UniqueMonthlyPayment = ({ q2, value }) => {
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
     value;
   const mortgageType = "Fixed";
+  const [newLoanLength, setNewLoanLength] = useState(loanLength);
+
+  function updateLoanLength()
   return (
     <p className="py-2 font-normal text-xl">
       {q2 === "a1" ? "Your current mortgage will be repaid in " : null}

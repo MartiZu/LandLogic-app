@@ -30,7 +30,7 @@ export default function RemortgageReport({ value, q2 }) {
         </p>
         <div className="flex justify-center items-center">
           {toolVisible ? (
-            <DisplayMortgageInformation value={value} />
+            <DisplayMortgageInformation q2={q2} value={value} />
           ) : (
             <Image
               src="/Toggle_man.png"
