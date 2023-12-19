@@ -13,14 +13,12 @@ import ComparisonTool from "./ComparisonTool";
 export default async function Dashboard() {
   async function readCookie(cookieName) {
     const cookie = cookies().get(cookieName);
-    console.log(cookie);
     const cookieUser = cookie.value;
-    console.log(cookieUser);
     return cookieUser;
   }
   const user = await readCookie("user_id");
-  const q1 = await readCookie("q1");
   const q2 = await readCookie("q2");
+  const q1 = await readCookie("q1");
 
   // await new Promise((resolve) => setTimeout(resolve, 1000));
   //destructing the object returned from the custom hook
@@ -44,13 +42,14 @@ export default async function Dashboard() {
           Welcome {currentUser.userName}, here is everything you need to know
         </p>
         {q1 === "a2" ? <RemortgageReport value={currentUser} q2={q2} /> : null}
+        {q1 === "a1" && q2 === "a2" ? <Checklist /> : null}
         {q1 === "a1" ? (
           <NewBuyerReport value={currentUser} properties={properties} />
         ) : null}
         {q1 === "a4" || q1 === "a3" ? <ComparisonTool /> : null}
         {q1 === "a2" ? <LearningSection /> : null}
         <Newsletter />
-        {q1 === "a1" ? <Checklist /> : null}
+        {q1 === "a1" && q2 === "a1" ? <Checklist /> : null}
         {q1 === "a1" ? <BuyingHomeTimeline steps={steps} /> : null}
       </div>
     </>
