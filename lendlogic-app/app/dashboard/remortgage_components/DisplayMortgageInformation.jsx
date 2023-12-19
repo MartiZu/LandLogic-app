@@ -2,6 +2,7 @@
 
 import MonthlyPaymentTool from "./MonthlyPaymentTool";
 import LoanLengthTool from "./LoanLengthTool";
+import ComparisonTool from "../ComparisonTool";
 // import getUserJenny from "@/library/getUsers";
 // import DisplayJenny from "../../customHooks/DisplayUser";
 
@@ -25,5 +26,6 @@ export default function DisplayMortgageInformation({ q2, value }) {
     <>
     {q2 === "a1" ? <LoanLengthTool q2={q2} value={value}/> : null}
     {q2 === "a2" ? <MonthlyPaymentTool q2={q2} value={value}/> : null}
+  
     </>
     )};
