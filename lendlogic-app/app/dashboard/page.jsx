@@ -22,7 +22,7 @@ export default async function Dashboard() {
   const q1 = await readCookie("q1");
   const q2 = await readCookie("q2");
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 8000));
   //destructing the object returned from the custom hook
   const currentUser = await DisplayUser(user);
   // console.log(currentUser);
