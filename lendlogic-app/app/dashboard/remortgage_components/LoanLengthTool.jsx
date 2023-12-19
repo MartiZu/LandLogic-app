@@ -6,7 +6,7 @@ import DisplayJenny from "../../customHooks/DisplayUser";
 import { useState, useEffect } from "react";
 import internal from "stream";
 
-export default function MonthlyPaymentTool({ q2, value }) {
+export default function LoanLengthTool({ q2, value }) {
   //destructing the object returned from the custom hook
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
     value;
@@ -21,19 +21,41 @@ export default function MonthlyPaymentTool({ q2, value }) {
   }
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
-      <div className="py-4">
-        Your new monthly payment could be{" "}
+        <div className="py-4">
+        Your new mortgage term length could be{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          {monthlyPayment}
+          {loanTerm} years
         </span>
       </div>
       <div className="py-4">
+        This would make your new monthly payment{" "}
+        <span className="text-2xl font-bold text-purple-accent">
+          £{monthlyPayment}
+        </span>
+      </div>
+      {/* <div className="py-4">
         Your remaining balance is{" "}
         <span className="text-2xl font-bold text-purple-accent">
           £{loanAmount}
         </span>
-      </div>
+      </div> */}
       <div id="toggles" className="flex flex-col items-center">
+        <label className="py-4" htmlFor="loanTerm">
+          Loan Term: {loanTerm}
+        </label>
+        <input
+          id="loanTerm"
+          className="w-1/2"
+          type="range"
+          min="5"
+          max="35"
+          step="1"
+          value={loanTerm}
+          onChange={(e) => {
+            setLoanTerm(e.target.value);
+            updateMonthlyPayment();
+        }}
+        />
         <label className="py-4" htmlFor="interestRate">
           Interest Rate: {interestRate}%
         </label>
@@ -48,22 +70,6 @@ export default function MonthlyPaymentTool({ q2, value }) {
           value={interestRate}
           onChange={(e) => {
             setInterestRate(e.target.value);
-            updateMonthlyPayment();
-          }}
-        />
-        <label className="py-4" htmlFor="loanTerm">
-          Loan Term: {loanTerm}
-        </label>
-        <input
-          id="loanTerm"
-          className="w-1/2"
-          type="range"
-          min="5"
-          max="35"
-          step="1"
-          value={loanTerm}
-          onChange={(e) => {
-            setLoanTerm(e.target.value);
             updateMonthlyPayment();
           }}
         />
