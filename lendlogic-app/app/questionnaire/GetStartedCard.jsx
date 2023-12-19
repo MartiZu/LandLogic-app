@@ -16,7 +16,7 @@ export default function GetStartedCard({ handleSubmit }) {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
+          className="w-48 h-16 bg-purple-accent cursor-pointer m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
         >
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           Let's get started!
