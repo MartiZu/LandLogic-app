@@ -28,35 +28,37 @@ export default function NewBuyerReport({ value, properties }) {
   const handleSearchInputChange = (e) => {
     const input = e.target.value;
     console.log(input);
-    //check if the search input has space
-    if (!input.includes(" ")) {
-      alert("Please enter a valid postcode");
-    } else {
-      setSearchInput(input);
-    }
+    const newInput = input.toUpperCase();
+    console.log(newInput);
+    setSearchInput(newInput);
   };
 
   const handleSearchButtonClick = () => {
-    //refine search input to uppercase and remove spaces before, plits the code
-    const searchedInput = searchInput;
-    console.log(searchedInput);
-    //take the search input and compare it to the postcode in the array of objects
-    const findProperty = properties.property.find(
-      (property) => property.searchPostcode === searchedInput
-    );
-    //if the search input matches the postcode in the array of objects
-    if (findProperty) {
-      //set the property value to the search value
-      setPropertyValue(findProperty.searchValue);
-      setPropertyPostcode(findProperty.searchPostcode);
-      setSearchInput("");
+    //to check if the search input contains a space
+    const spaceRegex = /\s/;
+    if (!spaceRegex.test(searchInput)) {
+      alert("Please enter a valid postcode");
     } else {
-      console.log("Postcode not found");
-      setSearchInput("");
-      alert("Postcode not found");
+      //refine search input taking only the first part
+      const shortInput = searchInput.split(" ")[0];
+      console.log(shortInput);
+      //take the search input and compare it to the postcode in the array of objects
+      const findProperty = properties.property.find(
+        (property) => property.searchPostcode === shortInput
+      );
+      //if the search input matches the postcode in the array of objects
+      if (findProperty) {
+        //set the property value to the search value
+        setPropertyValue(findProperty.searchValue);
+        setPropertyPostcode(findProperty.searchPostcode);
+        setSearchInput("");
+      } else {
+        console.log("Postcode not found");
+        setSearchInput("");
+        alert("Postcode not found");
+      }
     }
   };
-
 
   return (
     <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
