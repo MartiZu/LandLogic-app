@@ -1,24 +1,24 @@
-"use client";
-
+"use client"
+import React from 'react'
+import { useState, useEffect } from "react";
+import internal from "stream";
 import getUserJenny from "@/library/getUsers";
 import DisplayJenny from "../../customHooks/DisplayUser";
 
-import { useState, useEffect } from "react";
-import internal from "stream";
+const MonthlyPaymentTool = ({ q2, value}) => {
+   //destructing the object returned from the custom hook
+   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
+  value;
+  //  console.log(value);
+ const [monthlyPayment, setMonthlyPayment] = useState(userMonthlyPayment);
+ const [interestRate, setInterestRate] = useState(userInterestRate);
+ const [loanTerm, setLoanTerm] = useState(loanLength);
 
-export default function DisplayMortgageInformation({ q2, value }) {
-  //destructing the object returned from the custom hook
-  const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
-    value;
-  const [monthlyPayment, setMonthlyPayment] = useState(userMonthlyPayment);
-  const [interestRate, setInterestRate] = useState(userInterestRate);
-  const [loanTerm, setLoanTerm] = useState(loanLength);
-
-  function updateMonthlyPayment() {
-    let newMonthlyPayment = (loanAmount / (loanTerm * 12)) * interestRate;
-    setMonthlyPayment(Math.ceil(newMonthlyPayment));
-    // console.log(monthlyPayment);
-  }
+ function updateMonthlyPayment() {
+   let newMonthlyPayment = (loanAmount / (loanTerm * 12)) * interestRate;
+   setMonthlyPayment(Math.ceil(newMonthlyPayment));
+   console.log(monthlyPayment);
+ }
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
       <div className="py-4">
@@ -33,6 +33,7 @@ export default function DisplayMortgageInformation({ q2, value }) {
           £{loanAmount}
         </span>
       </div>
+
       <div id="toggles" className="flex flex-col items-center">
         <label className="py-4" htmlFor="interestRate">
           Interest Rate: {interestRate}%
@@ -69,6 +70,7 @@ export default function DisplayMortgageInformation({ q2, value }) {
         />
       </div>
     </div>
-  );
+  )
 }
- {/* {q2 === "a2" ? <MonthlyPaymentTool q2={q2} value={value}/> : null}*/}
+
+export default MonthlyPaymentTool

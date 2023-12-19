@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 const UniqueMonthlyPayment = ({ q2, value }) => {
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
@@ -6,7 +7,10 @@ const UniqueMonthlyPayment = ({ q2, value }) => {
   const mortgageType = "Fixed";
   const [newLoanLength, setNewLoanLength] = useState(loanLength);
 
-  function updateLoanLength()
+  // function updateLoanLength(){
+
+  //   setNewLoanLength(loanLength)
+  // }
   return (
     <p className="py-2 font-normal text-xl">
       {q2 === "a1" ? "Your current mortgage will be repaid in " : null}
