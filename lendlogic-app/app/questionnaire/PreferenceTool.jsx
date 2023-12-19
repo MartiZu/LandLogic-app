@@ -18,10 +18,10 @@ export default function PreferenceTool({ cookieHandler }) {
   const handleClick = (e, num, qNum, aNum) => {
     e.preventDefault();
     cookieHandler(qNum, aNum);
-    if (num === 99) {;  
+    if (num === 99) {
       setTimeout(() => {
         router.push("/dashboard");
-    }, 200);
+      }, 200);
     }
     // update the class names
     setCardVisible(false);
@@ -38,8 +38,8 @@ export default function PreferenceTool({ cookieHandler }) {
         <div
           className={
             cardVisible
-              ? "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
-              : "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
+              ? "flex flex-col min-h-card-height min-max-width mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
+              : "flex flex-col min-h-card-height min-max-width mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
           <form className="flex flex-col my-5 items-center ">
@@ -77,8 +77,8 @@ export default function PreferenceTool({ cookieHandler }) {
         <div
           className={
             cardVisible
-              ? "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
-              : "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
+              ? "flex flex-col min-h-card-height min-max-width mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
+              : "flex flex-col min-h-card-height min-max-width mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
           <form className="flex flex-col my-5 items-center">
@@ -105,8 +105,8 @@ export default function PreferenceTool({ cookieHandler }) {
         <div
           className={
             cardVisible
-              ? "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
-              : "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
+              ? "flex flex-col min-h-card-height min-max-width mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
+              : "flex flex-col min-h-card-height min-max-width mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
           <form className="flex flex-col my-5 items-center ">
@@ -145,8 +145,8 @@ export default function PreferenceTool({ cookieHandler }) {
         <div
           className={
             cardVisible
-              ? "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
-              : "flex flex-col min-h-card-height mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
+              ? "flex flex-col min-h-card-height min-max-width mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slidein"
+              : "flex flex-col min-h-card-height min-max-width mt-32 mx-4 mb-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl {} animate-slideout"
           }
         >
           <form className="flex flex-col my-5 items-center">
@@ -214,7 +214,9 @@ export default function PreferenceTool({ cookieHandler }) {
         </div>
       ) : null}
       {questionNumber === 99 ? (
-        <div className="flex flex-row justify-center items-center"><Loading /></div>
+        <div className="flex flex-row justify-center items-center">
+          <Loading />
+        </div>
       ) : null}
     </section>
   );

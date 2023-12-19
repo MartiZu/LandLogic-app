@@ -6,11 +6,12 @@
 }
 
 @media (min-width: 800px) {
-  body {
-    max-width: 800px;
+  .min-max-width {
+    max-width: 768px;
+    min-width: 768px;
   }
-  header {
-    max-width: full;
+  .margin-change {
+    margin: auto;
   }
 }
 
