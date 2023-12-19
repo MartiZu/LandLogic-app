@@ -4,40 +4,51 @@ import { useState } from "react";
 import DisplayNewBuyerInformation from "./DisplayNewBuyerInformation";
 import Image from "next/image";
 
-export default function NewBuyerReport({ value, property }) {
+export default function NewBuyerReport({ value, properties }) {
   //deconstruct data from user display
   const { postcode, property_value } = value;
   //set state for the property value
   const [propertyValue, setPropertyValue] = useState(property_value);
   //set state for visibility of other component
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
+  // const [searchPropertyVisible, setSearchPropertyVisible] = useState(false);
   //set property postcode state
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
   // Set state for the search input value
   const [searchInput, setSearchInput] = useState("");
   //prints array of objects with searchpostcode and searchvalue keys
-  // console.log(property);
+  // console.log(properties);
   //initiate variable to set value of the button
   const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
   //decalre deposit variable
-  const deposit = propertyValue * 0.2;
+  const deposit = propertyValue * 0.1;
 
   //write click handler to switch toggles
   function clickHandler() {
     setFurtherInfoVisible(!furtherInfoVisible);
   }
-  // debugging
-  //console.log(value);
+
+  function typeHandler() {
+    setSearchPropertyVisible();
+  }
 
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
   };
 
-  // Function to handle search button click
   const handleSearchButtonClick = () => {
-    // Perform any action you need with the searchInput value
-    // console.log("Search for:", searchInput);
-    // You may want to update state or perform some other action here
+    //take the search input and compare it to the postcode in the array of objects
+    const findProperty = properties.property.find(
+      (property) => property.searchPostcode === searchInput
+    );
+    //if the search input matches the postcode in the array of objects
+    if (findProperty) {
+      //set the property value to the search value
+      setPropertyValue(findProperty.searchValue);
+      setPropertyPostcode(findProperty.searchPostcode);
+    } else {
+      console.log("Postcode not found");
+    }
   };
 
   return (
@@ -46,9 +57,9 @@ export default function NewBuyerReport({ value, property }) {
         Your New Buyer Report
       </h2>
       <p className="py-2 font-normal text-xl">
-        We looked at properties around your area in{" "}
+        We looked at properties around your area you searched for in{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          {postcode}
+          {propertyPostcode}
         </span>
         . Based on the market value your estimated deposit is{" "}
         <span className="text-2xl font-bold text-purple-accent">
@@ -101,15 +112,6 @@ export default function NewBuyerReport({ value, property }) {
       >
         {buttonText}
       </button>
-      {/* <div>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={}
-          onChange={}
-        />
-        <button onClick={}>Search</button>
-      </div> */}
     </div>
   );
 }
