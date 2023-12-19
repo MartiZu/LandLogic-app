@@ -11,7 +11,6 @@ export default function NewBuyerReport({ value, properties }) {
   const [propertyValue, setPropertyValue] = useState(property_value);
   //set state for visibility of other component
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
-  // const [searchPropertyVisible, setSearchPropertyVisible] = useState(false);
   //set property postcode state
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
   // Set state for the search input value
@@ -28,26 +27,35 @@ export default function NewBuyerReport({ value, properties }) {
     setFurtherInfoVisible(!furtherInfoVisible);
   }
 
-  function typeHandler() {
-    setSearchPropertyVisible();
-  }
-
   const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value);
+    const input = e.target.value;
+    console.log(input);
+    //check if the search input has space
+    if (!input.includes(" ")) {
+      alert("Please enter a valid postcode");
+    } else {
+      setSearchInput(input);
+    }
   };
 
   const handleSearchButtonClick = () => {
+    //refine search input to uppercase and remove spaces before, plits the code
+    const searchedInput = searchInput;
+    console.log(searchedInput);
     //take the search input and compare it to the postcode in the array of objects
     const findProperty = properties.property.find(
-      (property) => property.searchPostcode === searchInput
+      (property) => property.searchPostcode === searchedInput
     );
     //if the search input matches the postcode in the array of objects
     if (findProperty) {
       //set the property value to the search value
       setPropertyValue(findProperty.searchValue);
       setPropertyPostcode(findProperty.searchPostcode);
+      setSearchInput("");
     } else {
       console.log("Postcode not found");
+      setSearchInput("");
+      alert("Postcode not found");
     }
   };
 
