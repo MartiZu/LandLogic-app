@@ -1,7 +1,7 @@
 export default function GetStartedCard({ handleSubmit }) {
   return (
     <>
-      <div className="mt-32 mb-4 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
+      <div className="mt-32 mb-4 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl lg:max-w-card-width">
         <h1 className="font-normal py-7 text-3xl text-purple-accent">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           Welcome to LendLogic! We're not just about rates, we're about you.
@@ -21,8 +21,6 @@ export default function GetStartedCard({ handleSubmit }) {
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           Let's get started!
         </button>
-
-        
       </div>
       <div className="flex flex-row justify-center items-center">
         <div className="current-circle w-3 h-3 rounded-full bg-purple-300 shadow-card mx-1"></div>

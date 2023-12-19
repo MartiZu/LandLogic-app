@@ -5,8 +5,12 @@
 :root {
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+@media (min-width: 800px) {
+  body {
+    max-width: 800px;
+  }
+  header {
+    max-width: full;
   }
 }
 
@@ -21,13 +25,14 @@ body {
   color: #5e5e5e;
   height: 100%;
   background-attachment: fixed;
+  margin: auto;
   margin-bottom: 0;
-
 }
 
-#loanTerm, #interestRate, #monthlySaving, #years, #months {
+#loanTerm,
+#interestRate,
+#monthlySaving,
+#years,
+#months {
   accent-color: #8a84e2;
 }
-
-
-
