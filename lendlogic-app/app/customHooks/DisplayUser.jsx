@@ -1,10 +1,10 @@
 import getUsers from "@/library/getUsers";
 
-export default async function DisplayUser(email) {
+export default async function displayUser(email) {
   // need to put email into the search function so it works with any user that logs in
 
   const userData = await getUsers();
-  // console.log(userData); 
+  // console.log(userData);
 
   const user = userData.find((user) => user.email === email);
 
@@ -20,10 +20,6 @@ export default async function DisplayUser(email) {
     const credit_score = user.credit_score;
     const postcode = user.address.postcode.split(" ")[0];
     const userName = user.name;
-
-    // console.log(loanAmount);
-    // console.log(userMonthlyPayment);
-    // console.log(userInterestRate);
 
     return {
       salary,
