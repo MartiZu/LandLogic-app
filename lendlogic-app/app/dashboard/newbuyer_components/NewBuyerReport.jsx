@@ -11,13 +11,10 @@ export default function NewBuyerReport({ value, properties }) {
   const [propertyValue, setPropertyValue] = useState(property_value);
   //set state for visibility of other component
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
-  // const [searchPropertyVisible, setSearchPropertyVisible] = useState(false);
   //set property postcode state
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
   // Set state for the search input value
   const [searchInput, setSearchInput] = useState("");
-  //prints array of objects with searchpostcode and searchvalue keys
-  // console.log(properties);
   //initiate variable to set value of the button
   const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
   //decalre deposit variable
@@ -28,26 +25,38 @@ export default function NewBuyerReport({ value, properties }) {
     setFurtherInfoVisible(!furtherInfoVisible);
   }
 
-  function typeHandler() {
-    setSearchPropertyVisible();
-  }
-
   const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value);
+    const input = e.target.value;
+    console.log(input);
+    const newInput = input.toUpperCase();
+    console.log(newInput);
+    setSearchInput(newInput);
   };
 
   const handleSearchButtonClick = () => {
-    //take the search input and compare it to the postcode in the array of objects
-    const findProperty = properties.property.find(
-      (property) => property.searchPostcode === searchInput
-    );
-    //if the search input matches the postcode in the array of objects
-    if (findProperty) {
-      //set the property value to the search value
-      setPropertyValue(findProperty.searchValue);
-      setPropertyPostcode(findProperty.searchPostcode);
+    //to check if the search input contains a space
+    const spaceRegex = /\s/;
+    if (!spaceRegex.test(searchInput)) {
+      alert("Please enter a valid postcode");
     } else {
-      console.log("Postcode not found");
+      //refine search input taking only the first part
+      const shortInput = searchInput.split(" ")[0];
+      console.log(shortInput);
+      //take the search input and compare it to the postcode in the array of objects
+      const findProperty = properties.property.find(
+        (property) => property.searchPostcode === shortInput
+      );
+      //if the search input matches the postcode in the array of objects
+      if (findProperty) {
+        //set the property value to the search value
+        setPropertyValue(findProperty.searchValue);
+        setPropertyPostcode(findProperty.searchPostcode);
+        setSearchInput("");
+      } else {
+        console.log("Postcode not found");
+        setSearchInput("");
+        alert("Postcode not found");
+      }
     }
   };
 
@@ -90,14 +99,14 @@ export default function NewBuyerReport({ value, properties }) {
               <div className="flex flex-row w-72 justify-center py-3">
                 <input
                   type="text"
-                  placeholder="Enter postcode..."
+                  placeholder="Enter postcode"
                   value={searchInput}
                   onChange={handleSearchInputChange}
-                  className="w-40 h-12 p-2 border rounded-l-full text-xl focus:outline-none"
+                  className="w-44 h-12 pl-4 py-2 border rounded-l-full text-xl focus:outline-none border-purple-accent border-r-0"
                 />
                 <button
                   onClick={handleSearchButtonClick}
-                  className="w-24 h-12 bg-purple-accent rounded-r-full text-off-white text-xl font-semibold shadow-button"
+                  className="w-24 h-12 bg-purple-accent rounded-r-full text-off-white text-xl font-semibold shadow-button cursor-pointer"
                 >
                   Search
                 </button>
@@ -107,7 +116,7 @@ export default function NewBuyerReport({ value, properties }) {
         )}
       </div>
       <button
-        className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
+        className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
         onClick={clickHandler}
       >
         {buttonText}

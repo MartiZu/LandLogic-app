@@ -21,7 +21,7 @@ export default function PreferenceTool({ cookieHandler }) {
     if (num === 99) {
       setTimeout(() => {
         router.push("/dashboard");
-      }, 200);
+    }, 1000);
     }
     // update the class names
     setCardVisible(false);

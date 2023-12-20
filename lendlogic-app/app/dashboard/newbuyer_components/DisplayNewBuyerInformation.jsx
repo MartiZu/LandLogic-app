@@ -63,7 +63,7 @@ export default function DisplayNewBuyerInformation({ value, deposit }) {
         </label>
         <input
           id="propertyValue"
-          className="border-2 max-w-md border-purple-accent rounded-full w-1/2 h-16 pl-8 text-xl font-semibold shadow-button"
+          className="border-2 max-w-md border-purple-accent rounded-full w-1/2 h-16 pl-8 text-xl font-semibold shadow-button cursor-pointer"
           type="number"
           value={propertyValue}
           onChange={handlePropertyValueChange}
