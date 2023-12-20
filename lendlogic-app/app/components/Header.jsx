@@ -18,11 +18,6 @@ export default function Header() {
               className="rounded-2xl"
             />
           </Link>
-          <Link href="/questionnaire">
-        <div className="flex flex-col items-center text-purple-accent mx-2 text-xl">
-          <h1 className="hover:underline">Retake the questionnaire!</h1>
-        </div>
-        </Link>
         </div>
         
         <div className="flex flex-col items-center text-purple-accent font-semibold text-xl">

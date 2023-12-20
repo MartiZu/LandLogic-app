@@ -9,6 +9,7 @@ import Checklist from "./newbuyer_components/Checklist";
 import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
 import GetSteps from "../customHooks/DisplaySteps";
 import ComparisonTool from "./ComparisonTool";
+import Link from "next/link";
 
 export default async function Dashboard() {
   async function readCookie(cookieName) {
@@ -34,6 +35,13 @@ export default async function Dashboard() {
 
   return (
     <>
+    <Link href="/questionnaire">
+        <div className="flex flex-col items-center text-purple-accent mx-3 text-xl bg-purple-accent rounded-full">
+          <h1 className="text-white p-2">
+            Start again
+            </h1>
+        </div>
+        </Link>
       <div className="flex m-auto flex-col my-8 rounded-3xl text-center text-2xl min-max-width">
         <h1 className="font-normal pt-7 text-3xl text-purple-accent">
           We've got your back!
