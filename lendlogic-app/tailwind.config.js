@@ -12,6 +12,9 @@ module.exports = {
     minWidth: {
       "button-width": "230px",
     },
+    maxWidth: {
+      "card-width": "800px",
+    },
     extend: {
       animation: {
         slideout: "slideleft 0.5s ease 0s 1 normal forwards",

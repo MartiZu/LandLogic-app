@@ -34,7 +34,7 @@ export default async function Dashboard() {
 
   return (
     <>
-      <div className="flex flex-col my-8 rounded-3xl text-center text-2xl">
+      <div className="flex m-auto flex-col my-8 rounded-3xl text-center text-2xl min-max-width">
         <h1 className="font-normal pt-7 text-3xl text-purple-accent">
           We've got your back!
         </h1>
