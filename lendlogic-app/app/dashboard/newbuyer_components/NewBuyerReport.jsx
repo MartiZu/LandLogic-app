@@ -11,13 +11,10 @@ export default function NewBuyerReport({ value, properties }) {
   const [propertyValue, setPropertyValue] = useState(property_value);
   //set state for visibility of other component
   const [furtherInfoVisible, setFurtherInfoVisible] = useState(false);
-  // const [searchPropertyVisible, setSearchPropertyVisible] = useState(false);
   //set property postcode state
   const [propertyPostcode, setPropertyPostcode] = useState(postcode);
   // Set state for the search input value
   const [searchInput, setSearchInput] = useState("");
-  //prints array of objects with searchpostcode and searchvalue keys
-  // console.log(properties);
   //initiate variable to set value of the button
   const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
   //decalre deposit variable
@@ -28,26 +25,38 @@ export default function NewBuyerReport({ value, properties }) {
     setFurtherInfoVisible(!furtherInfoVisible);
   }
 
-  function typeHandler() {
-    setSearchPropertyVisible();
-  }
-
   const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value);
+    const input = e.target.value;
+    console.log(input);
+    const newInput = input.toUpperCase();
+    console.log(newInput);
+    setSearchInput(newInput);
   };
 
   const handleSearchButtonClick = () => {
-    //take the search input and compare it to the postcode in the array of objects
-    const findProperty = properties.property.find(
-      (property) => property.searchPostcode === searchInput
-    );
-    //if the search input matches the postcode in the array of objects
-    if (findProperty) {
-      //set the property value to the search value
-      setPropertyValue(findProperty.searchValue);
-      setPropertyPostcode(findProperty.searchPostcode);
+    //to check if the search input contains a space
+    const spaceRegex = /\s/;
+    if (!spaceRegex.test(searchInput)) {
+      alert("Please enter a valid postcode");
     } else {
-      console.log("Postcode not found");
+      //refine search input taking only the first part
+      const shortInput = searchInput.split(" ")[0];
+      console.log(shortInput);
+      //take the search input and compare it to the postcode in the array of objects
+      const findProperty = properties.property.find(
+        (property) => property.searchPostcode === shortInput
+      );
+      //if the search input matches the postcode in the array of objects
+      if (findProperty) {
+        //set the property value to the search value
+        setPropertyValue(findProperty.searchValue);
+        setPropertyPostcode(findProperty.searchPostcode);
+        setSearchInput("");
+      } else {
+        console.log("Postcode not found");
+        setSearchInput("");
+        alert("Postcode not found");
+      }
     }
   };
 
