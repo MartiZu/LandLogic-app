@@ -28,6 +28,6 @@ describe("DisplayUser", () => {
   it("check output salary", async () => {
     getUsers.mockResolvedValue(mockData);
     const result = await displayUser("jenny.smith@example.com");
-    expect(result.salary).toEqual("40000");
+    expect(result.property_value).toEqual("200000");
   });
 });

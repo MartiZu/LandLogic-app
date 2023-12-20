@@ -9,9 +9,9 @@ export default async function GetSteps() {
     const steps = stepsData.map((step) => {
       const title = step.title;
       const tasks = step.tasks;
-
+    
       // Log each step's title and tasks
-      // console.log(title, tasks);
+      console.log(title, tasks);
 
       // Return an object with title and tasks
       return { title, tasks };
