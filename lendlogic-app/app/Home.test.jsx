@@ -3,18 +3,38 @@ import Home from "./page";
 import { describe } from "node:test";
 
 describe("Home", () => {
-  // it("renders the home page", () => {
-  //   //arrange
-  //   render(<Home />);
-  // });
-  it("setCookieJenny function is setting cookie as Jenny's email", async () => {
-    const mockId = {"user_id": "jenny.smith@example.com"}
-    setCookieJenny = jest.fn(() => Promise.resolve(mockId));
-    // const mockSetCookie = jest.fn();
-    const jennyEmail = await setCookieJenny();
-    expect(mockId).toEqual(jennyEmail);
+  it("setCookieJenny function sets a cookie with Jenny's email", () => {
+    const setCookieSpy = jest.spyOn(cookies(), 'set');
+
+    render(<Home />);
+    
+    // Trigger the setCookieJenny function by interacting with the component
+
+    const button = screen.getByText("Jenny's journey");
+    fireEvent.click(button);
+    
+    // Assert that the setCookieJenny function has been called with the expected arguments
+    expect(setCookieSpy).toHaveBeenCalledWith("user_id", "jenny.smith@example.com");
+    
+    // Clean up the spy
+    setCookieSpy.mockRestore();
   });
 });
+
+
+// describe("Home", () => {
+//   // it("renders the home page", () => {
+//   //   //arrange
+//   //   render(<Home />);
+//   // });
+//   it("setCookieJenny function is setting cookie as Jenny's email", async () => {
+//     const mockId = {"user_id": "jenny.smith@example.com"}
+//     setCookieJenny = jest.fn(() => Promise.resolve(mockId));
+//     // const mockSetCookie = jest.fn();
+//     const jennyEmail = await setCookieJenny();
+//     expect(mockId).toEqual(jennyEmail);
+//   });
+// });
 
 
 
