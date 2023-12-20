@@ -7,8 +7,9 @@ export default async function Home() {
   async function setCookieJenny() {
     "use server";
     const userId = "jenny.smith@example.com";
-    cookies().set("user_id", userId);
+      cookies().set("user_id", userId);
     // console.log("Jenny logged in successfully!");
+     
   }
   async function setCookieKat() {
     "use server";

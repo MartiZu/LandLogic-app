@@ -20,17 +20,20 @@ describe("Home", () => {
     // Trigger the setCookieJenny function by interacting with the component
 
     const button = screen.getByText("Jenny's journey");
-    fireEvent.click(button)
-    await waitFor(() => {});
+    await fireEvent.click(button)
+    await waitFor(() => { 
+      expect(setCookieSpy).toHaveBeenCalledWith("user_id", "jenny.smith@example.com");
+    
+    // Clean up the spy
+    setCookieSpy.mockRestore();
+  
+  });
 
     // const buttontwo = screen.getByText("Kat's journey");
     // fireEvent.click(buttontwo);
     
     // Assert that the setCookieJenny function has been called with the expected arguments
-    expect(setCookieSpy).toHaveBeenCalledWith("user_id", "jenny.smith@example.com");
-    
-    // Clean up the spy
-    setCookieSpy.mockRestore();
+   
   });
 });
 
