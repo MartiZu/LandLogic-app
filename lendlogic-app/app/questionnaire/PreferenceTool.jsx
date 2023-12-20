@@ -18,7 +18,7 @@ export default function PreferenceTool({ cookieHandler }) {
   const handleClick = (e, num, qNum, aNum) => {
     e.preventDefault();
     cookieHandler(qNum, aNum);
-    if (num === 99) {;  
+    if (num === 99) {
       router.push("/dashboard");
     }
     // update the class names
@@ -212,7 +212,9 @@ export default function PreferenceTool({ cookieHandler }) {
         </div>
       ) : null}
       {questionNumber === 99 ? (
-        <div className="flex flex-row justify-center items-center"><Loading /></div>
+        <div className="flex flex-row justify-center items-center">
+          <Loading />
+        </div>
       ) : null}
     </section>
   );

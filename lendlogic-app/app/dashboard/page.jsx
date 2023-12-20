@@ -13,9 +13,9 @@ import ComparisonTool from "./ComparisonTool";
 export default async function Dashboard() {
   async function readCookie(cookieName) {
     const cookie = cookies().get(cookieName);
-    console.log(cookie);
+    // console.log(cookie);
     const cookieUser = cookie.value;
-    console.log(cookieUser);
+    // console.log(cookieUser);
     return cookieUser;
   }
   const user = await readCookie("user_id");

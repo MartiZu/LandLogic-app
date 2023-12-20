@@ -27,11 +27,6 @@ export default function NewBuyerReport({ value, properties }) {
   function clickHandler() {
     setFurtherInfoVisible(!furtherInfoVisible);
   }
-
-  function typeHandler() {
-    setSearchPropertyVisible();
-  }
-
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
   };
