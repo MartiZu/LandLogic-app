@@ -5,11 +5,7 @@ const MortageType = ({ value, q2}) => {
     // Pull mortage type from database  
     const { loanLength, loanAmount, userMonthlyPayment, userInterestRate ,mortgageType,
         fixedTermLength, startDate, } = value;
-    // Term length for fixed mortage to be added to database
-    // Display mortage type
-    // use start date to calculate end date of fixed term
-    // Comparison tool 
-    //destructing the object returned from the custom hook
+  
 
 const [monthlyPayment, setMonthlyPayment] = useState(userMonthlyPayment);
 const [interestRate, setInterestRate] = useState(userInterestRate);
