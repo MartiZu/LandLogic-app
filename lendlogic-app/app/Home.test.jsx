@@ -2,16 +2,29 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Home from "./page";
 import { describe } from "node:test";
 
+// Mock the cookies module
+jest.mock("next/headers", () => ({
+  __esModule: true,
+  cookies: jest.fn(() => ({
+    set: jest.fn(),
+  })),
+}));
+
 describe("Home", () => {
-  it("setCookieJenny function sets a cookie with Jenny's email", () => {
-    const setCookieSpy = jest.spyOn(cookies(), 'set');
+  it("setCookieJenny function sets a cookie with Jenny's email", async () => {
+    // const setCookieSpy = jest.spyOn(cookies(), 'set');
+    const setCookieSpy = jest.spyOn(require("next/headers").cookies(), 'set');
 
     render(<Home />);
     
     // Trigger the setCookieJenny function by interacting with the component
 
     const button = screen.getByText("Jenny's journey");
-    fireEvent.click(button);
+    fireEvent.click(button)
+    await waitFor(() => {});
+
+    // const buttontwo = screen.getByText("Kat's journey");
+    // fireEvent.click(buttontwo);
     
     // Assert that the setCookieJenny function has been called with the expected arguments
     expect(setCookieSpy).toHaveBeenCalledWith("user_id", "jenny.smith@example.com");
