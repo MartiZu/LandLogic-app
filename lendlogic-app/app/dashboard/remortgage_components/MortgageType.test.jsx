@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe } from "node:test";
-import MortgageType from "./remortgage_components/MortgageType";
+import MortgageType from "./MortgageType";
 
 const mockValue = {
   loanAmount: 100000,
