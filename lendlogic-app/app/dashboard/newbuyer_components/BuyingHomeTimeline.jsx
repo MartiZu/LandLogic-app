@@ -24,9 +24,8 @@ export default function BuyingHomeTimeline({ steps }) {
           New Buyer Timeline
         </h2>
         <p className="py-2 font-normal text-xl">
-          Buying a home is one of the most stressful things you'll do and sadly
-          it's not become any easier over time. Knowing the rough outline of how
-          the process works though will make the ride that bit smoother.
+        Buying a home can be a very stressful experience, and unfortunately, it has not become any easier with time. 
+        However, having a good understanding of the general process can help make the journey a bit easier.
         </p>
         {toolVisible ? (
           <NewBuyerTimeline steps={stepsArr} />
