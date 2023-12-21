@@ -16,7 +16,7 @@ export default function ReleaseEquityTool({ q2, value }) {
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
       <p className="py-2 font-normal text-xl" data-testid="textValue">
-        Your monthly equity paymment will be{" "}
+        Your monthly equity payment will be{" "}
         <span className="text-2xl font-bold text-purple-accent">
           £{monthlyEquityPayment}{" "}
         </span>
