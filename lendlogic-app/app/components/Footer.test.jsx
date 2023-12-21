@@ -7,6 +7,6 @@ describe("Footer", () => {
     // locator
     render(<Footer />);
     //assertion
-    expect(screen.getByText("LendLogic")).toBeInTheDocument();
+    expect(screen.getByTestId("footer")).toBeInTheDocument();
   });
 });
