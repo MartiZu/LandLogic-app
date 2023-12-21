@@ -3,35 +3,39 @@ import { useState } from "react";
 
 export default function ReleaseEquityTool({ q2, value }) {
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
-  value;
+    value;
 
   const [equity, setEquity] = useState(200000 - loanAmount);
   const [borrowTime, setBorrowTime] = useState(20);
   const [monthlyEquityPayment, setMonthlyEquityPayment] = useState(0);
 
   function updateMonthlyPayment() {
-
-    let payment = Math.floor((equity / borrowTime) / 12);
+    let payment = Math.floor(equity / borrowTime / 12);
     setMonthlyEquityPayment(payment);
-    console.log(payment)
-    console.log(equity)
-    console.log(borrowTime)
-   
   }
   return (
-
     <div className="mt-8 mx-4 text-center text-2xl">
-      <p className="py-2 font-normal text-xl">Your monthly equity paymment will be {" "}  
-      <span className="text-2xl font-bold text-purple-accent">
+      <p className="py-2 font-normal text-xl" data-testid="textValue">
+        Your monthly equity paymment will be{" "}
+        <span className="text-2xl font-bold text-purple-accent">
           £{monthlyEquityPayment}{" "}
-        </span>on top of your existing payment of {" "}<span className="text-2xl font-bold text-purple-accent">
-          £{userMonthlyPayment}
-          {" "}</span></p>
-      <p className="py-2 font-normal text-xl">How much would you like to borrow?{" "}<span className="text-2xl font-bold text-purple-accent">
-          £{equity}
-          {" "}</span></p>
+        </span>
+        on top of your existing payment of{" "}
+        <span className="text-2xl font-bold text-purple-accent">
+          £{userMonthlyPayment}{" "}
+        </span>
+      </p>
+      <p className="py-2 font-normal text-xl">
+        How much would you like to borrow?{" "}
+        <span
+          data-testid="equitySpan"
+          className="text-2xl font-bold text-purple-accent"
+        >
+          £{equity}{" "}
+        </span>
+      </p>
       <label className="py-4" htmlFor="interestRate">
-        £ 
+        £
       </label>
       <input
         data-testid="equityValue"
@@ -47,15 +51,17 @@ export default function ReleaseEquityTool({ q2, value }) {
           updateMonthlyPayment();
         }}
       />
-       <p className="py-2 font-normal text-xl">How long would you like to borrow this equity for? {" "}  
-       <span className="text-2xl font-bold text-purple-accent">
-          {borrowTime} years
-          {" "}</span></p>
+      <p className="py-2 font-normal text-xl">
+        How long would you like to borrow this equity for?{" "}
+        <span className="text-2xl font-bold text-purple-accent">
+          {borrowTime} years{" "}
+        </span>
+      </p>
       <label className="py-4" htmlFor="interestRate">
         £
       </label>
       <input
-        data-testid="interestRate"
+        data-testid="borrowTime"
         id="interestRate"
         className="w-1/2"
         type="range"
