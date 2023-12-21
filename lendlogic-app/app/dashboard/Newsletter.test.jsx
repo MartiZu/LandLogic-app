@@ -44,7 +44,6 @@ describe("Newsletter", () => {
       expect(input.value).toBe("example@email.com");
     });
     it("button submits email correctly", () => {
-      jest.useFakeTimers();
       const logSpy = jest.spyOn(global.console, "log");
       render(<Newsletter />);
       const input = screen.getByPlaceholderText("Email address");
