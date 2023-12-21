@@ -14,7 +14,7 @@ const mockValue = {
     loanAmount: 100000,
     userMonthlyPayment: 1000,
     userInterestRate: 3.5,
-  };
+};
 
 describe("LoanLengthTool", () => {
     describe("Render", () => {
@@ -23,4 +23,15 @@ describe("LoanLengthTool", () => {
         expect(screen.getByText("Your new mortgage term length could be")).toBeInTheDocument();
       });
     });
+    describe("Function", () => {
+        it("should update the monthly payment when the loan term is changed", () => {
+            render(<LoanLengthTool value={mockValue}/>);
+           // store input element in a variable
+           const input = screen.getByTestId("loanTerm");
+           fireEvent.change(input, { target: { value: 15 } });
+
+           expect(mockValue.updateMonthlyPayment).toHaveBeenCalled();
+        //    expect(screen.getByText("Loan Term: ")).toBeInTheDocument();
+        });
+});
 });
