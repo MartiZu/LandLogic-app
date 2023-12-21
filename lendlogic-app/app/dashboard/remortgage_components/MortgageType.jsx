@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import { useState, useEffect } from "react";
 
-export default function MortageType({ value, q2 }) {
+export default function MortgageType({ value, q2 }) {
   // Pull mortage type from database
   const {
     loanAmount,
@@ -19,12 +19,6 @@ export default function MortageType({ value, q2 }) {
   const handleSearchInputChange = (e) => {
     const input = e.target.value;
     setSearchInput(input);
-    // const isValidNumber = /^[0-9]+$/.test(input);
-    // if (isValidNumber) {
-    //   setSearchInput(input);
-    // } else {
-    //   alert("Please enter a valid number");
-    // }
   };
   const handleSearchButtonClick = () => {
     //ensure that searchInput is a valid number
