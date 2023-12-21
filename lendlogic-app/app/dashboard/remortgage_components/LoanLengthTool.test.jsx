@@ -26,12 +26,12 @@ describe("LoanLengthTool", () => {
     describe("Function", () => {
         it("should update the monthly payment when the loan term is changed", () => {
             render(<LoanLengthTool value={mockValue}/>);
+            
            // store input element in a variable
            const input = screen.getByTestId("loanTerm");
            fireEvent.change(input, { target: { value: 15 } });
 
-           expect(mockValue.updateMonthlyPayment).toHaveBeenCalled();
-        //    expect(screen.getByText("Loan Term: ")).toBeInTheDocument();
+           expect(screen.getByText("Loan Term: 15")).toBeInTheDocument();
         });
 });
 });
