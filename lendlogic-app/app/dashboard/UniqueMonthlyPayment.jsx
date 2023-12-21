@@ -1,9 +1,16 @@
 import React from "react";
+import { useState } from "react";
 
 const UniqueMonthlyPayment = ({ q2, value }) => {
-  const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
+  const { loanLength, loanAmount, userMonthlyPayment, userInterestRate, mortgageType } =
     value;
-  const mortgageType = "Fixed";
+  // const mortgageType = "Fixed";
+  const [newLoanLength, setNewLoanLength] = useState(loanLength);
+
+  // function updateLoanLength(){
+
+  //   setNewLoanLength(loanLength)
+  // }
   return (
     <p className="py-2 font-normal text-xl">
       {q2 === "a1" ? "Your current mortgage will be repaid in " : null}
@@ -13,7 +20,7 @@ const UniqueMonthlyPayment = ({ q2, value }) => {
       <span className="text-2xl font-bold text-purple-accent">
         {q2 === "a1" ? `${loanLength} years` : null}
         {q2 === "a2" ? `£${userMonthlyPayment}` : null}
-        {q2 === "a3" ? mortgageType : null}
+        {q2 === "a3" ? `${mortgageType}` : null}
         {q2 === "a4" ? `£${loanAmount}` : null}
       </span>
     </p>

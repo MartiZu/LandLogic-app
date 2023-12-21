@@ -13,6 +13,9 @@ export default function RemortgageReport({ value, q2 }) {
   }
   // console.log(value);
 
+    //initiate variable to set value of the button
+    const buttonText = toolVisible ? "Hide" : "Find Out More";
+
   //destructing the object returned from the custom hook
   const { loanLength, loanAmount, userMonthlyPayment, userInterestRate } =
     value;
@@ -30,7 +33,7 @@ export default function RemortgageReport({ value, q2 }) {
         </p>
         <div className="flex justify-center items-center">
           {toolVisible ? (
-            <DisplayMortgageInformation value={value} />
+            <DisplayMortgageInformation q2={q2} value={value} />
           ) : (
             <Image
               src="/Toggle_man.png"
@@ -44,7 +47,7 @@ export default function RemortgageReport({ value, q2 }) {
           className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
           onClick={clickHandler}
         >
-          View My Report
+          {buttonText}
         </button>
       </div>
     </>

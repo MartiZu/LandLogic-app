@@ -20,6 +20,9 @@ export default async function displayUser(email) {
     const credit_score = user.credit_score;
     const postcode = user.address.postcode.split(" ")[0];
     const userName = user.name;
+    const mortgageType = user.mortgage ? user.mortgage.type : 0;
+    const fixedTermLength = user.mortgage ? user.mortgage.fixed_term : 0;
+    const startDate = user.mortgage ? user.mortgage.start_date : 0;
 
     return {
       salary,
@@ -31,6 +34,9 @@ export default async function displayUser(email) {
       userInterestRate,
       userName,
       postcode,
+      mortgageType,
+      fixedTermLength,
+      startDate,
     };
   }
   console.log("no user found");
