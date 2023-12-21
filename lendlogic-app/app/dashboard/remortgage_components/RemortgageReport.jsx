@@ -23,7 +23,7 @@ export default function RemortgageReport({ value, q2 }) {
   return (
     <>
       <div className="mt-6 mx-4 bg-off-white rounded-3xl p-3 shadow-card text-center text-2xl">
-        <h2 className="font-normal py-7 text-3xl text-purple-accent">
+        <h2 data-testid="remortgage-tool" className="font-normal py-7 text-3xl text-purple-accent">
           Your Remortgage Report
         </h2>
         <UniqueMonthlyPayment q2={q2} value={value} />
@@ -43,7 +43,7 @@ export default function RemortgageReport({ value, q2 }) {
             />
           )}
         </div>
-        <button
+        <button data-testid="remortgage-tool-button"
           className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
           onClick={clickHandler}
         >

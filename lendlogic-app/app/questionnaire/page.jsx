@@ -15,13 +15,6 @@ export default function Questionnaire() {
     <>
       <div className="flex flex-col justify-center items-center m-auto min-max-width">
         <QuestionnaireContent cookieHandler={setQuestionCookies} />
-        {/* <Image
-          className="mt-8"
-          src={"/Logo_lendlogic.png"}
-          width={200}
-          height={300}
-          alt="LandLogic Logo"
-        /> */}
       </div>
     </>
   );
