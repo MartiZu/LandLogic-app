@@ -33,5 +33,14 @@ describe("LoanLengthTool", () => {
 
            expect(screen.getByText("Loan Term: 15")).toBeInTheDocument();
         });
+        it("should update the interest rate when the loan term is changed", () => {
+            render(<LoanLengthTool value={mockValue}/>);
+            
+           // store input element in a variable
+           const input = screen.getByTestId("interestRate");
+           fireEvent.change(input, { target: { value: 3 } });
+
+           expect(screen.getByText("Interest Rate: 3")).toBeInTheDocument();
+        });
 });
 });
