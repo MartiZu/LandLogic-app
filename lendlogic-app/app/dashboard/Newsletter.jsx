@@ -6,31 +6,30 @@ export default function Newsletter() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
-    setEmail(e.target.value);
+    let inputValue = e.target.value;
     //  email validation
-    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue);
+    setEmail(inputValue);
+  };
 
-    if (isValidEmail || inputValue === "") {
-      setEmail(inputValue);
+  const handleSubmit = () => {
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (isValidEmail) {
+      //simulate storing user data
+      console.log("Data submitted", email);
+      //display messafe and reset form
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setEmail("");
+      }, 4000);
     } else {
       alert("Please enter a valid email address");
     }
   };
 
-  const handleSubmit = () => {
-    //simulate storing user data
-    // console.log("Data submitted", email);
-    //display messafe and reset form
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setEmail("");
-    }, 4000);
-  };
-
   return (
     <main>
-      <div className="mt-6 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
+      <div className="mt-12 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
         <h2 className="font-normal py-7 text-3xl text-purple-accent">
           Sign up for our newsletter
         </h2>
@@ -49,14 +48,14 @@ export default function Newsletter() {
           ) : (
             <div className="flex flex-col items-center py-4">
               <input
-                className="border-2 max-w-md border-purple-accent rounded-full w-4/5 h-16 pl-8 text-xl font-semibold shadow-button cursor-pointer"
+                className="border-2 max-w-md border-purple-accent rounded-full w-4/5 h-16 pl-8 text-xl font-semibold shadow-button"
                 type="email"
                 placeholder="Email address"
                 value={email}
                 onChange={handleInputChange}
               />
               <button
-                className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
+                className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
                 type="submit"
                 onClick={handleSubmit}
               >
