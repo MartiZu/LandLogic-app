@@ -22,9 +22,11 @@ export default function ReleaseEquityTool({ q2, value }) {
 
   function updateMonthlyPayment() {
 
-    let payment = Math.floor(equity / borrowTime) / 12;
+    let payment = Math.floor((equity / borrowTime) / 12);
     setMonthlyEquityPayment(payment);
     console.log(payment)
+    console.log(equity)
+    console.log(borrowTime)
    
   }
   return (
@@ -48,7 +50,7 @@ export default function ReleaseEquityTool({ q2, value }) {
         className="w-1/2"
         type="range"
         min="5000"
-        max={equity}
+        max="200000"
         step="1000"
         value={equity}
         onChange={(e) => {
@@ -69,7 +71,7 @@ export default function ReleaseEquityTool({ q2, value }) {
         className="w-1/2"
         type="range"
         min="5"
-        max={20}
+        max={30}
         step="1"
         value={borrowTime}
         onChange={(e) => {
