@@ -7,6 +7,14 @@ export default function Newsletter() {
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
+    //  email validation
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue);
+
+    if (isValidEmail || inputValue === "") {
+      setEmail(inputValue);
+    } else {
+      alert("Please enter a valid email address");
+    }
   };
 
   const handleSubmit = () => {
@@ -23,8 +31,12 @@ export default function Newsletter() {
   return (
     <main>
       <div className="mt-6 mx-4 bg-off-white  rounded-3xl p-3 shadow-card text-center text-2xl">
-        <h2 className="font-normal py-7 text-3xl text-purple-accent">Sign up for our newsletter</h2>
-        <p className="py-2 font-normal text-xl">Did you see something interesting?</p>
+        <h2 className="font-normal py-7 text-3xl text-purple-accent">
+          Sign up for our newsletter
+        </h2>
+        <p className="py-2 font-normal text-xl">
+          Did you see something interesting?
+        </p>
         <p className="py-2 font-normal text-xl">
           Get the latest news and updates from Lendlogic
         </p>
