@@ -1,7 +1,6 @@
 import getUsers from "./getUsers";
 import { describe } from "node:test";
 
-
 const mockUsers = ["user1", "user2"]
 
 global.fetch = jest.fn(() => Promise.resolve({
