@@ -10,14 +10,14 @@ const mockValue = {
   startDate: "2022-01-01",
 };
 
-describe("MortageType", () => {
+describe("MortgageType", () => {
   it("should render the component", () => {
     render(<MortgageType value={mockValue} />);
-    expect(screen.getByText("Mortgage Type")).toBeInTheDocument();
+    expect(screen.getByTestId("paragraph")).toBeInTheDocument();
   });
   it("handles search input change", () => {
     render(<MortgageType value={mockValue} />);
-    const input = getByPlaceholderText("Enter number");
+    const input = screen.getByTestId("search-input");
     fireEvent.change(input, { target: { value: "10" } });
     expect(input.value).toBe("10");
   });

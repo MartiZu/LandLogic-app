@@ -95,13 +95,13 @@ export default function MortgageType({ value, q2 }) {
         <span className="text-2xl font-bold text-purple-accent">2.9%</span>
       </p>
       <div className="flex flex-col items-center">
-        <p className="py-2 font-normal text-xl">
+        <p className="py-2 font-normal text-xl" data-testid="paragraph">
           Thinking about changing mortgage type? 
         </p>
         <p className="py-2 font-normal text-xl">Enter your repayment
           charge here</p>
         <div className="flex flex-row w-72 justify-center py-3">
-          <input
+          <input data-testid="search-input"
             type="text"
             placeholder="Enter number"
             value={searchInput}
