@@ -40,7 +40,7 @@ describe("LoanLengthTool", () => {
            const input = screen.getByTestId("interestRate");
            fireEvent.change(input, { target: { value: 3 } });
 
-           expect(screen.getByText("Interest Rate: 3")).toBeInTheDocument();
+           expect(screen.getByText("Interest Rate: 3%")).toBeInTheDocument();
         });
 });
 });
