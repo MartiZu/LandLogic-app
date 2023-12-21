@@ -27,14 +27,14 @@ describe("MonthlyPayment", () => {
 
 
 
-// describe("Function", () => {
-//   it("should update monthly payment when interest rate is changed", () => {
-//     render(<MonthlyPaymentTool value={mockValue} />);
+describe("Function", () => {
+  it("should update monthly payment when interest rate is changed", () => {
+    render(<MonthlyPaymentTool value={mockValue} />);
 
-//     const input = screen.getByTestId("monthlyPayment");
-//     fireEvent.change(input, { target: { value: 800 } });
+    const input = screen.getByTestId("interestRate");
+    fireEvent.change(input, { target: { value: 800 } });
 
-//     expect(screen.getByText("Your new monthly payment could be 800")).toBeInTheDocument();
-//   });
+    expect(screen.getByTestId("monthlyPayment")).toBeInTheDocument(800);
+  });
 
-// });
+});
