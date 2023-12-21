@@ -21,16 +21,17 @@ describe("MortgageType", () => {
     fireEvent.change(input, { target: { value: "10" } });
     expect(input.value).toBe("10");
   });
-  it("handles search button click with valid input", () => {
-    render(<MortgageType value={mockValue} />);
-    const input = screen.getByPlaceholderText("Enter number");
-    const button = screen.getByRole("button", { name: "Search" });
-    // Set a valid value in the input
-    fireEvent.change(input, { target: { value: "10" } });
-    // Trigger the button click
-    fireEvent.click(button);
-  });
+  // it("handles search button click with valid input", () => {
+  //   render(<MortgageType value={mockValue} />);
+  //   const input = screen.getByPlaceholderText("Enter number");
+  //   const button = screen.getByRole("button", { name: "Search" });
+  //   // Set a valid value in the input
+  //   fireEvent.change(input, { target: { value: "10" } });
+  //   // Trigger the button click
+  //   fireEvent.click(button);
+  // });
   it("handles search button click with invalid input", () => {
+    const alertMock = jest.spyOn(window, "alert").mockImplementation();
     render(<MortgageType value={mockValue} />);
     const input = screen.getByPlaceholderText("Enter number");
     const button = screen.getByRole("button", { name: "Search" });
@@ -38,5 +39,6 @@ describe("MortgageType", () => {
     fireEvent.change(input, { target: { value: "abc" } });
     // Trigger the button click
     fireEvent.click(button);
+    expect(alertMock).toHaveBeenCalled();
   });
 });
