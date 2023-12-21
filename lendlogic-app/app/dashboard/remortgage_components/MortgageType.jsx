@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import { useState, useEffect } from "react";
 
-export default function MortageType({ value, q2 }) {
+export default function MortgageType({ value, q2 }) {
   // Pull mortage type from database
   const {
     loanAmount,
@@ -19,12 +19,6 @@ export default function MortageType({ value, q2 }) {
   const handleSearchInputChange = (e) => {
     const input = e.target.value;
     setSearchInput(input);
-    // const isValidNumber = /^[0-9]+$/.test(input);
-    // if (isValidNumber) {
-    //   setSearchInput(input);
-    // } else {
-    //   alert("Please enter a valid number");
-    // }
   };
   const handleSearchButtonClick = () => {
     //ensure that searchInput is a valid number
@@ -101,13 +95,13 @@ export default function MortageType({ value, q2 }) {
         <span className="text-2xl font-bold text-purple-accent">2.9%</span>
       </p>
       <div className="flex flex-col items-center">
-        <p className="py-2 font-normal text-xl">
+        <p className="py-2 font-normal text-xl" data-testid="paragraph">
           Thinking about changing mortgage type? 
         </p>
         <p className="py-2 font-normal text-xl">Enter your repayment
           charge here</p>
         <div className="flex flex-row w-72 justify-center py-3">
-          <input
+          <input data-testid="search-input"
             type="text"
             placeholder="Enter number"
             value={searchInput}
