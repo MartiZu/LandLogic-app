@@ -7,9 +7,8 @@ export default async function Home() {
   async function setCookieJenny() {
     "use server";
     const userId = "jenny.smith@example.com";
-      cookies().set("user_id", userId);
+    cookies().set("user_id", userId);
     // console.log("Jenny logged in successfully!");
-     
   }
   async function setCookieKat() {
     "use server";
@@ -26,8 +25,16 @@ export default async function Home() {
           </Link>
         </div> */}
 
-        <CookieButton setCookie={setCookieJenny} user={"Jenny"} className="cursor-pointer"/>
-        <CookieButton setCookie={setCookieKat} user={"Kat"} className="cursor-pointer"/>
+        <CookieButton
+          setCookie={setCookieJenny}
+          user={"Jenny"}
+          className="cursor-pointer"
+        />
+        <CookieButton
+          setCookie={setCookieKat}
+          user={"Kat"}
+          className="cursor-pointer"
+        />
 
         <Image
           loading="eager"
