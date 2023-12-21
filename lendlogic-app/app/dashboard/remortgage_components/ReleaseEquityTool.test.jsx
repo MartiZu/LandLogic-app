@@ -11,37 +11,37 @@ const mockValue = {
 };
 
 describe("ReleaseEquityTool", () => {
-  //   it("renders the component with initial values", () => {
-  //     render(<ReleaseEquityTool value={mockValue} />);
+    it("renders the component with initial values", () => {
+      render(<ReleaseEquityTool value={mockValue} />);
 
-  //     expect(
-  //       screen.getByTestId("textValue")
-  //     ).toBeInTheDocument();
-  //   });
-
-  //   it("updates equity and monthly payment when adjusting the borrowing amount", () => {
-  //     render(<ReleaseEquityTool value={mockValue} />);
-
-  //     const equityInput = screen.getByTestId("equityValue");
-  //     fireEvent.change(equityInput, { target: { value: 150000 } });
-
-  //     expect(screen.getByTestId("equitySpan")).toBeInTheDocument();
-  //   });
-  it("calls updateMonthlyPayment with correct arguments when adjusting borrowing amount", () => {
-    // Arrange
-
-    render(
-      <ReleaseEquityTool
-        value={mockValue}
-        updateMonthlyPayment={updateMonthlyPaymentMock}
-      />
-    );
-    const borrowTime = 15;
-    // Act
-    fireEvent.change(screen.getByTestId("borrowTime"), {
-      target: { value: borrowTime },
+      expect(
+        screen.getByTestId("textValue")
+      ).toBeInTheDocument();
     });
-    // Assert
-    expect(updateMonthlyPaymentMock).toHaveBeenCalled();
-  });
+
+    it("updates equity and monthly payment when adjusting the borrowing amount", () => {
+      render(<ReleaseEquityTool value={mockValue} />);
+
+      const equityInput = screen.getByTestId("equityValue");
+      fireEvent.change(equityInput, { target: { value: 150000 } });
+
+      expect(screen.getByTestId("equitySpan")).toBeInTheDocument();
+    });
+  // it("calls updateMonthlyPayment with correct arguments when adjusting borrowing amount", () => {
+  //   // Arrange
+
+  //   render(
+  //     <ReleaseEquityTool
+  //       value={mockValue}
+  //       updateMonthlyPayment={updateMonthlyPaymentMock}
+  //     />
+  //   );
+  //   const borrowTime = 15;
+  //   // Act
+  //   fireEvent.change(screen.getByTestId("borrowTime"), {
+  //     target: { value: borrowTime },
+  //   });
+  //   // Assert
+  //   expect(updateMonthlyPaymentMock).toHaveBeenCalled();
+  // });
 });
