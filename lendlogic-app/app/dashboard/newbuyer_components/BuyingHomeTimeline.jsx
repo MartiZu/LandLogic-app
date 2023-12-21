@@ -11,7 +11,7 @@ export default function BuyingHomeTimeline({ steps }) {
   function clickHandler() {
     setToolVisible(!toolVisible);
   }
-  const stepsArr = steps.steps
+  const stepsArr = steps.steps;
   // console.log("debug buyinghometimeline", stepsArr);
   // const firstStep = steps.steps[0];
   // console.log("print first step", firstStep);
@@ -34,14 +34,14 @@ export default function BuyingHomeTimeline({ steps }) {
           <div className="flex justify-center">
             <Image
               src="/clap_img.png"
-              alt="A man using toggles"
+              alt="Two people hi-fiving"
               width={300}
               height={200}
             />
           </div>
         )}
         <button
-          className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button"
+          className="w-48 h-16 bg-purple-accent  m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
           type="submit"
           onClick={clickHandler}
         >

@@ -12,8 +12,8 @@ export default function Questionnaire() {
     // console.log(`Cookie set to ${qNum}:${aNum}`);
   }
   return (
-    <main>
-      <div className="flex flex-col items-center">
+    <>
+      <div className="flex flex-col justify-center items-center m-auto min-max-width">
         <QuestionnaireContent cookieHandler={setQuestionCookies} />
         {/* <Image
           className="mt-8"
@@ -23,6 +23,6 @@ export default function Questionnaire() {
           alt="LandLogic Logo"
         /> */}
       </div>
-    </main>
+    </>
   );
 }
