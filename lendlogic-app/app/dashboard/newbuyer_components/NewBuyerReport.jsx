@@ -37,7 +37,7 @@ export default function NewBuyerReport({ value, properties }) {
     //to check if the search input contains a space
     const spaceRegex = /\s/;
     if (!spaceRegex.test(searchInput)) {
-      alert("Please enter a valid postcode");
+      alert("Please use a space in the postcode");
     } else {
       //refine search input taking only the first part
       const shortInput = searchInput.split(" ")[0];
