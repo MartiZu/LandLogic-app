@@ -16,6 +16,7 @@ export default async function Dashboard() {
   async function readCookie(cookieName) {
     const cookie = cookies().get(cookieName);
     const cookieUser = cookie.value;
+    console.log(cookieUser);
     return cookieUser;
   }
   const user = await readCookie("user_id");
