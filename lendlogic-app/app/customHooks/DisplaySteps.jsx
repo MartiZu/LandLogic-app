@@ -11,7 +11,7 @@ export default async function GetSteps() {
       const tasks = step.tasks;
     
       // Log each step's title and tasks
-      console.log(title, tasks);
+      // console.log(title, tasks);
 
       // Return an object with title and tasks
       return { title, tasks };
