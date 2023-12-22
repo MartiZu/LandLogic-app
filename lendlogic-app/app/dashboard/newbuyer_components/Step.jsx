@@ -1,7 +1,7 @@
 export default function Step({ id, tasks, title }) {
   return (
     <div className="flex flex-col text-left items-center py-4">
-      <ul>
+      <ul data-testid="task-list">
         {tasks
           .filter((task) => task.id === id)
           // Only show tasks with the selected ID

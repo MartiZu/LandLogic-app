@@ -8,22 +8,47 @@ jest.mock ("../../customHooks/DisplayUser" , () => ({
     default: jest.fn(),
 }));
 
+  
 const mockTask =[{
-    id: 1,
+   
     tasks: [
         "Calculate upfront funds and potential borrowing.",
         "Use an affordability calculator and get an agreement in principle (AIP) for added attractiveness."
     ],
 } ]
 
-describe("Step", () => {
+const id = 1;
+  describe("Step", () => {
     describe("Render", () => {
       it("should render the component", () => {
-        render(<Step id={1} tasks={mockTask[0].tasks} />);
+        render(<Step id={id} tasks={mockTask[0].tasks} />);
         expect(
           screen.getByText("Calculate upfront funds and potential borrowing.")
         ).toBeInTheDocument();
       });
     });
   });
+
+// describe('Step', () => { 
+//     describe('Render', () => {
+//     const tasks = [
+//         "Calculate upfront funds and potential borrowing.",
+//         "Use an affordability calculator and get an agreement in principle (AIP) for added attractiveness."
+//       ];
+//     it('renders a specific task based on ID', () => {
+     
+//       const id = 1; // Specify the desired ID
+      
+//       render(<Step id={id} tasks={tasks} />);
+      
+//       const ulElement = screen.getByTestId('task-list'); // Get the ul element by data-testid
+      
+//       // Check if the ul element exists
+//       expect(ulElement).toBeInTheDocument();
+      
+//       // Check if the ul element contains the expected task content based on the specified ID
+//       expect(ulElement).toHaveTextContent("Calculate upfront funds and potential borrowing.");
+//     });
+// });
+//   });
   
