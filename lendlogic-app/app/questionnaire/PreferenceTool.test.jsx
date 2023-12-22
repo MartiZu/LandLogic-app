@@ -23,8 +23,8 @@ describe("PreferenceTool", () => {
   describe("Render", () => {
   it("renders the PreferenceTool page", async () => {
     //arrange
-    const PreferenceToolResolved = await resolvedComponent(PreferenceTool);
-    render(<PreferenceToolResolved value={mockCookieHandler} />)
+    const PreferenceToolResolved = await resolvedComponent(PreferenceTool, mockCookieHandler);
+    render(<PreferenceToolResolved />)
     // render(<PreferenceTool value={mockCookieHandler} />)
     expect(screen.getByText("Which of the following best describes you?")).toBeInTheDocument();
   });
