@@ -17,6 +17,13 @@ jest.mock("next/router", () => ({
   }),
 }));
 
+// mocking the useState
+
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useState: jest.fn(),
+}))
+
 const mockCookieHandler = jest.fn()
 
 describe("PreferenceTool", () => {
@@ -27,6 +34,8 @@ describe("PreferenceTool", () => {
     render(<PreferenceToolResolved />)
     // render(<PreferenceTool value={mockCookieHandler} />)
     expect(screen.getByText("Which of the following best describes you?")).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId("remortgage-button"));
+    expect(screen.getByText("What are your remortgage goals?")).toBeInTheDocument();
   });
 });
 }); 
