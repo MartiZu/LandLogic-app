@@ -13,7 +13,7 @@ export default function GetStartedCard({ handleSubmit }) {
           that fit your unique story.
         </p>
 
-        <button
+        <button data-testid="started-button"
           type="submit"
           onClick={handleSubmit}
           className="w-48 h-16 bg-purple-accent cursor-pointer m-5 rounded-full text-xl text-off-white font-semibold shadow-button"

@@ -3,7 +3,6 @@ import Step from "./Step";
 
 export default function NewBuyerTimeline({ steps }) {
   const [seeStep, setSeeStep] = useState(new Array(steps.length).fill(false));
-  console.log(seeStep);
 
   // Toggle visibility when a step is clicked
   const handleClick = (index) => {

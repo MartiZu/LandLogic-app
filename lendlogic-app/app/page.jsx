@@ -29,7 +29,7 @@ export default async function Home() {
         <CookieButton setCookie={setCookieJenny} user={"Jenny"} className="cursor-pointer"/>
         <CookieButton setCookie={setCookieKat} user={"Kat"} className="cursor-pointer"/>
 
-        <Image
+        <Image data-testid="test-logo"
           loading="eager"
           className=""
           src={"/Logo_lendlogic.png"}
