@@ -67,7 +67,7 @@ export default function NewBuyerReport({ value, properties }) {
       </h2>
       <p className="py-2 font-normal text-xl">
         We looked at properties around your area you searched for in{" "}
-        <span className="text-2xl font-bold text-purple-accent">
+        <span data-testid="postcode" className="text-2xl font-bold text-purple-accent">
           {propertyPostcode}
         </span>
         . Based on the market value your estimated deposit is{" "}
@@ -104,7 +104,7 @@ export default function NewBuyerReport({ value, properties }) {
                   onChange={handleSearchInputChange}
                   className="w-44 h-12 pl-4 py-2 border rounded-l-full text-xl focus:outline-none border-purple-accent border-r-0"
                 />
-                <button
+                <button data-testid="search-button"
                   onClick={handleSearchButtonClick}
                   className="w-24 h-12 bg-purple-accent rounded-r-full text-off-white text-xl font-semibold shadow-button cursor-pointer"
                 >
