@@ -43,7 +43,7 @@ export default function PreferenceTool({ cookieHandler }) {
           }
         >
           <form className="flex flex-col my-5 items-center ">
-            <h2 className="mb-40 text-3xl font-normal text-purple-accent">
+            <h2 data-testid="firstquestion" className="mb-40 text-3xl font-normal text-purple-accent">
               Which of the following best describes you?
             </h2>
             <input
@@ -82,7 +82,7 @@ export default function PreferenceTool({ cookieHandler }) {
           }
         >
           <form className="flex flex-col my-5 items-center">
-            <h2 className="mb-40 text-3xl font-normal text-purple-accent">
+            <h2 data-testid="secondquestion" className="mb-40 text-3xl font-normal text-purple-accent">
               How comfortable are you with mortgage terminology?
             </h2>
             <input
