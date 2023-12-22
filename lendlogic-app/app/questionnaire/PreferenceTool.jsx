@@ -52,7 +52,7 @@ export default function PreferenceTool({ cookieHandler }) {
               type="submit"
               onClick={(e) => handleClick(e, 2, "q1", "a1")}
             ></input>
-            <input
+            <input data-testid="remortgage-button"
               value="Remortgage"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
@@ -131,7 +131,7 @@ export default function PreferenceTool({ cookieHandler }) {
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"
               onClick={(e) => handleClick(e, 99, "q2", "a3")}
             ></input>
-            <input
+            <input data-testid="release-button"
               value="Release equity"
               type="submit"
               className="border border-purple-accent transition-transform transform hover:bg-purple-accent hover:text-off-white hover:font-semibold rounded-3xl w-full my-1 h-12 text-xl font-normal"

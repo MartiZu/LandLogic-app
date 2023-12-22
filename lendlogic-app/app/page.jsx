@@ -18,17 +18,11 @@ export default async function Home() {
   return (
     <main>
       <div className="mt-32 flex flex-col items-center">
-        <CookieButton
-          setCookie={setCookieJenny}
-          user={"Jenny"}
-          className="cursor-pointer"
-        />
-        <CookieButton
-          setCookie={setCookieKat}
-          user={"Kat"}
-          className="cursor-pointer"
-        />
-        <Image
+        <CookieButton setCookie={setCookieJenny} user={"Jenny"} className="cursor-pointer"/>
+        <CookieButton setCookie={setCookieKat} user={"Kat"} className="cursor-pointer"/>
+
+        <Image data-testid="test-logo"
+
           loading="eager"
           className=""
           src={"/Logo_lendlogic.png"}
