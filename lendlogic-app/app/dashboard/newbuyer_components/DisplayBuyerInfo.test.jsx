@@ -19,7 +19,7 @@ describe("NewBuyer", () => {
     it("should render the component", () => {
       render(<DisplayNewBuyerInformation value={mockValue} />);
       expect(
-        screen.getByLabelText(" Update the property value:")
+        screen.getByText("Your monthly saving could be")
       ).toBeInTheDocument();
     });
   });
