@@ -7,7 +7,7 @@ import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
 import { cookies } from "next/headers";
 import Checklist from "./newbuyer_components/Checklist";
 import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
-import GetSteps from "../customHooks/DisplaySteps";
+import displaySteps from "../customHooks/DisplaySteps";
 import ComparisonTool from "./ComparisonTool";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,7 +32,7 @@ export default async function Dashboard() {
   // console.log(properties);
   // read cookies fucntion
 
-  const steps = await GetSteps();
+  const steps = await displaySteps();
   // console.log("debugging on dashboard page stesp", steps);
 
   return (
