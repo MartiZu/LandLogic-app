@@ -2,7 +2,12 @@ import { render, screen, fireEvent } from "@testing-library/react";
 //userEvent is an alternative to fireEvent
 import { describe } from "node:test";
 import PreferenceTool from "./PreferenceTool";
-import { useRouter } from "next/router";
+
+
+async function resolvedComponent(Component, props) {
+  const ComponentResolved = await Component(props);
+  return () => ComponentResolved;
+}
 
 // Mock the next/router module
 jest.mock("next/router", () => ({
@@ -12,56 +17,54 @@ jest.mock("next/router", () => ({
   }),
 }));
 
+const mockCookieHandler = jest.fn()
+
 describe("PreferenceTool", () => {
   describe("Render", () => {
-  it("renders the PreferenceTool page", () => {
+  it("renders the PreferenceTool page", async () => {
     //arrange
-    render(<PreferenceTool />)
+    const PreferenceToolResolved = await resolvedComponent(PreferenceTool);
+    render(<PreferenceToolResolved value={mockCookieHandler} />)
+    // render(<PreferenceTool value={mockCookieHandler} />)
     expect(screen.getByText("Which of the following best describes you?")).toBeInTheDocument();
   });
 });
 }); 
 
 
-async function resolvedComponent(Component, props) {
-  const ComponentResolved = await Component(props);
-  return () => ComponentResolved;
-}
-
-
-// jest.mock("next/navigation", () => ({
-//   __esModule: true,
-//   useRouter: jest.fn(() => ({
+// // Mock the next/router module
+// jest.mock("next/router", () => ({
+//   useRouter: () => ({
 //     push: jest.fn(),
-//   })),
-// }));
-// jest.mock("next/headers", () => ({
-//   cookies: jest.fn(() => ({ set: jest.fn() })),
+//   }),
 // }));
 
-// describe("Home", () => {
-//   it("setCookieJenny function is setting cookie as Jenny's email", async () => {
-//     const mockId = { user_id: "jenny.smith@example.com" };
-//     setCookieJenny = jest.fn(() => Promise.resolve(mockId));
-//     const jennyEmail = await setCookieJenny();
-//     expect(mockId).toEqual(jennyEmail);
-//   });
-//   it("setCookieJenny function runs on click", async () => {
-//     const logSpy = jest.spyOn(global.console, "log");
-//     const HomeResolved = await resolvedComponent(Home);
-//     render(<HomeResolved />);
-//     const button = screen.getByText("Jenny's journey");
-//     fireEvent.click(button);
-//     expect(logSpy).toHaveBeenCalled();
-//     expect(logSpy).toHaveBeenCalledWith("Jenny logged in successfully!");
-//   });
-//   it("setCookieKat function runs on click", async () => {
-//     const logSpy = jest.spyOn(global.console, "log");
-//     const HomeResolved = await resolvedComponent(Home);
-//     render(<HomeResolved />);
-//     const button = screen.getByText("Kat's journey");
-//     fireEvent.click(button);
-//     expect(logSpy).toHaveBeenCalled();
-//     expect(logSpy).toHaveBeenCalledWith("Kat logged in successfully!");
+// const mockCookieHandler = jest.fn();
+
+// // Updated resolvedComponent function
+// async function resolvedComponent(Component, props) {
+//   // Mock the useRouter function for the duration of the test
+//   jest.mock("next/router", () => ({
+//     useRouter: () => ({
+//       push: jest.fn(),
+//     }),
+//   }));
+
+//   const ComponentResolved = await Component(props);
+//   return () => ComponentResolved;
+// }
+
+// describe("PreferenceTool", () => {
+//   it("renders the PreferenceTool page", async () => {
+//     // Arrange
+//     const PreferenceToolResolved = await resolvedComponent(PreferenceTool, {
+//       cookieHandler: mockCookieHandler,
+//     });
+
+//     // Act
+//     render(<PreferenceToolResolved />);
+
+//     // Assert
+//     expect(screen.getByText("Which of the following best describes you?")).toBeInTheDocument();
 //   });
 // });
