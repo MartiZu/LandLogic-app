@@ -17,7 +17,7 @@ describe("PreferenceTool", () => {
   it("renders the PreferenceTool page", () => {
     //arrange
     render(<PreferenceTool />)
-    expect(screen.getByText("Which of the following best describe you?")).toBeInTheDocument();
+    expect(screen.getByText("Which of the following best describes you?")).toBeInTheDocument();
   });
 });
 }); 
