@@ -115,7 +115,7 @@ export default function NewBuyerReport({ value, properties }) {
           </div>
         )}
       </div>
-      <button
+      <button data-testid="newbuyerreport-findoutmore"
         className="w-48 h-16 bg-purple-accent m-5 rounded-full text-xl text-off-white font-semibold shadow-button cursor-pointer"
         onClick={clickHandler}
       >
