@@ -56,6 +56,7 @@ export default function NewBuyerReport({ value, properties }) {
         //set the property value to the search value
         setPropertyValue(findProperty.searchValue);
         setPropertyPostcode(findProperty.searchPostcode);
+        setDepositValue(findProperty.searchValue * 0.1);
         setSearchInput("");
       } else {
         console.log("Postcode not found");
