@@ -19,6 +19,11 @@ export default function NewBuyerReport({ value, properties }) {
   const buttonText = furtherInfoVisible ? "Hide" : "Find Out More";
   //decalre deposit variable
   const deposit = propertyValue * 0.1;
+  const [depositValue, setDepositValue] = useState(deposit);
+  //updates deposit when this is updated in the child component
+  const updateDepositValue = (newDepositValue) => {
+    setDepositValue(newDepositValue);
+  };
 
   //write click handler to switch toggles
   function clickHandler() {
@@ -72,7 +77,7 @@ export default function NewBuyerReport({ value, properties }) {
         </span>
         . Based on the market value your estimated deposit is{" "}
         <span className="text-2xl font-bold text-purple-accent">
-          £{deposit}
+          £{depositValue}
         </span>{" "}
         <span className="text-xs">
           <br />
@@ -82,7 +87,7 @@ export default function NewBuyerReport({ value, properties }) {
 
       <div className="flex justify-center items-center">
         {furtherInfoVisible ? (
-          <DisplayNewBuyerInformation value={propertyValue} deposit={deposit} />
+          <DisplayNewBuyerInformation value={propertyValue} deposit={deposit} updateDepositValue={updateDepositValue}/>
         ) : (
           <div>
             <Image
