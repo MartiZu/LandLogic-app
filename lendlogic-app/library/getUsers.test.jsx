@@ -18,36 +18,35 @@ describe("getUsers", () => {
     });
 
     // Act
-    const result = await getUsers();
+    await getUsers();
 
     // Assert
-    expect(result).toEqual(mockUsers);
+    expect(global.fetch).toHaveBeenCalled();
   });
-  it("should call fetch and return the correct data", () => {
+  it("should call fetch and return the correct data", async () => {
+    // Arrange
+    global.fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => mockUsers,
+    });
+
+    // Act
+    const users = await getUsers();
+
     // Assert
     expect(global.fetch).toHaveBeenCalled();
     expect(users).toEqual(mockUsers);
   });
+  it("should handle !ok response", async () => {
+    const logSpy = jest.spyOn(global.console, "log");
+    global.fetch.mockResolvedValueOnce({
+      ok: false,
+      status: 401,
+    });
+    // Act
+    await getUsers();
+    // Assert
+    expect(global.fetch).toHaveBeenCalled();
+    expect(logSpy).toHaveBeenCalled();
+  });
 });
-
-// describe('getUsers', () => {
-
-//   let expectedData = mockUsers[0];
-//   let result = getUsers();
-
-//   //Test that the fetch is working
-//   it('should call fetch', async () => {
-//     getUsers();
-//     expect(result).toHaveBeenCalled(expectedData);
-//   });
-
-//   describe('When getUsers is called', () => {
-//     beforeEach(async () => {
-//       users = await getUsers();
-//     });
-
-//     it('Then the correct users should be returned', () => {
-//       expect(users).toEqual(mockUsers);
-//     });
-//   });
-// });
