@@ -34,7 +34,7 @@ export default function ReleaseEquityTool({ q2, value }) {
           £{equity}{" "}
         </span>
       </p>
-      <label className="py-4" htmlFor="interestRate">
+      <label className="py-2 font-normal text-xl" htmlFor="interestRate">
         £
       </label>
       <input
@@ -57,7 +57,7 @@ export default function ReleaseEquityTool({ q2, value }) {
           {borrowTime} years{" "}
         </span>
       </p>
-      <label className="py-4" htmlFor="interestRate">
+      <label className="py-2 font-normal text-xl" htmlFor="interestRate">
         £
       </label>
       <input
