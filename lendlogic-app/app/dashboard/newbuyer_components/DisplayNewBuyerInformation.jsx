@@ -51,7 +51,7 @@ export default function DisplayNewBuyerInformation({
         </label>
         <input
           id="monthlySaving"
-          className="w-1/2"
+          className="w-1/2 py-2"
           type="range"
           min="100"
           max="1000"
@@ -65,7 +65,7 @@ export default function DisplayNewBuyerInformation({
           Update the property value:{" "}
           
         </label>
-        <div className="flex flex-row items-center justify-center">
+        <div className="py-2 flex flex-row items-center justify-center">
         <p className="text-4xl pr-2 font-bold text-purple-accent">£</p>
           <input
             id="propertyValue"
