@@ -27,20 +27,17 @@ export default function ReleaseEquityTool({ q2, value }) {
       </p>
       <p className="py-2 font-normal text-xl">
         How much would you like to borrow?{" "}
-        <span
-          data-testid="equitySpan"
-          className="text-2xl font-bold text-purple-accent"
-        >
-          £{equity}{" "}
-        </span>
       </p>
-      <label className="py-4" htmlFor="interestRate">
-        £
-      </label>
+      <span
+        data-testid="equitySpan"
+        className="pt-2 text-2xl font-bold text-purple-accent"
+      >
+        £{equity}{" "}
+      </span>
       <input
         data-testid="equityValue"
         id="interestRate"
-        className="w-1/2"
+        className="w-1/2 py-2"
         type="range"
         min="5000"
         max="200000"
@@ -51,15 +48,12 @@ export default function ReleaseEquityTool({ q2, value }) {
           updateMonthlyPayment();
         }}
       />
-      <p className="py-2 font-normal text-xl">
+      <p className="pt-2 font-normal text-xl">
         How long would you like to borrow this equity for?{" "}
-        <span className="text-2xl font-bold text-purple-accent">
-          {borrowTime} years{" "}
-        </span>
       </p>
-      <label className="py-4" htmlFor="interestRate">
-        £
-      </label>
+      <span className="text-2xl font-bold text-purple-accent">
+        {borrowTime} years{" "}
+      </span>
       <input
         data-testid="borrowTime"
         id="interestRate"
