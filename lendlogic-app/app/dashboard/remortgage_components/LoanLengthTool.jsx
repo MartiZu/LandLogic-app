@@ -21,13 +21,13 @@ export default function LoanLengthTool({ q2, value }) {
   }
   return (
     <div className="mt-8 mx-4 text-center text-2xl">
-        <div className="py-4">
+        <div className="py-4 font-normal text-xl">
         Your new mortgage term length could be{" "}
         <span className="text-2xl font-bold text-purple-accent">
           {loanTerm} years
         </span>
       </div>
-      <div className="py-4">
+      <div className="py-4 font-normal text-xl">
         This would make your new monthly payment{" "}
         <span className="text-2xl font-bold text-purple-accent">
           £{monthlyPayment}
@@ -40,7 +40,7 @@ export default function LoanLengthTool({ q2, value }) {
         </span>
       </div> */}
       <div id="toggles" className="flex flex-col items-center">
-        <label className="py-4" htmlFor="loanTerm">
+        <label className="py-4 font-normal text-xl" htmlFor="loanTerm">
           Loan Term: {loanTerm}
         </label>
         <input
@@ -57,7 +57,7 @@ export default function LoanLengthTool({ q2, value }) {
             updateMonthlyPayment();
         }}
         />
-        <label className="py-4" htmlFor="interestRate">
+        <label className="py-4 font-normal text-xl" htmlFor="interestRate">
           Interest Rate: {interestRate}%
         </label>
         <input
