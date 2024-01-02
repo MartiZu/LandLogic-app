@@ -1,14 +1,17 @@
 import LearningSection from "./LearningSection";
 import Newsletter from "./Newsletter";
+import ComparisonTool from "./ComparisonTool";
 import RemortgageReport from "./remortgage_components/RemortgageReport";
+import RemortgageChecklist from "./remortgage_components/RemortgageChecklist";
+import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
+import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
+import Checklist from "./newbuyer_components/Checklist";
+
 import DisplayUser from "../customHooks/DisplayUser";
 import DisplayProperties from "../customHooks/DisplayProperties";
-import NewBuyerReport from "./newbuyer_components/NewBuyerReport";
-import { cookies } from "next/headers";
-import Checklist from "./newbuyer_components/Checklist";
-import BuyingHomeTimeline from "./newbuyer_components/BuyingHomeTimeline";
 import displaySteps from "../customHooks/DisplaySteps";
-import ComparisonTool from "./ComparisonTool";
+
+import { cookies } from "next/headers";
 import Link from "next/link";
 import Image from "next/image";
 
