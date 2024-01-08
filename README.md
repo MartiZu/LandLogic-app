@@ -1,6 +1,7 @@
 # LandLogic-app
 [Link](https://land-logic-app-frontend.vercel.app/) to the app deployed on Vercel.
 [Video](https://youtu.be/WsQBYR9njp8) presentation of our app.
+[Backend](https://github.com/MartiZu/LendLogic-backend) here.
 
 ## The Brief
 Having been selected to work with real life stakeholders gave us a unique opportunity. We were able to align our project to their needs and expectations, avoiding ambiguity and addressing any misunderstandings. This also allowed us to create a project that is relevant to the market, as well as the organization’s goals. The company wanted us to explore options and opportunities to serve that substantial portion of users that engages with the app for mortgage-related reasons, but that is currently underserved in the market because products do not offer them user-specific features. With the complexity and significance of mortgage decisions, there is a substantial opportunity to enhance the customer experience by offering features and services specifically tailored to these needs. 
